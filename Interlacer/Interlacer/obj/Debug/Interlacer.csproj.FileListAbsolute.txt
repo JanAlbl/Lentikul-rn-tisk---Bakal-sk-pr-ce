@@ -1,0 +1,11 @@
+C:\Users\Luckin\Desktop\Interlacer\Interlacer\Interlacer\bin\Debug\Interlacer.exe.config
+C:\Users\Luckin\Desktop\Interlacer\Interlacer\Interlacer\bin\Debug\Interlacer.exe
+C:\Users\Luckin\Desktop\Interlacer\Interlacer\Interlacer\bin\Debug\Interlacer.pdb
+C:\Users\Luckin\Desktop\Interlacer\Interlacer\Interlacer\obj\Debug\Interlacer.MainForm.resources
+C:\Users\Luckin\Desktop\Interlacer\Interlacer\Interlacer\obj\Debug\Interlacer.Properties.Resources.resources
+C:\Users\Luckin\Desktop\Interlacer\Interlacer\Interlacer\obj\Debug\Interlacer.csproj.GenerateResource.Cache
+C:\Users\Luckin\Desktop\Interlacer\Interlacer\Interlacer\obj\Debug\Interlacer.exe
+C:\Users\Luckin\Desktop\Interlacer\Interlacer\Interlacer\obj\Debug\Interlacer.pdb
+C:\Users\Luckin\Desktop\Interlacer Github\Projekt\Interlacer\Interlacer\bin\Debug\Interlacer.exe.config
+C:\Users\Luckin\Desktop\Interlacer Github\Projekt\Interlacer\Interlacer\obj\Debug\Interlacer.exe
+C:\Users\Luckin\Desktop\Interlacer Github\Projekt\Interlacer\Interlacer\obj\Debug\Interlacer.pdb
