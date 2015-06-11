@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GfxlibWrapper;
 using System.IO;
+using System.Drawing.Drawing2D;
 
 namespace Interlacer
 {
@@ -100,6 +101,8 @@ namespace Interlacer
             interpol1ComboBox.SelectedIndex = 0;
             interpol2ComboBox.SelectedIndex = 0;
             resetPictureInfo();
+
+            drawLineThickness();
         }
 
         /// <summary>
@@ -630,5 +633,45 @@ namespace Interlacer
             pictureListViewEx.Items[selectedIndex].Selected = true;
             return true;
         }
+
+        private void drawLineThickness()
+        {
+            // Pera jsou k namalování obrysu.
+            Pen blackPen = new Pen(Color.Black, 5);
+            // Brushe jsou k malování výplně.
+            //SolidBrush grayBrush = new SolidBrush(lineColorButton.BackColor);
+            SolidBrush grayBrush = new SolidBrush(Color.Gray);
+
+            Bitmap bufferImage = new Bitmap(linePictureBox.Width, linePictureBox.Height);
+
+            Graphics imgContext = Graphics.FromImage(bufferImage);
+            imgContext.SmoothingMode = SmoothingMode.AntiAlias;
+            imgContext.DrawRectangle(blackPen, 0, 0, linePictureBox.Width - 1, linePictureBox.Height - 1);
+           // MessageBox.Show("" + bufferImage.Width + " : " + bufferImage.Height);
+
+            int indentTop = 30;
+            int indentBottom = 10;
+            int indentLeft = 10;
+            blackPen.Width = 2;
+
+            int columnWidth = (bufferImage.Width - 2 * indentLeft) / lineThicknessTrackbar.Maximum;
+            int columnHeight = bufferImage.Height - indentTop - indentBottom;
+
+            int columnFillingIndent = columnWidth / 15;
+
+            for (int i = 0; i < lineThicknessTrackbar.Value; i++)
+            {
+                imgContext.FillRectangle(grayBrush, indentLeft + i * columnWidth, indentTop, columnWidth, columnHeight);
+            }
+
+            for (int i = 0; i < lineThicknessTrackbar.Maximum; i++)
+            {
+                imgContext.DrawRectangle(blackPen, indentLeft + i * columnWidth, indentTop, columnWidth, columnHeight);
+            }
+
+
+            linePictureBox.Image = bufferImage;
+        }
+
     }
 }

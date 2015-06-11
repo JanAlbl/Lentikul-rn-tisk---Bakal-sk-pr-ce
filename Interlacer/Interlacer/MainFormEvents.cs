@@ -251,6 +251,8 @@ namespace Interlacer
             {
                 lineColorButton.BackColor = lc.Color;
                 projectData.GetLineData().SetLineColor(lc.Color);
+
+                drawLineThickness();
             }
         }
 
@@ -266,6 +268,8 @@ namespace Interlacer
             {
                 backgroundColorButton.BackColor = bc.Color;
                 projectData.GetLineData().SetBackgroundColor(bc.Color);
+
+                drawLineThickness();
             }
         }
 
@@ -280,6 +284,8 @@ namespace Interlacer
         {
             actualPicsUnderLenLabel.Text = Convert.ToString(lineThicknessTrackbar.Value);
             projectData.GetLineData().SetLineThickness(lineThicknessTrackbar.Value);
+
+            drawLineThickness();
         }
 
         /// <summary>
@@ -572,6 +578,8 @@ namespace Interlacer
             changeMaxLineThickness();
             updateAllComponents();
             reorder();
+
+            drawLineThickness();
         }
 
         /// <summary>
@@ -653,6 +661,8 @@ namespace Interlacer
                 }
                 trySetValuesFromPictures(chosenPictures);
             }
+
+            drawLineThickness();
         }
 
         /// <summary>

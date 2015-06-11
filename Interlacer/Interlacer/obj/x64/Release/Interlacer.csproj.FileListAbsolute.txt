@@ -115,3 +115,20 @@ c:\Users\Jan\Documents\GitHub\Interlacer\bin64bit\doc.xml
 c:\Users\Jan\Documents\GitHub\Interlacer\bin64bit\cs-CZ\Interlacer.resources.dll
 c:\Users\Jan\Documents\GitHub\Interlacer\Interlacer\obj\x64\Release\cs-CZ\Interlacer.resources.dll
 c:\Users\Jan\Documents\GitHub\Interlacer\Interlacer\obj\x64\Release\Interlacer.pdb
+D:\Bak. prace\Interlacer\bin64bit\Interlacer.exe.config
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.exe
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.pdb
+D:\Bak. prace\Interlacer\bin64bit\Interlacer.exe
+D:\Bak. prace\Interlacer\bin64bit\Interlacer.pdb
+D:\Bak. prace\Interlacer\bin64bit\doc.xml
+D:\Bak. prace\Interlacer\bin64bit\cs-CZ\Interlacer.resources.dll
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.csprojResolveAssemblyReference.cache
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.resources
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.Properties.Resources.resources
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.SettingsForm.resources
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.StringRes_CZ.resources
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.StringRes_EN.resources
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.cs-CZ.resources
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.SettingsForm.cs-CZ.resources
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.csproj.GenerateResource.Cache
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\cs-CZ\Interlacer.resources.dll
