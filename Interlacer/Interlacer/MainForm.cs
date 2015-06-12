@@ -637,7 +637,7 @@ namespace Interlacer
         private void drawLineThickness()
         {
             int backGroundMax = Math.Max(backgroundColorButton.BackColor.R, backgroundColorButton.BackColor.G); // jakejsi takejsi "průměr" z barvy pozadí
-            backGroundMax = Math.Max(backGroundMax, backgroundColorButton.BackColor.B)  / 3;
+            backGroundMax = Math.Max(backGroundMax, backgroundColorButton.BackColor.B)  / 5;
 
             int finalColor = Math.Max(lineColorButton.BackColor.R, lineColorButton.BackColor.G); // jakejsi takejsi "průměr" z barvy popředí
             // finální barva složená podle barvy čar a barvy pozadí
@@ -666,9 +666,11 @@ namespace Interlacer
 
             if (projectData.GetLineData().GetCenterPosition())
             {
+                //zjistit jestli tamm á bejt to +1 nebo ne
                 for (int i = 0; i < lineThicknessTrackbar.Maximum; i++)
                 {
-                    if (((i + 2 * lineThicknessTrackbar.Maximum - (lineThicknessTrackbar.Maximum / 2 - lineThicknessTrackbar.Value / 2)) % lineThicknessTrackbar.Maximum) < lineThicknessTrackbar.Value)
+                   // if (((i + 2 * (lineThicknessTrackbar.Maximum+1) - ((lineThicknessTrackbar.Maximum+1) / 2 - lineThicknessTrackbar.Value / 2)) % (lineThicknessTrackbar.Maximum+1)) < lineThicknessTrackbar.Value)
+                    if (((i + 2 * pictureListViewEx.Items.Count - (pictureListViewEx.Items.Count / 2 - lineThicknessTrackbar.Value / 2)) % pictureListViewEx.Items.Count) < lineThicknessTrackbar.Value)
                     {
                         imgContext.FillRectangle(fillBrush, indentLeft + i * columnWidth, indentTop, columnWidth, columnHeight);
                     }
