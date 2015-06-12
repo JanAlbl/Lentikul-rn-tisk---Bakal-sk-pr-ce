@@ -636,39 +636,56 @@ namespace Interlacer
 
         private void drawLineThickness()
         {
+            int backGroundMax = Math.Max(backgroundColorButton.BackColor.R, backgroundColorButton.BackColor.G); // jakejsi takejsi "průměr" z barvy pozadí
+            backGroundMax = Math.Max(backGroundMax, backgroundColorButton.BackColor.B)  / 3;
+
+            int finalColor = Math.Max(lineColorButton.BackColor.R, lineColorButton.BackColor.G); // jakejsi takejsi "průměr" z barvy popředí
+            // finální barva složená podle barvy čar a barvy pozadí
+            finalColor = Math.Max(0, 150 - (Math.Max(finalColor, lineColorButton.BackColor.B) / 3) - backGroundMax);    // tady můžou bejt rlzný barvy od 125- 200                                                                                                                        //
+                                                                                                                        // více jsem nezkoušel ale pak by to asi bylo moc světlý, 125 . 150 vypadlao nejlíp na všech možných kombinacích pozadí/popředí
             // Pera jsou k namalování obrysu.
-            Pen blackPen = new Pen(Color.Black, 5);
+            Color penColor = Color.FromArgb(finalColor, finalColor, finalColor);
+            Pen drawPen = new Pen(penColor, 2);
+            Pen outLinePen = new Pen(Color.Black, 5);
+
             // Brushe jsou k malování výplně.
-            //SolidBrush grayBrush = new SolidBrush(lineColorButton.BackColor);
-            SolidBrush grayBrush = new SolidBrush(Color.Gray);
+            SolidBrush fillBrush = new SolidBrush(lineColorButton.BackColor);
+            SolidBrush backgroundBrush = new SolidBrush(backgroundColorButton.BackColor);
 
             Bitmap bufferImage = new Bitmap(linePictureBox.Width, linePictureBox.Height);
 
             Graphics imgContext = Graphics.FromImage(bufferImage);
             imgContext.SmoothingMode = SmoothingMode.AntiAlias;
-            imgContext.DrawRectangle(blackPen, 0, 0, linePictureBox.Width - 1, linePictureBox.Height - 1);
-           // MessageBox.Show("" + bufferImage.Width + " : " + bufferImage.Height);
+            imgContext.FillRectangle(backgroundBrush, 0, 0, linePictureBox.Width - 1, linePictureBox.Height - 1);
+            imgContext.DrawRectangle(outLinePen, 0, 0, linePictureBox.Width - 1, linePictureBox.Height - 1);
 
-            int indentTop = 30;
-            int indentBottom = 10;
-            int indentLeft = 10;
-            blackPen.Width = 2;
+            int indentTop = 30; int indentBottom = 10;  int indentLeft = 10;
 
-            int columnWidth = (bufferImage.Width - 2 * indentLeft) / lineThicknessTrackbar.Maximum;
+            int columnWidth = (bufferImage.Width - 2 * indentLeft) / (lineThicknessTrackbar.Maximum + 1);
             int columnHeight = bufferImage.Height - indentTop - indentBottom;
 
-            int columnFillingIndent = columnWidth / 15;
-
-            for (int i = 0; i < lineThicknessTrackbar.Value; i++)
+            if (projectData.GetLineData().GetCenterPosition())
             {
-                imgContext.FillRectangle(grayBrush, indentLeft + i * columnWidth, indentTop, columnWidth, columnHeight);
+                for (int i = 0; i < lineThicknessTrackbar.Maximum; i++)
+                {
+                    if (((i + 2 * lineThicknessTrackbar.Maximum - (lineThicknessTrackbar.Maximum / 2 - lineThicknessTrackbar.Value / 2)) % lineThicknessTrackbar.Maximum) < lineThicknessTrackbar.Value)
+                    {
+                        imgContext.FillRectangle(fillBrush, indentLeft + i * columnWidth, indentTop, columnWidth, columnHeight);
+                    }
+                }
             }
-
-            for (int i = 0; i < lineThicknessTrackbar.Maximum; i++)
+            else
             {
-                imgContext.DrawRectangle(blackPen, indentLeft + i * columnWidth, indentTop, columnWidth, columnHeight);
+                for (int i = 0; i < lineThicknessTrackbar.Value; i++)
+                {
+                    imgContext.FillRectangle(fillBrush, indentLeft + i * columnWidth, indentTop, columnWidth, columnHeight);
+                }
             }
-
+            // +1 kvůli tomu že šířka čáry je maximálně počet obrázků - 1
+            for (int i = 0; i < lineThicknessTrackbar.Maximum + 1; i++)
+            {
+                imgContext.DrawRectangle(drawPen, indentLeft + i * columnWidth, indentTop, columnWidth, columnHeight);
+            }
 
             linePictureBox.Image = bufferImage;
         }

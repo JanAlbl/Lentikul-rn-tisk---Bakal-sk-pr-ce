@@ -226,6 +226,7 @@ namespace Interlacer
         private void centerRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             projectData.GetLineData().SetCenterPosition(true);
+            drawLineThickness();
         }
 
         /// <summary>
@@ -237,6 +238,7 @@ namespace Interlacer
         private void edgeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             projectData.GetLineData().SetCenterPosition(false);
+            drawLineThickness();
         }
 
         /// <summary>
