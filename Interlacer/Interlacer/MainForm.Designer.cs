@@ -335,6 +335,7 @@
             this.pictureListViewEx.View = System.Windows.Forms.View.Details;
             this.pictureListViewEx.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.pictureListViewEx_ItemSelectionChanged);
             this.pictureListViewEx.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureListViewEx_DragDrop);
+            this.pictureListViewEx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pictureListViewEx_KeyDown);
             // 
             // orderHeader
             // 

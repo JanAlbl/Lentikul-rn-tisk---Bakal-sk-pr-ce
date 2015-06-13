@@ -692,5 +692,33 @@ namespace Interlacer
             linePictureBox.Image = bufferImage;
         }
 
+        /// <summary>
+        /// Odstraní z listu vybrané obrázky.
+        /// </summary>
+        private void removePictures()
+        {
+            int count = pictureListViewEx.SelectedItems.Count;
+            for (int i = 0; i < count; i++)
+            {
+                pictureListViewEx.SelectedItems[0].Remove();
+            }
+            changeMaxLineThickness();
+            updateAllComponents();
+            reorder();
+
+            drawLineThickness();
+        }
+
+        /// <summary>
+        /// Označí všechny orbázky v listu.
+        /// </summary>
+        private void selectAllPictures()
+        {
+            for (int i = 0; i < pictureListViewEx.Items.Count; i++)
+            {
+                pictureListViewEx.Items[i].Selected = true;
+            }
+        }
+
     }
 }

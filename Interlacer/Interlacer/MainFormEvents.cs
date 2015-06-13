@@ -572,16 +572,7 @@ namespace Interlacer
         /// <param name="e"></param>
         private void removePicButton_Click(object sender, EventArgs e)
         {
-            int count = pictureListViewEx.SelectedItems.Count;
-            for (int i = 0; i < count; i++)
-            {
-                pictureListViewEx.SelectedItems[0].Remove();
-            }
-            changeMaxLineThickness();
-            updateAllComponents();
-            reorder();
-
-            drawLineThickness();
+            removePictures();
         }
 
         /// <summary>
@@ -749,6 +740,24 @@ namespace Interlacer
             }
             result.Destroy();  //dealokace obrazku
             MessageBox.Show(Localization.resourcesStrings.GetString("doneMessage"));
+        }
+
+        /// <summary>
+        /// KeyListener pro pro list s obrázky.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void pictureListViewEx_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Delete) {
+                removePictures();
+            }
+
+            if (e.Control && e.KeyCode == Keys.A)
+            {
+                selectAllPictures();
+            }
+            
         }
     }
 }

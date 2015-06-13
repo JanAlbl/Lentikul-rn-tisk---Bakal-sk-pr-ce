@@ -1202,6 +1202,16 @@
             <param name="indeces">kolekce indexu vybranych radku</param>
             <returns>vraci true, pokud v listu neco je, jinak false</returns>
         </member>
+        <member name="M:Interlacer.MainForm.removePictures">
+            <summary>
+            Odstraní z listu vybrané obrázky.
+            </summary>
+        </member>
+        <member name="M:Interlacer.MainForm.selectAllPictures">
+            <summary>
+            Označí všechny orbázky v listu.
+            </summary>
+        </member>
         <member name="F:Interlacer.MainForm.components">
             <summary>
             Required designer variable.
@@ -1533,6 +1543,13 @@
         <member name="M:Interlacer.MainForm.interlaceButton_Click(System.Object,System.EventArgs)">
             <summary>
             vyzada si zadani cesty a jmena vystupniho souboru a provede prolozeni
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Interlacer.MainForm.pictureListViewEx_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            KeyListener pro pro list s obrázky.
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
