@@ -670,7 +670,7 @@ namespace Interlacer
                 for (int i = 0; i < lineThicknessTrackbar.Maximum; i++)
                 {
                    // if (((i + 2 * (lineThicknessTrackbar.Maximum+1) - ((lineThicknessTrackbar.Maximum+1) / 2 - lineThicknessTrackbar.Value / 2)) % (lineThicknessTrackbar.Maximum+1)) < lineThicknessTrackbar.Value)
-                    if (((i + 2 * pictureListViewEx.Items.Count - (pictureListViewEx.Items.Count / 2 - lineThicknessTrackbar.Value / 2)) % pictureListViewEx.Items.Count) < lineThicknessTrackbar.Value)
+                    if (((i + 2 * pictureListViewEx.Items.Count - (pictureListViewEx.Items.Count / 2 - lineThicknessTrackbar.Value / 2)) % Math.Max(1, pictureListViewEx.Items.Count)) < lineThicknessTrackbar.Value)
                     {
                         imgContext.FillRectangle(fillBrush, indentLeft + i * columnWidth, indentTop, columnWidth, columnHeight);
                     }
@@ -697,15 +697,13 @@ namespace Interlacer
         /// </summary>
         private void removePictures()
         {
-            int count = pictureListViewEx.SelectedItems.Count;
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < pictureListViewEx.SelectedItems.Count; i++)
             {
                 pictureListViewEx.SelectedItems[0].Remove();
             }
             changeMaxLineThickness();
             updateAllComponents();
             reorder();
-
             drawLineThickness();
         }
 
@@ -717,6 +715,113 @@ namespace Interlacer
             for (int i = 0; i < pictureListViewEx.Items.Count; i++)
             {
                 pictureListViewEx.Items[i].Selected = true;
+            }
+        }
+
+        private void movePicturesDown()
+        {
+            var indeces = pictureListViewEx.SelectedIndices;
+            if (indeces.Count == 0)
+                return;
+
+            int firstIndex = Convert.ToInt32(indeces[0]);
+            int lastIndex = Convert.ToInt32(indeces[indeces.Count - 1]);
+
+            if (lastIndex == pictureListViewEx.Items.Count - 1)
+            {
+                pictureListViewEx.Focus();
+                return;
+            }
+
+            String[] rowValues = new String[pictureListViewEx.Items[0].SubItems.Count];
+            for (int i = indeces.Count - 1; i >= 0; i--)
+            {
+                for (int j = 0; j < pictureListViewEx.Items[0].SubItems.Count; j++)
+                {
+                    rowValues[j] = pictureListViewEx.Items[indeces[i] + 1].SubItems[j].Text;
+                    pictureListViewEx.Items[indeces[i] + 1].SubItems[j].Text = pictureListViewEx.Items[indeces[i]].SubItems[j].Text;
+                    pictureListViewEx.Items[indeces[i]].SubItems[j].Text = rowValues[j];
+                }
+            }
+
+            reorder();
+            pictureListViewEx.Focus();
+            for (int i = indeces.Count - 1; i >= 0; i--)
+            {
+                pictureListViewEx.Items[indeces[i] + 1].Selected = true;
+                pictureListViewEx.Items[indeces[i]].Selected = false;
+            }
+        }
+
+        private void movePicturesUp()
+        {
+            var indeces = pictureListViewEx.SelectedIndices;
+            if (indeces.Count == 0)
+                return;
+
+            int firstIndex = Convert.ToInt32(indeces[0]);
+            int lastIndex = Convert.ToInt32(indeces[indeces.Count - 1]);
+
+            if (firstIndex == 0)
+            {
+                pictureListViewEx.Focus();
+                return;
+            }
+
+            String[] rowValues = new String[pictureListViewEx.Items[0].SubItems.Count];
+            for (int i = 0; i < indeces.Count; i++)
+            {
+                for (int j = 0; j < pictureListViewEx.Items[0].SubItems.Count; j++)
+                {
+                    rowValues[j] = pictureListViewEx.Items[indeces[i] - 1].SubItems[j].Text;
+                    pictureListViewEx.Items[indeces[i] - 1].SubItems[j].Text = pictureListViewEx.Items[indeces[i]].SubItems[j].Text;
+                    pictureListViewEx.Items[indeces[i]].SubItems[j].Text = rowValues[j];
+                }
+            }
+           
+            reorder();
+
+            int [] ind = new int[indeces.Count];
+
+            for (int i = 0; i < indeces.Count; i++)
+                ind[i] = indeces[i];
+
+            pictureListViewEx.Focus();
+            for (int i = 0; i < indeces.Count; i++)
+            {
+                pictureListViewEx.Items[ind[i] - 1].Selected = true;
+                pictureListViewEx.Items[ind[i]].Selected = false;
+            }
+        }
+
+        private void copyPictures(int copiesCount)
+        {
+            var indeces = pictureListViewEx.SelectedIndices;  //vybrane radky
+            // Pokud je vybrána aspoň jedna položka
+            if (indeces.Count > 0)
+            {
+                for (int i = 0; i < indeces.Count; i++)
+                {
+                    for (int j = 0; j < copiesCount; j++)
+                    {
+                        ListViewItem item = pictureListViewEx.Items.Insert(indeces[i] + 1, Convert.ToString(order)); //vlozeni noveho radku do listView a prirazeno tohoto radku do promenne item
+                        for (int k = 1; k < pictureListViewEx.Items[0].SubItems.Count; k++)  //pruchod jednotlivych prvku radku (sloupecku)
+                        {
+                            ListViewItem.ListViewSubItem subItem = item.SubItems.Add(new ListViewItem.ListViewSubItem());  //pridani novehu subItemu (pro kazdy sloupec) a prirazeni do promenne subItem
+                            subItem.Text = pictureListViewEx.Items[indeces[i]].SubItems[k].Text;  //prirazeni spravneho textu danemu subItemu
+                        }
+                    }
+                }
+                reorder();
+                changeMaxLineThickness();
+                drawLineThickness();
+
+                // Vrátí focus na položky, které byli původně označené
+                pictureListViewEx.Focus();
+                for (int i = 0; i < indeces.Count; i++)
+                {
+                    pictureListViewEx.Items[indeces[i]].Selected = true;
+                }
             }
         }
 

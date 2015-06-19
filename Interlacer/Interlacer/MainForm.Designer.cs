@@ -952,6 +952,8 @@
             // imagePreviewCheckBox
             // 
             resources.ApplyResources(this.imagePreviewCheckBox, "imagePreviewCheckBox");
+            this.imagePreviewCheckBox.Checked = true;
+            this.imagePreviewCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.imagePreviewCheckBox.Name = "imagePreviewCheckBox";
             this.imagePreviewCheckBox.UseVisualStyleBackColor = true;
             this.imagePreviewCheckBox.CheckedChanged += new System.EventHandler(this.imagePreviewCheckBox_CheckedChanged);

@@ -316,32 +316,7 @@ namespace Interlacer
         /// <param name="e"></param>
         private void copyPicButton_Click(object sender, EventArgs e)
         {
-            var indeces = pictureListViewEx.SelectedIndices;  //vybrane radky
-            // Pokud je vybrána aspoň jedna položka
-            if (indeces.Count > 0)
-            {
-                for (int i = 0; i < indeces.Count; i++)
-                {
-                    for (int j = 0; j < Convert.ToInt32(copyCountNumeric.Value); j++)
-                    {
-                        ListViewItem item = pictureListViewEx.Items.Insert(indeces[i] + 1, Convert.ToString(order)); //vlozeni noveho radku do listView a prirazeno tohoto radku do promenne item
-                        for (int k = 1; k < pictureListViewEx.Items[0].SubItems.Count; k++)  //pruchod jednotlivych prvku radku (sloupecku)
-                        {
-                            ListViewItem.ListViewSubItem subItem = item.SubItems.Add(new ListViewItem.ListViewSubItem());  //pridani novehu subItemu (pro kazdy sloupec) a prirazeni do promenne subItem
-                            subItem.Text = pictureListViewEx.Items[indeces[i]].SubItems[k].Text;  //prirazeni spravneho textu danemu subItemu
-                        }
-                    }
-                }
-                reorder();
-                changeMaxLineThickness();
-
-                // Vrátí focus na položky, které byli původně označené
-                pictureListViewEx.Focus();
-                for (int i = 0; i < indeces.Count; i++)
-                {
-                    pictureListViewEx.Items[indeces[i]].Selected = true;
-                }
-            }
+            copyPictures(Convert.ToInt32(copyCountNumeric.Value));
         }
 
         /// <summary>
@@ -500,6 +475,8 @@ namespace Interlacer
                 projectData.GetInterlacingData().SetResolutionUnits(((StringValuePair<Units>)settings.GetSelectedResolutionUnits()).value);
                 updateAllComponents();      // updatuju celý mainform aby se provedli změny v gui
                 setPictureViewFromList(pathPics);       // nastavím i cesty k novým obrázkům
+
+                drawLineThickness();
             }
             catch (Exception exc)
             {
@@ -515,25 +492,7 @@ namespace Interlacer
         /// <param name="e"></param>
         private void moveDownButton_Click(object sender, EventArgs e)
         {
-            var indeces = pictureListViewEx.SelectedIndices;
-            if (!selectCurrentListItem(indeces))
-                return;
-            int selectedIndex = Convert.ToInt32(indeces[0]);
-            // Pokud vybraná položka je na konci sezamu, metoda skončí
-            if (selectedIndex == pictureListViewEx.Items.Count - 1)
-            {
-                return;
-            }
-            string tmp;
-            for (int i = 0; i < pictureListViewEx.Items[0].SubItems.Count; i++)
-            {
-                tmp = pictureListViewEx.Items[selectedIndex + 1].SubItems[i].Text;
-                pictureListViewEx.Items[selectedIndex + 1].SubItems[i].Text = pictureListViewEx.Items[selectedIndex].SubItems[i].Text;
-                pictureListViewEx.Items[selectedIndex].SubItems[i].Text = tmp;
-            }
-            // Vrácení focusu na posouvanou položku
-            pictureListViewEx.Items[selectedIndex + 1].Selected = true;
-            pictureListViewEx.Items[selectedIndex].Selected = false;
+            movePicturesDown();
         }
 
         /// <summary>
@@ -544,25 +503,7 @@ namespace Interlacer
         /// <param name="e"></param>
         private void moveUpButton_Click(object sender, EventArgs e)
         {
-            var indeces = pictureListViewEx.SelectedIndices;
-            if (!selectCurrentListItem(indeces))
-                return;
-            int selectedIndex = Convert.ToInt32(indeces[0]);
-            // Ověření že není vybrána první položka seznamu
-            if (selectedIndex == 0)
-            {
-                return;
-            }
-            string tmp;
-            for (int i = 0; i < pictureListViewEx.Items[0].SubItems.Count; i++)
-            {
-                tmp = pictureListViewEx.Items[selectedIndex - 1].SubItems[i].Text;
-                pictureListViewEx.Items[selectedIndex - 1].SubItems[i].Text = pictureListViewEx.Items[selectedIndex].SubItems[i].Text;
-                pictureListViewEx.Items[selectedIndex].SubItems[i].Text = tmp;
-            }
-            // Vrácení focusu na posouvanou položku
-            pictureListViewEx.Items[selectedIndex - 1].Selected = true;
-            pictureListViewEx.Items[selectedIndex].Selected = false;
+            movePicturesUp();
         }
 
         /// <summary>
@@ -589,6 +530,7 @@ namespace Interlacer
             changeMaxLineThickness();
             updateAllComponents();
             previewData.ShowDefaultImage();
+            drawLineThickness();
         }
         /// <summary>
         /// Metoda vyvolaná po dokončení akce drag and drop.    
@@ -751,13 +693,15 @@ namespace Interlacer
         {
             if(e.KeyCode == Keys.Delete) {
                 removePictures();
-            }
-
-            if (e.Control && e.KeyCode == Keys.A)
-            {
+            } else if (e.Control && e.KeyCode == Keys.A) {
                 selectAllPictures();
+            } else if (e.Control && e.KeyCode == Keys.Down) {
+                movePicturesDown();
+            } else if (e.Control && e.KeyCode == Keys.Up) {
+                movePicturesUp();
+            } else if (e.Control && e.KeyCode == Keys.D) {
+                copyPictures(1);
             }
-            
         }
     }
 }
