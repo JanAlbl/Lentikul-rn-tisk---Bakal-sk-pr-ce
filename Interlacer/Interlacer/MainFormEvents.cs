@@ -25,17 +25,7 @@ namespace Interlacer
         /// <param name="e"></param>
         private void reverseButton_Click(object sender, EventArgs e)
         {
-            int count = pictureListViewEx.Items.Count;
-            for (int i = 0; i < count / 2; i++)
-            {
-                String tmp;
-                for (int j = 1; j < pictureListViewEx.Items[i].SubItems.Count; j++)
-                {
-                    tmp = pictureListViewEx.Items[i].SubItems[j].Text;
-                    pictureListViewEx.Items[i].SubItems[j].Text = pictureListViewEx.Items[count - i - 1].SubItems[j].Text;
-                    pictureListViewEx.Items[count - i - 1].SubItems[j].Text = tmp;
-                }
-            }
+            revertList();
         }
 
         /// <summary>
@@ -298,6 +288,7 @@ namespace Interlacer
         private void verticalRadiobutton_CheckedChanged(object sender, EventArgs e)
         {
             projectData.GetInterlacingData().SetDirection(Direction.Vertical);
+            drawLineThickness();
         }
         /// <summary>
         /// Nastaví směr prokládání na horizontální
@@ -307,6 +298,7 @@ namespace Interlacer
         private void horizontalRadiobutton_CheckedChanged(object sender, EventArgs e)
         {
             projectData.GetInterlacingData().SetDirection(Direction.Horizontal);
+            drawLineThickness();
         }
 
         /// <summary>
@@ -523,14 +515,7 @@ namespace Interlacer
         /// <param name="e"></param>
         private void clearAllButton_Click(object sender, EventArgs e)
         {
-            pictureListViewEx.Items.Clear();
-            order = 1;
-            projectData.GetInterlacingData().SetWidth(0);
-            projectData.GetInterlacingData().SetHeight(0);
-            changeMaxLineThickness();
-            updateAllComponents();
-            previewData.ShowDefaultImage();
-            drawLineThickness();
+            clearList();
         }
         /// <summary>
         /// Metoda vyvolaná po dokončení akce drag and drop.    
@@ -564,40 +549,7 @@ namespace Interlacer
         /// <param name="e"></param>
         private void addPicButton_Click(object sender, EventArgs e)
         {
-            addPicFileDialog.Multiselect = true;
-            addPicFileDialog.Filter = stringOfInputExtensions;
-            addPicFileDialog.FilterIndex = 1;
-            DialogResult result = addPicFileDialog.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                string[] chosenPictures = addPicFileDialog.FileNames;
-                for (int i = 0; i < chosenPictures.Length; i++)
-                {
-                    var indeces = pictureListViewEx.SelectedIndices;
-                    int selectedIndex;
-                    // Pokud je vybrano vic, tak posuneme ten nad tim pod vybrane
-                    // Pokud neni v listu nic vybrano
-                    if (indeces.Count == 0)
-                    {
-                        selectedIndex = Convert.ToInt32(order - 1);
-                    }
-                    // Pokud je v listu neco vybrano
-                    else
-                    {
-                        selectedIndex = Convert.ToInt32(indeces[0]) + 1;
-                    }
-                    int numOfPics = chosenPictures.Count();
-                    ListViewItem item = new ListViewItem(new[] { Convert.ToString(order), chosenPictures[i], getPicName(chosenPictures[i]), "" });
-                    pictureListViewEx.Items.Insert(selectedIndex, item);
-                    reorder();
-                    pictureListViewEx.Focus();
-                    pictureListViewEx.Items[selectedIndex].Selected = false;
-                    changeMaxLineThickness();
-                }
-                trySetValuesFromPictures(chosenPictures);
-            }
-
-            drawLineThickness();
+            addPicToList();
         }
 
         /// <summary>
@@ -618,70 +570,7 @@ namespace Interlacer
         /// <param name="e"></param>
         private void interlaceButton_Click(object sender, EventArgs e)
         {
-            String filename;
-            savePicFileDialog.Filter = stringOfOutputExenstions;
-            savePicFileDialog.AddExtension = true;
-            if (savePicFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                filename = savePicFileDialog.FileName;
-            }
-            else return;
-            if (isExtensionValid(filename))
-                savePicFileDialog.AddExtension = false;
-
-            List<Picture> picList = harvestPicList();  //ziskani seznamu obrazku z listView
-            if (picList.Count == 0)  //chyba pri prazdnem seznamu
-            {
-                MessageBox.Show(Localization.resourcesStrings.GetString("emptyListError"));
-                return;
-            }
-            PictureContainer picCon = new PictureContainer(picList, projectData.GetInterlacingData(), projectData.GetLineData(), interlaceProgressBar);  //vytvoreni PictureContaineru
-            try
-            {
-                if (!picCon.CheckPictures())  //kontrola konzistence velikosti jednotlivych obrazku
-                {
-                    /*pokud nejsou stejne velke, aplikace se zepta, zda ma obrazky oriznout a pokracovat*/
-                    DialogResult dialogResult = MessageBox.Show(Localization.resourcesStrings.GetString("imageDimensionError"), "", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.No)  //pri odmitnuti je proces ukoncen
-                        return;
-                }
-                picCon.Interlace();  //prolozeni
-            }
-            catch (PictureLoadFailureException ex)  //chyba pri nacitani souboru s obrazkem (pravdepodobne chybejici soubor)
-            {
-                MessageBox.Show(string.Format(Localization.resourcesStrings.GetString("fileNotFoundError"), ex.filename));
-                interlaceProgressBar.Value = 0;
-                return;
-            }
-            catch (PictureWrongFormatException ex)  //chyba pri chybnem formatu nacitaneho obrazku
-            {
-                MessageBox.Show(string.Format(Localization.resourcesStrings.GetString("wrongFormatError"), ex.filename));
-                interlaceProgressBar.Value = 0;
-                return;
-            }
-            catch (OutOfMemoryException)  //chyba nedostatku pameti
-            {
-                MessageBox.Show(Localization.resourcesStrings.GetString("memoryError"));
-                interlaceProgressBar.Value = 0;
-                return;
-            }
-            catch (PictureProcessException)  //chyba pri chybne nastavenych parametrech prokladani
-            {
-                MessageBox.Show(Localization.resourcesStrings.GetString("interlacingError"));
-                interlaceProgressBar.Value = 0;
-                return;
-            }
-            Picture result = picCon.GetResult();  //ziskani vysledneho obrazku
-            try
-            {
-                result.Save(filename);  //ulozeni obrazku
-            }
-            catch (PictureSaveFailureException ex)  //chyba pri ukladani obrazku
-            {
-                MessageBox.Show(string.Format(Localization.resourcesStrings.GetString("imageSaveError"), ex.filename));
-            }
-            result.Destroy();  //dealokace obrazku
-            MessageBox.Show(Localization.resourcesStrings.GetString("doneMessage"));
+            interlace();
         }
 
         /// <summary>
@@ -693,15 +582,26 @@ namespace Interlacer
         {
             if(e.KeyCode == Keys.Delete) {
                 removePictures();
-            } else if (e.Control && e.KeyCode == Keys.A) {
-                selectAllPictures();
+            } else if (e.KeyCode == Keys.Add || e.KeyCode == Keys.D1) {
+                addPicToList();
             } else if (e.Control && e.KeyCode == Keys.Down) {
                 movePicturesDown();
             } else if (e.Control && e.KeyCode == Keys.Up) {
                 movePicturesUp();
+            } else if (e.Control && e.KeyCode == Keys.A) {
+                selectAllPictures();
             } else if (e.Control && e.KeyCode == Keys.D) {
                 copyPictures(1);
+            } else if (e.Control && e.KeyCode == Keys.Q) {
+                replacePicture();
+            } else if (e.Control && e.KeyCode == Keys.S) {
+                sortListView();
+            } else if (e.Control && e.KeyCode == Keys.R) {
+                revertList();
+            } else if (e.Control && e.KeyCode == Keys.E) {
+                clearList();
             }
+            
         }
     }
 }

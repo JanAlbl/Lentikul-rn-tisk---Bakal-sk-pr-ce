@@ -132,3 +132,26 @@ D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.cs-CZ.re
 D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.SettingsForm.cs-CZ.resources
 D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.csproj.GenerateResource.Cache
 D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\cs-CZ\Interlacer.resources.dll
+G:\Bak. Prace\Interlacer\bin64bit\Interlacer.exe.config
+G:\Bak. Prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.exe
+G:\Bak. Prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.pdb
+F:\Bak. Prace\Interlacer\bin64bit\Interlacer.exe.config
+F:\Bak. Prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.exe
+F:\Bak. Prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.pdb
+D:\Interlacer\bin64bit\Interlacer.exe.config
+D:\Interlacer\Interlacer\obj\x64\Release\Interlacer.exe
+D:\Interlacer\Interlacer\obj\x64\Release\Interlacer.pdb
+D:\Interlacer\bin64bit\Interlacer.exe
+D:\Interlacer\bin64bit\Interlacer.pdb
+D:\Interlacer\bin64bit\doc.xml
+D:\Interlacer\bin64bit\cs-CZ\Interlacer.resources.dll
+D:\Interlacer\Interlacer\obj\x64\Release\Interlacer.csprojResolveAssemblyReference.cache
+D:\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.resources
+D:\Interlacer\Interlacer\obj\x64\Release\Interlacer.Properties.Resources.resources
+D:\Interlacer\Interlacer\obj\x64\Release\Interlacer.SettingsForm.resources
+D:\Interlacer\Interlacer\obj\x64\Release\Interlacer.StringRes_CZ.resources
+D:\Interlacer\Interlacer\obj\x64\Release\Interlacer.StringRes_EN.resources
+D:\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.cs-CZ.resources
+D:\Interlacer\Interlacer\obj\x64\Release\Interlacer.SettingsForm.cs-CZ.resources
+D:\Interlacer\Interlacer\obj\x64\Release\Interlacer.csproj.GenerateResource.Cache
+D:\Interlacer\Interlacer\obj\x64\Release\cs-CZ\Interlacer.resources.dll

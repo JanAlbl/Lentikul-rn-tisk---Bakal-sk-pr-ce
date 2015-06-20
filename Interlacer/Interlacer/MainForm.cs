@@ -98,8 +98,8 @@ namespace Interlacer
             changeLanguage();  //nastaveni vsech textu na texty ve spravnem jazyce, vcetne textu komponent
             changeUnits();  //nastaveni jednotek podle aktualnich jednotek v atributu settings
             pictureListViewEx.MultiSelect = true;
-            interpol1ComboBox.SelectedIndex = 0;
-            interpol2ComboBox.SelectedIndex = 0;
+            interpol1ComboBox.SelectedIndex = 2;
+            interpol2ComboBox.SelectedIndex = 2;
             resetPictureInfo();
 
             drawLineThickness();
@@ -265,7 +265,13 @@ namespace Interlacer
             {
                 ListView.SelectedListViewItemCollection selectedItems = pictureListViewEx.SelectedItems;  //ziskani vybranych radku
                 if (selectedItems.Count > 0)
-                    previewData.Show(selectedItems[0].SubItems[1].Text);  //nastaveni nahledu na prvniho z nich
+                {
+                    previewData.Show(selectedItems[0].SubItems[1].Text);//nastaveni nahledu na prvniho z nich
+                }
+                else // jinak zobrazit defaultní image picture boxu
+                {
+                    previewData.ShowDefaultImage();  //zobrazeni defaultniho obrazku
+                }
             }
             catch  //pripad, kdy se obrazek nepodari nacist
             {
@@ -683,11 +689,16 @@ namespace Interlacer
                     imgContext.FillRectangle(fillBrush, indentLeft + i * columnWidth, indentTop, columnWidth, columnHeight);
                 }
             }
+
+            // Obtahnuti
             // +1 kvůli tomu že šířka čáry je maximálně počet obrázků - 1
             for (int i = 0; i < lineThicknessTrackbar.Maximum + 1; i++)
             {
                 imgContext.DrawRectangle(drawPen, indentLeft + i * columnWidth, indentTop, columnWidth, columnHeight);
             }
+
+            if (projectData.GetInterlacingData().GetDirection() == Direction.Horizontal)
+                bufferImage.RotateFlip(RotateFlipType.Rotate90FlipNone);
 
             linePictureBox.Image = bufferImage;
         }
@@ -701,6 +712,7 @@ namespace Interlacer
             {
                 pictureListViewEx.SelectedItems[0].Remove();
             }
+            setPreview();
             changeMaxLineThickness();
             updateAllComponents();
             reorder();
@@ -825,5 +837,203 @@ namespace Interlacer
             }
         }
 
+        private Boolean checkLineSettings()
+        {
+            if ((leftLineCheckBox.Checked || rightLineCheckBox.Checked || topLineCheckBox.Checked || bottomLineCheckBox.Checked) && frameWidthNumeric.Value == 0)
+            {
+                var answer = MessageBox.Show("Some positions for alignment lines are checked, but frame width is zero.\nDo you wish to continue?", "Warning", 
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if (answer == DialogResult.No)
+                    return false;
+            }
+            if ((!leftLineCheckBox.Checked && !rightLineCheckBox.Checked && !topLineCheckBox.Checked && !bottomLineCheckBox.Checked) && frameWidthNumeric.Value > 0) 
+            {
+                var answer = MessageBox.Show("No positions for alignment lines are checked, but frame width is greater than zero.\nDo you wish to continue?", "Warning",
+                   MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if (answer == DialogResult.No)
+                    return false;
+            }
+            
+            return true;
+        }
+
+        private String findFalseParameters()
+        {
+            String falseParams = "";
+            Boolean isHeadlined = false;
+
+            if(widthNumeric.Value == 0) {
+                falseParams += widthLabel.Parent.Text + ":\n";
+                isHeadlined = true;
+                falseParams += widthLabel.Text + "\n";
+            }
+            if(heightNumeric.Value == 0) {
+                if(!isHeadlined)
+                    falseParams += heightLabel.Parent.Text + ":\n";
+
+                falseParams += heightLabel.Text + "\n";
+            }
+            isHeadlined = false;
+            if(dpiNumeric.Value == 0) {
+                falseParams += dpiLabel.Parent.Text + ":\n";
+                isHeadlined = true;
+                falseParams += dpiLabel.Text + "\n";
+            }
+            if(lpiNumeric.Value == 0) {
+                if (!isHeadlined)
+                    falseParams += lpiLabel.Parent.Text + ":\n";
+
+                falseParams += lpiLabel.Text;
+            }
+
+
+            return falseParams;
+        }
+
+        private void interlace()
+        {
+            if(!checkLineSettings())
+                return ;
+
+            String filename;
+            savePicFileDialog.Filter = stringOfOutputExenstions;
+            savePicFileDialog.AddExtension = true;
+            if (savePicFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filename = savePicFileDialog.FileName;
+            }
+            else return;
+            if (isExtensionValid(filename))
+                savePicFileDialog.AddExtension = false;
+
+            List<Picture> picList = harvestPicList();  //ziskani seznamu obrazku z listView
+            if (picList.Count == 0)  //chyba pri prazdnem seznamu
+            {
+                MessageBox.Show(Localization.resourcesStrings.GetString("emptyListError"));
+                return;
+            }
+            PictureContainer picCon = new PictureContainer(picList, projectData.GetInterlacingData(), projectData.GetLineData(), interlaceProgressBar);  //vytvoreni PictureContaineru
+            try
+            {
+                if (!picCon.CheckPictures())  //kontrola konzistence velikosti jednotlivych obrazku
+                {
+                    /*pokud nejsou stejne velke, aplikace se zepta, zda ma obrazky oriznout a pokracovat*/
+                    DialogResult dialogResult = MessageBox.Show(Localization.resourcesStrings.GetString("imageDimensionError"), "", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.No)  //pri odmitnuti je proces ukoncen
+                        return;
+                }
+                picCon.Interlace();  //prolozeni
+            }
+            catch (PictureLoadFailureException ex)  //chyba pri nacitani souboru s obrazkem (pravdepodobne chybejici soubor)
+            {
+                MessageBox.Show(string.Format(Localization.resourcesStrings.GetString("fileNotFoundError"), ex.filename));
+                interlaceProgressBar.Value = 0;
+                return;
+            }
+            catch (PictureWrongFormatException ex)  //chyba pri chybnem formatu nacitaneho obrazku
+            {
+                MessageBox.Show(string.Format(Localization.resourcesStrings.GetString("wrongFormatError"), ex.filename));
+                interlaceProgressBar.Value = 0;
+                return;
+            }
+            catch (OutOfMemoryException)  //chyba nedostatku pameti
+            {
+                MessageBox.Show(Localization.resourcesStrings.GetString("memoryError"));
+                interlaceProgressBar.Value = 0;
+                return;
+            }
+            catch (PictureProcessException)  //chyba pri chybne nastavenych parametrech prokladani
+            {
+                String falseParameters = findFalseParameters();
+                MessageBox.Show(falseParameters, "False parameters", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+               // MessageBox.Show(Localization.resourcesStrings.GetString("interlacingError"));
+                interlaceProgressBar.Value = 0;
+                return;
+            }
+            Picture result = picCon.GetResult();  //ziskani vysledneho obrazku
+            try
+            {
+                result.Save(filename);  //ulozeni obrazku
+            }
+            catch (PictureSaveFailureException ex)  //chyba pri ukladani obrazku
+            {
+                MessageBox.Show(string.Format(Localization.resourcesStrings.GetString("imageSaveError"), ex.filename));
+            }
+            result.Destroy();  //dealokace obrazku
+            MessageBox.Show(Localization.resourcesStrings.GetString("doneMessage"));
+        }
+
+        private void clearList()
+        {
+            var answer = MessageBox.Show("Are you sure?", "Clear list", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (answer == DialogResult.No)
+                return;
+
+            previewData.ShowDefaultImage();  //zobrazeni defaultniho obrazku
+            pictureListViewEx.Items.Clear();
+            order = 1;
+            projectData.GetInterlacingData().SetWidth(0);
+            projectData.GetInterlacingData().SetHeight(0);
+            changeMaxLineThickness();
+            updateAllComponents();
+            previewData.ShowDefaultImage();
+            drawLineThickness();
+        }
+
+        private void addPicToList()
+        {
+            addPicFileDialog.Multiselect = true;
+            addPicFileDialog.Filter = stringOfInputExtensions;
+            addPicFileDialog.FilterIndex = 1;
+            DialogResult result = addPicFileDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string[] chosenPictures = addPicFileDialog.FileNames;
+                for (int i = 0; i < chosenPictures.Length; i++)
+                {
+                    var indeces = pictureListViewEx.SelectedIndices;
+                    int selectedIndex;
+                    // Pokud je vybrano vic, tak posuneme ten nad tim pod vybrane
+                    // Pokud neni v listu nic vybrano
+                    if (indeces.Count == 0)
+                    {
+                        selectedIndex = Convert.ToInt32(order - 1);
+                    }
+                    // Pokud je v listu neco vybrano
+                    else
+                    {
+                        selectedIndex = Convert.ToInt32(indeces[0]) + 1;
+                    }
+                    int numOfPics = chosenPictures.Count();
+                    ListViewItem item = new ListViewItem(new[] { Convert.ToString(order), chosenPictures[i], getPicName(chosenPictures[i]), "" });
+                    pictureListViewEx.Items.Insert(selectedIndex, item);
+                    reorder();
+                    pictureListViewEx.Focus();
+                    pictureListViewEx.Items[selectedIndex].Selected = false;
+                    changeMaxLineThickness();
+                }
+                trySetValuesFromPictures(chosenPictures);
+            }
+
+            drawLineThickness();
+        }
+
+        private void revertList()
+        {
+            int count = pictureListViewEx.Items.Count;
+            for (int i = 0; i < count / 2; i++)
+            {
+                String tmp;
+                for (int j = 1; j < pictureListViewEx.Items[i].SubItems.Count; j++)
+                {
+                    tmp = pictureListViewEx.Items[i].SubItems[j].Text;
+                    pictureListViewEx.Items[i].SubItems[j].Text = pictureListViewEx.Items[count - i - 1].SubItems[j].Text;
+                    pictureListViewEx.Items[count - i - 1].SubItems[j].Text = tmp;
+                }
+            }
+        }
     }
 }
