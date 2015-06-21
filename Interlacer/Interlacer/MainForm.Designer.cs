@@ -143,6 +143,9 @@
             this.savePicFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.saveConfigDialog = new System.Windows.Forms.SaveFileDialog();
             this.openConfigDialog = new System.Windows.Forms.OpenFileDialog();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.interlaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.outputImageTab.SuspendLayout();
@@ -186,8 +189,11 @@
             // souborMenuItem
             // 
             this.souborMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.interlaceToolStripMenuItem,
+            this.toolStripSeparator1,
             this.ulozToolStripMenuItem,
             this.nactiToolStripMenuItem,
+            this.toolStripSeparator2,
             this.zavřítToolStripMenuItem});
             this.souborMenuItem.Name = "souborMenuItem";
             resources.ApplyResources(this.souborMenuItem, "souborMenuItem");
@@ -972,6 +978,22 @@
             this.reorderTimer.Interval = 10;
             this.reorderTimer.Tick += new System.EventHandler(this.reorderTimer_Tick);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
+            // interlaceToolStripMenuItem
+            // 
+            this.interlaceToolStripMenuItem.Name = "interlaceToolStripMenuItem";
+            resources.ApplyResources(this.interlaceToolStripMenuItem, "interlaceToolStripMenuItem");
+            this.interlaceToolStripMenuItem.Click += new System.EventHandler(this.interlaceToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -1153,6 +1175,9 @@
         private System.Windows.Forms.ColumnHeader picNameHeader;
         private System.Windows.Forms.Button sortButton;
         private System.Windows.Forms.ColumnHeader loadedHeader;
+        private System.Windows.Forms.ToolStripMenuItem interlaceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 
     }
 }

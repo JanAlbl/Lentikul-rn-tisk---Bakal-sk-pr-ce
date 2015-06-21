@@ -28,7 +28,7 @@ namespace Interlacer
         /// <summary>
         /// retezec koncovek pro vystupni file dialog
         /// </summary>
-        private const String stringOfOutputExenstions = "JPEG|*.jpg;*.jpeg|PNG|*.png|BMP|*.bmp|TIF|*.tif";
+        private const String stringOfOutputExenstions = "TIF|*.tif|JPEG|*.jpg;*.jpeg|PNG|*.png|BMP|*.bmp";
 
         /// <summary>
         /// nazev souboru pro ulozeni nastaveni
@@ -841,7 +841,7 @@ namespace Interlacer
         {
             if ((leftLineCheckBox.Checked || rightLineCheckBox.Checked || topLineCheckBox.Checked || bottomLineCheckBox.Checked) && frameWidthNumeric.Value == 0)
             {
-                var answer = MessageBox.Show("Some positions for alignment lines are checked, but frame width is zero.\nDo you wish to continue?", "Warning", 
+                var answer = MessageBox.Show(Localization.resourcesStrings.GetString("alignLinesWarningMessage"), Localization.resourcesStrings.GetString("alignLinesWarningMessageName"), 
                     MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
                 if (answer == DialogResult.No)
@@ -849,7 +849,7 @@ namespace Interlacer
             }
             if ((!leftLineCheckBox.Checked && !rightLineCheckBox.Checked && !topLineCheckBox.Checked && !bottomLineCheckBox.Checked) && frameWidthNumeric.Value > 0) 
             {
-                var answer = MessageBox.Show("No positions for alignment lines are checked, but frame width is greater than zero.\nDo you wish to continue?", "Warning",
+                var answer = MessageBox.Show(Localization.resourcesStrings.GetString("alignLinesWarningMessage2"), Localization.resourcesStrings.GetString("alignLinesWarningMessageName"),
                    MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
                 if (answer == DialogResult.No)
@@ -861,29 +861,30 @@ namespace Interlacer
 
         private String findFalseParameters()
         {
-            String falseParams = "";
+            String falseParams = Localization.resourcesStrings.GetString("falseParamsHeadline");
+            falseParams += "\n\n";
             Boolean isHeadlined = false;
 
             if(widthNumeric.Value == 0) {
-                falseParams += widthLabel.Parent.Text + ":\n";
+                falseParams += widthLabel.Parent.Text + "\n";
                 isHeadlined = true;
                 falseParams += widthLabel.Text + "\n";
             }
             if(heightNumeric.Value == 0) {
                 if(!isHeadlined)
-                    falseParams += heightLabel.Parent.Text + ":\n";
+                    falseParams += heightLabel.Parent.Text + "\n";
 
-                falseParams += heightLabel.Text + "\n";
+                falseParams += heightLabel.Text + "\n\n";
             }
             isHeadlined = false;
             if(dpiNumeric.Value == 0) {
-                falseParams += dpiLabel.Parent.Text + ":\n";
+                falseParams += dpiLabel.Parent.Text + "\n";
                 isHeadlined = true;
                 falseParams += dpiLabel.Text + "\n";
             }
             if(lpiNumeric.Value == 0) {
                 if (!isHeadlined)
-                    falseParams += lpiLabel.Parent.Text + ":\n";
+                    falseParams += lpiLabel.Parent.Text + "\n";
 
                 falseParams += lpiLabel.Text;
             }
@@ -947,7 +948,7 @@ namespace Interlacer
             catch (PictureProcessException)  //chyba pri chybne nastavenych parametrech prokladani
             {
                 String falseParameters = findFalseParameters();
-                MessageBox.Show(falseParameters, "False parameters", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(falseParameters, Localization.resourcesStrings.GetString("falseParamsMessageName"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                // MessageBox.Show(Localization.resourcesStrings.GetString("interlacingError"));
                 interlaceProgressBar.Value = 0;
                 return;
@@ -967,7 +968,8 @@ namespace Interlacer
 
         private void clearList()
         {
-            var answer = MessageBox.Show("Are you sure?", "Clear list", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var answer = MessageBox.Show(Localization.resourcesStrings.GetString("clearListMessage"), Localization.resourcesStrings.GetString("clearListMessageName"),
+                                                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (answer == DialogResult.No)
                 return;

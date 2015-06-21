@@ -601,7 +601,11 @@ namespace Interlacer
             } else if (e.Control && e.KeyCode == Keys.E) {
                 clearList();
             }
-            
+        }
+
+        private void interlaceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            interlace();
         }
     }
 }

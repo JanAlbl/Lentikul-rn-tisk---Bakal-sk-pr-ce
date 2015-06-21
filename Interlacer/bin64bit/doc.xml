@@ -1894,12 +1894,39 @@
         </member>
         <member name="P:Interlacer.StringRes_CZ.addPicTooltip">
             <summary>
-              Looks up a localized string similar to Přidat.
+              Looks up a localized string similar to Přidat (+).
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.alignLinesWarningMessage">
+             <summary>
+               Looks up a localized string similar to Jsou zaškrtlé některé pozice vodících čar, ale šířka rámečku je nula.
+            Chcete pokračovat?.
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.alignLinesWarningMessage2">
+             <summary>
+               Looks up a localized string similar to Nejsou zaškrtlé žádné pozice vodících čar, ale šířka rámečku je větší než nula.
+            Chcete pokračovat?.
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.alignLinesWarningMessageName">
+            <summary>
+              Looks up a localized string similar to Varování.
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.clearAllTooltip">
             <summary>
-              Looks up a localized string similar to Vymazat vše.
+              Looks up a localized string similar to Vymazat vše (Ctrl + E).
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.clearListMessage">
+            <summary>
+              Looks up a localized string similar to Jste si jistí?.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.clearListMessageName">
+            <summary>
+              Looks up a localized string similar to Vymazat list.
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.configFileCorruptError">
@@ -1909,7 +1936,7 @@
         </member>
         <member name="P:Interlacer.StringRes_CZ.copyPicTooltip">
             <summary>
-              Looks up a localized string similar to Kopírovat.
+              Looks up a localized string similar to Kopírovat (Ctrl + D).
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.doneMessage">
@@ -1920,6 +1947,17 @@
         <member name="P:Interlacer.StringRes_CZ.emptyListError">
             <summary>
               Looks up a localized string similar to Seznam obrázků je prázdný..
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.falseParamsHeadline">
+             <summary>
+               Looks up a localized string similar to Tyto parametry jsou špatné zadány:
+            .
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.falseParamsMessageName">
+            <summary>
+              Looks up a localized string similar to Špatné parametry prokládání.
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.fileNotFoundError">
@@ -2001,12 +2039,12 @@
         </member>
         <member name="P:Interlacer.StringRes_CZ.moveDownTooltip">
             <summary>
-              Looks up a localized string similar to Posunout o jeden dolů.
+              Looks up a localized string similar to Posunout o jeden dolů (Ctrl + šipka dolů).
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.moveUpTooltip">
             <summary>
-              Looks up a localized string similar to Posunout o jeden nahoru.
+              Looks up a localized string similar to Posunout o jeden nahoru (Ctrl + šipka nahoru).
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.nameListView">
@@ -2031,17 +2069,17 @@
         </member>
         <member name="P:Interlacer.StringRes_CZ.removePicTooltip">
             <summary>
-              Looks up a localized string similar to Odebrat.
+              Looks up a localized string similar to Odebrat (Del).
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.replaceTooltip">
             <summary>
-              Looks up a localized string similar to Nahradit obrázek za jiný.
+              Looks up a localized string similar to Nahradit obrázek za jiný (Ctrl + Q).
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.revertTooltip">
             <summary>
-              Looks up a localized string similar to Otočit list obrázků.
+              Looks up a localized string similar to Otočit list obrázků (Ctrl + R).
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.saveTooltip">
@@ -2051,7 +2089,7 @@
         </member>
         <member name="P:Interlacer.StringRes_CZ.sortTooltip">
             <summary>
-              Looks up a localized string similar to Seřadí obrázky podle koncového čísla.
+              Looks up a localized string similar to Seřadí obrázky podle koncového čísla (Ctrl + S).
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.unitsInches">
@@ -2082,12 +2120,39 @@
         </member>
         <member name="P:Interlacer.StringRes_EN.addPicTooltip">
             <summary>
-              Looks up a localized string similar to Add.
+              Looks up a localized string similar to Add (+).
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.alignLinesWarningMessage">
+             <summary>
+               Looks up a localized string similar to Some positions for alignment lines are checked, but frame width is zero.
+            Do you wish to continue?.
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.alignLinesWarningMessage2">
+             <summary>
+               Looks up a localized string similar to No positions for alignment lines are checked, but frame width is greater than zero.
+            Do you wish to continue?.
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.alignLinesWarningMessageName">
+            <summary>
+              Looks up a localized string similar to Warning.
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.clearAllTooltip">
             <summary>
-              Looks up a localized string similar to Clear all.
+              Looks up a localized string similar to Clear all (Ctrl + E).
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.clearListMessage">
+            <summary>
+              Looks up a localized string similar to Are you sure?.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.clearListMessageName">
+            <summary>
+              Looks up a localized string similar to Clear list.
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.configFileCorruptError">
@@ -2097,7 +2162,7 @@
         </member>
         <member name="P:Interlacer.StringRes_EN.copyPicTooltip">
             <summary>
-              Looks up a localized string similar to Copy.
+              Looks up a localized string similar to Copy (Ctrl + D).
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.doneMessage">
@@ -2108,6 +2173,16 @@
         <member name="P:Interlacer.StringRes_EN.emptyListError">
             <summary>
               Looks up a localized string similar to List of images is empty.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.falseParamsHeadline">
+            <summary>
+              Looks up a localized string similar to These parameters have false values:.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.falseParamsMessageName">
+            <summary>
+              Looks up a localized string similar to False interlacing parameters.
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.fileNotFoundError">
@@ -2188,12 +2263,12 @@
         </member>
         <member name="P:Interlacer.StringRes_EN.moveDownTooltip">
             <summary>
-              Looks up a localized string similar to Move down.
+              Looks up a localized string similar to Move down (Ctrl + down arrow).
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.moveUpTooltip">
             <summary>
-              Looks up a localized string similar to Move up.
+              Looks up a localized string similar to Move up (Ctrl + up arrow).
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.nameListView">
@@ -2218,17 +2293,17 @@
         </member>
         <member name="P:Interlacer.StringRes_EN.removePicTooltip">
             <summary>
-              Looks up a localized string similar to Remove.
+              Looks up a localized string similar to Remove (Del).
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.replaceTooltip">
             <summary>
-              Looks up a localized string similar to Replace image.
+              Looks up a localized string similar to Replace image (Ctrl + Q).
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.revertTooltip">
             <summary>
-              Looks up a localized string similar to Reverse list.
+              Looks up a localized string similar to Reverse list (Ctrl + R).
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.saveTooltip">
@@ -2238,7 +2313,7 @@
         </member>
         <member name="P:Interlacer.StringRes_EN.sortTooltip">
             <summary>
-              Looks up a localized string similar to Sort images by their ending number.
+              Looks up a localized string similar to Sort images by their ending number (Ctrl + S).
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.unitsInches">
