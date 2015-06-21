@@ -1,0 +1,32 @@
+Dodìlávky Interlaceru
+1) Jednoduchý náhled èar
+2) Vždy mít  v listu oznaèený alespoò jeden obrázek
+3) Zkontrolovat nastavení pøi pøepínání z nastavení obrázku – pasovací znaèky
+4) Výchozí hodnoty jako .tif, kubický
+5) Pøidání klávesových zkratek do listu obrázkù
+6) Varování pøi zadání špatné hodnoty, která hodnota byla špatnì zadána
+7) Pøidání výšky a šíøky v délkových jednotkách a velikost v megapixelech
+8) Pokud se pøi naètení konfigurace nenajdou obrázky, zkusí se relativní cesta ze složky kde je uložen konfiguraèní soubor a v nejbližším okolí.
+9) Varování jestli obrázek není v RGB
+10) Fill button – doplnìní obrázkù do listu, tak aby poèet obrázku pod lentikulí byl maximální
+Prokládání
+1) Tvorba Pitch testu
+2) Podpora pro vìtší obrázky 6x6 m napøíklad
+3) Stupòovité prokládání obrázku (otoèení proloženého obrázku i prokládání)
+4) Full paralax
+5) Pøidání textu do okraje pasovacích znaèek napøíklad nìjaké poznámky
+6) Analiticky se podívat na problematiku prokládání
+7) Nezávislé pracování s pasovacími znaèkami a obrázkem
+GUI
+1) Oøíznutí obrázku (možnost vrácení k pùvodním rozmìru)
+2) Pøidání presetu (inteligentnì zadávat a editovat)
+3) Založení lentikulárních projektù
+4) Náhledy obrázkù (Normální a 3D)
+5) Posuvník u náhledu
+6) Podívat se na gui ostatních programù
+7) Export všeho nìkam napøíklad .zip
+8) Expand a colaps
+9) Tiskový dialog 
+1. Náhled na aktuální rozmìr tisk. Formátu
+2. Preview na formát
+3. výbìr formátu
