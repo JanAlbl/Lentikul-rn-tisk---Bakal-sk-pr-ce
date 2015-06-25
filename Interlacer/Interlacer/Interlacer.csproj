@@ -146,6 +146,7 @@
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GfxlibWrapper\Units.cs" />
+    <Compile Include="TreeNodeInherited.cs" />
     <EmbeddedResource Include="MainForm.cs-CZ.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

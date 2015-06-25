@@ -81,6 +81,12 @@ namespace Interlacer
                 System.Environment.Exit(0);
             }
             InitializeComponent();
+
+
+            pictureListViewEx.FullRowSelect = true;
+            pictureListViewEx.MultiSelect = true;
+            pictureListViewEx.AllowDrop = true;
+            wholeDriveTree.AllowDrop = true;
             /*nastaveni defaultnich hodnot*/
             projectData.GetInterlacingData().KeepAspectRatio(keepRatioCheckbox.Checked);
             reorderTimer.Stop();
@@ -103,6 +109,9 @@ namespace Interlacer
             resetPictureInfo();
 
             drawLineThickness();
+
+            mapDriversToTree();
+            
         }
 
         /// <summary>
@@ -1036,6 +1045,251 @@ namespace Interlacer
                     pictureListViewEx.Items[count - i - 1].SubItems[j].Text = tmp;
                 }
             }
+        }
+
+        private void mapDriversToTree()
+        {
+            string[] drives = System.Environment.GetLogicalDrives();
+
+            foreach (string dr in drives)
+            {
+                DriveInfo di = new System.IO.DriveInfo(dr);
+
+                if (!di.IsReady)
+                    continue ;
+
+                TreeNodeInherited node = new TreeNodeInherited(dr);
+                node.ImageKey = "HardDisk.png";
+                node.SelectedImageKey = "HardDisk.png";
+                node.Tag = dr;
+                wholeDriveTree.Nodes.Add(node);
+
+                DirectoryInfo rootDir = di.RootDirectory;
+                populateDirectory(rootDir, node);
+                node.isPopulated = true;
+            }
+        }
+
+        private void populateDirectory(DirectoryInfo root, TreeNodeInherited node)
+        {
+            FileInfo[] files = null;
+            DirectoryInfo[] subDirs = null;
+
+            try
+            {
+                files = root.GetFiles("*.*");
+            }
+            catch (UnauthorizedAccessException e) { }
+            catch (DirectoryNotFoundException e) { }
+            //catch (SystemException e) { }
+            
+            if (files != null)
+            {
+                subDirs = root.GetDirectories();
+
+                foreach (DirectoryInfo dirInfo in subDirs)
+                {
+                    if (dirInfo.Attributes.HasFlag(FileAttributes.System))
+                        continue;
+
+                    TreeNodeInherited newDir = new TreeNodeInherited(dirInfo.Name);
+                    newDir.isDirectory = true;
+                    newDir.ImageKey = "Folder.png";
+                    newDir.SelectedImageKey = "Folder.png";
+                    node.Nodes.Add(newDir);
+
+                    newDir.Nodes.Add(new TreeNodeInherited("Dummy"));
+                }
+
+                foreach (FileInfo fi in files) {
+                    TreeNodeInherited newFile = new TreeNodeInherited(fi.Name);
+
+                    if (fi.Extension.ToLower().Equals(".jpg") || fi.Extension.ToLower().Equals(".jpeg"))
+                    {
+                        newFile.ImageKey = "image.png";
+                        newFile.SelectedImageKey = "image.png";
+                        newFile.isImage = true;
+                    }
+
+                    node.Nodes.Add(newFile);
+                }
+            }
+        }
+
+        //==================================
+        private void pictureListViewEx_ItemDrag(object sender, ItemDragEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                DoDragDrop(e.Item, DragDropEffects.Move);
+            }
+
+        }
+
+        private void pictureListViewEx_DragEnter(object sender, DragEventArgs e)
+        {
+            TreeNodeInherited draggedNode = (TreeNodeInherited)e.Data.GetData(typeof(TreeNodeInherited));
+            ListViewItem draggedItem = (ListViewItem)e.Data.GetData(typeof(ListViewItem));
+
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] filePaths = (string[])(e.Data.GetData(DataFormats.FileDrop));
+                int lastIndnex = pictureListViewEx.Items.Count;
+                foreach (string path in filePaths)
+                {
+                    if (isExtensionValid(path))
+                    {
+                        e.Effect = DragDropEffects.Copy;
+                    }
+                    else
+                    {
+                        e.Effect = DragDropEffects.None;
+                        return;
+                    }
+                }
+            }
+            else if (draggedNode != null && draggedNode.isImage == true)
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+            else if (draggedItem != null)
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+        }
+
+        /// <summary>
+        /// Pokud se s nějakou položkou seznamu pohne drag and dropem. Zapne se timer, který volá metodu na očíslování položek seznamu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void pictureListViewEx_DragDrop(object sender, DragEventArgs e)
+        {
+            TreeNodeInherited draggedNode = (TreeNodeInherited)e.Data.GetData(typeof(TreeNodeInherited));
+            ListViewItem draggedItem = (ListViewItem)e.Data.GetData(typeof(ListViewItem));
+
+            // TODO tady se dodelava kam co pridat
+            //
+
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] filePaths = (string[])(e.Data.GetData(DataFormats.FileDrop));
+                int lastIndnex = pictureListViewEx.Items.Count;
+                foreach (string path in filePaths)
+                {
+                    ListViewItem item = new ListViewItem(new[] { Convert.ToString(order), path, getPicName(path), "" });
+                    pictureListViewEx.Items.Add(item);
+                    order++;
+                }
+                reorder();
+                trySetValuesFromPictures(filePaths);
+            }
+            else if (draggedNode != null)
+            {
+
+            }
+            else if (draggedItem != null)
+            {
+                Point targetPoint = pictureListViewEx.PointToClient(new Point(e.X, e.Y));
+                ListViewItem targetItem = pictureListViewEx.GetItemAt(targetPoint.X, targetPoint.Y);
+                int targetIndex = pictureListViewEx.Items.Count;
+                int indexShift = 1;
+
+                if (targetItem != null)
+                    targetIndex = targetItem.Index;
+
+                // selected itemy jsou ty co jsou draglí
+
+                var indeces = pictureListViewEx.SelectedIndices;
+                int[] selectedIndexes = new int[indeces.Count];
+
+
+                for (int i = 0; i < indeces.Count; i++)
+                    selectedIndexes[i] = indeces[i];
+
+                ListViewItem [] draggedItems = new ListViewItem[selectedIndexes.Length];
+
+                for (int i = 0; i < draggedItems.Length; i++)
+                {
+                    draggedItems[i] = new ListViewItem();
+                    for (int j = 0; j < pictureListViewEx.Items[selectedIndexes[i]].SubItems.Count; j++)
+                    {
+                        draggedItems[i].SubItems.Add("");
+                        draggedItems[i].SubItems[j].Text = pictureListViewEx.Items[selectedIndexes[i]].SubItems[j].Text;
+                    }
+                }
+
+                int[] newIndexes = new int[draggedItems.Length];
+
+                for (int i = 0; i < newIndexes.Length; i++)
+                {
+                    if(targetIndex > selectedIndexes[i]) {
+                        if (i >= 1)
+                        {
+                            newIndexes[i] = newIndexes[i - 1] + 1 - indexShift;
+                        }
+                        else
+                        {
+                            newIndexes[i] = targetIndex - indexShift;
+                        }
+                    }
+                    else
+                    {
+                        if (i >= 1)
+                        {
+                            newIndexes[i] = newIndexes[i - 1] + 1;
+                        }
+                        else
+                        {
+                            newIndexes[i] = targetIndex;
+                        }
+                    }   
+                }
+
+                int[] indexesToRemove = new int[draggedItems.Length];
+                for (int i = 0; i < indexesToRemove.Length; i++)
+                {
+                    if (targetIndex > selectedIndexes[i])
+                    {
+                        if(i == 0)
+                            indexesToRemove[i] = selectedIndexes[i];
+                        else
+                            indexesToRemove[i] = selectedIndexes[i] - i;
+                    }
+                    else
+                    {
+                        indexesToRemove[i] = selectedIndexes[i];
+                    }
+                }
+
+                for (int i = 0; i < newIndexes.Length; i++)
+                {
+                    pictureListViewEx.Items[indexesToRemove[i]].Remove();
+                    pictureListViewEx.Items.Insert(newIndexes[i], draggedItems[i]);
+                }
+            }
+            pictureListViewEx.InsertionMark.Index = -1;
+
+            reorderTimer.Start();
+        }
+
+        private void pictureListViewEx_DragOver(object sender, DragEventArgs e)
+        {
+            Point targetPoint = pictureListViewEx.PointToClient(new Point(e.X, e.Y));
+            int index = pictureListViewEx.Items.Count - 1;
+
+            ListViewItem targetItem = pictureListViewEx.GetItemAt(targetPoint.X, targetPoint.Y);
+
+            if (targetItem == null)
+            {
+                pictureListViewEx.InsertionMark.AppearsAfterItem = true;
+            }
+            else
+            {
+                pictureListViewEx.InsertionMark.AppearsAfterItem = false;
+            }
+
+            pictureListViewEx.InsertionMark.Index = pictureListViewEx.InsertionMark.NearestIndex(targetPoint);
         }
     }
 }

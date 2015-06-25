@@ -32,8 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.souborMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.interlaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ulozToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nactiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.zavřítToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nastaeníToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,13 +48,12 @@
             this.loadToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.outputImageTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureListViewEx = new System.Windows.Forms.ListView();
+            this.poradi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cesta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nazev = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.copyCountLabel = new System.Windows.Forms.Label();
             this.copyCountNumeric = new System.Windows.Forms.NumericUpDown();
-            this.pictureListViewEx = new Bol.WinControls.ListViewEx();
-            this.orderHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pathHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.picNameHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.loadedHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.replaceButton = new System.Windows.Forms.Button();
             this.clearAllButton = new System.Windows.Forms.Button();
             this.reverseButton = new System.Windows.Forms.Button();
@@ -143,9 +145,8 @@
             this.savePicFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.saveConfigDialog = new System.Windows.Forms.SaveFileDialog();
             this.openConfigDialog = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.interlaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.wholeDriveTree = new System.Windows.Forms.TreeView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.outputImageTab.SuspendLayout();
@@ -198,6 +199,17 @@
             this.souborMenuItem.Name = "souborMenuItem";
             resources.ApplyResources(this.souborMenuItem, "souborMenuItem");
             // 
+            // interlaceToolStripMenuItem
+            // 
+            this.interlaceToolStripMenuItem.Name = "interlaceToolStripMenuItem";
+            resources.ApplyResources(this.interlaceToolStripMenuItem, "interlaceToolStripMenuItem");
+            this.interlaceToolStripMenuItem.Click += new System.EventHandler(this.interlaceToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
             // ulozToolStripMenuItem
             // 
             this.ulozToolStripMenuItem.Name = "ulozToolStripMenuItem";
@@ -209,6 +221,11 @@
             this.nactiToolStripMenuItem.Name = "nactiToolStripMenuItem";
             resources.ApplyResources(this.nactiToolStripMenuItem, "nactiToolStripMenuItem");
             this.nactiToolStripMenuItem.Click += new System.EventHandler(this.nactiToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // zavřítToolStripMenuItem
             // 
@@ -280,9 +297,9 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage1.Controls.Add(this.pictureListViewEx);
             this.tabPage1.Controls.Add(this.copyCountLabel);
             this.tabPage1.Controls.Add(this.copyCountNumeric);
-            this.tabPage1.Controls.Add(this.pictureListViewEx);
             this.tabPage1.Controls.Add(this.replaceButton);
             this.tabPage1.Controls.Add(this.clearAllButton);
             this.tabPage1.Controls.Add(this.reverseButton);
@@ -301,6 +318,34 @@
             this.tabPage1.Controls.Add(this.label5);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
+            // 
+            // pictureListViewEx
+            // 
+            this.pictureListViewEx.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.poradi,
+            this.cesta,
+            this.nazev});
+            resources.ApplyResources(this.pictureListViewEx, "pictureListViewEx");
+            this.pictureListViewEx.Name = "pictureListViewEx";
+            this.pictureListViewEx.UseCompatibleStateImageBehavior = false;
+            this.pictureListViewEx.View = System.Windows.Forms.View.Details;
+            this.pictureListViewEx.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.pictureListViewEx_ItemDrag);
+            this.pictureListViewEx.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureListViewEx_DragDrop);
+            this.pictureListViewEx.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureListViewEx_DragEnter);
+            this.pictureListViewEx.DragOver += new System.Windows.Forms.DragEventHandler(this.pictureListViewEx_DragOver);
+            this.pictureListViewEx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pictureListViewEx_KeyDown);
+            // 
+            // poradi
+            // 
+            resources.ApplyResources(this.poradi, "poradi");
+            // 
+            // cesta
+            // 
+            resources.ApplyResources(this.cesta, "cesta");
+            // 
+            // nazev
+            // 
+            resources.ApplyResources(this.nazev, "nazev");
             // 
             // copyCountLabel
             // 
@@ -322,42 +367,6 @@
             0,
             0});
             this.copyCountNumeric.ValueChanged += new System.EventHandler(this.copyCountNumeric_ValueChanged);
-            // 
-            // pictureListViewEx
-            // 
-            this.pictureListViewEx.AllowDrop = true;
-            this.pictureListViewEx.AllowRowReorder = true;
-            resources.ApplyResources(this.pictureListViewEx, "pictureListViewEx");
-            this.pictureListViewEx.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.orderHeader,
-            this.pathHeader,
-            this.picNameHeader,
-            this.loadedHeader});
-            this.pictureListViewEx.FullRowSelect = true;
-            this.pictureListViewEx.GridLines = true;
-            this.pictureListViewEx.HideSelection = false;
-            this.pictureListViewEx.Name = "pictureListViewEx";
-            this.pictureListViewEx.UseCompatibleStateImageBehavior = false;
-            this.pictureListViewEx.View = System.Windows.Forms.View.Details;
-            this.pictureListViewEx.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.pictureListViewEx_ItemSelectionChanged);
-            this.pictureListViewEx.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureListViewEx_DragDrop);
-            this.pictureListViewEx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pictureListViewEx_KeyDown);
-            // 
-            // orderHeader
-            // 
-            resources.ApplyResources(this.orderHeader, "orderHeader");
-            // 
-            // pathHeader
-            // 
-            resources.ApplyResources(this.pathHeader, "pathHeader");
-            // 
-            // picNameHeader
-            // 
-            resources.ApplyResources(this.picNameHeader, "picNameHeader");
-            // 
-            // loadedHeader
-            // 
-            resources.ApplyResources(this.loadedHeader, "loadedHeader");
             // 
             // replaceButton
             // 
@@ -978,27 +987,38 @@
             this.reorderTimer.Interval = 10;
             this.reorderTimer.Tick += new System.EventHandler(this.reorderTimer_Tick);
             // 
-            // toolStripSeparator1
+            // wholeDriveTree
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            this.wholeDriveTree.BackColor = System.Drawing.SystemColors.Control;
+            this.wholeDriveTree.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.wholeDriveTree, "wholeDriveTree");
+            this.wholeDriveTree.ImageList = this.imageList1;
+            this.wholeDriveTree.ItemHeight = 18;
+            this.wholeDriveTree.Name = "wholeDriveTree";
+            this.wholeDriveTree.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.wholeDriveTree_BeforeExpand);
+            this.wholeDriveTree.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.wholeDriveTree_ItemDrag);
+            this.wholeDriveTree.DragDrop += new System.Windows.Forms.DragEventHandler(this.wholeDriveTree_DragDrop);
+            this.wholeDriveTree.DragEnter += new System.Windows.Forms.DragEventHandler(this.wholeDriveTree_DragEnter);
+            this.wholeDriveTree.DragOver += new System.Windows.Forms.DragEventHandler(this.wholeDriveTree_DragOver);
             // 
-            // interlaceToolStripMenuItem
+            // imageList1
             // 
-            this.interlaceToolStripMenuItem.Name = "interlaceToolStripMenuItem";
-            resources.ApplyResources(this.interlaceToolStripMenuItem, "interlaceToolStripMenuItem");
-            this.interlaceToolStripMenuItem.Click += new System.EventHandler(this.interlaceToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Blank-Unknown-File.png");
+            this.imageList1.Images.SetKeyName(1, "Folder.png");
+            this.imageList1.Images.SetKeyName(2, "HardDisk.png");
+            this.imageList1.Images.SetKeyName(3, "JPG.png");
+            this.imageList1.Images.SetKeyName(4, "PNG.png");
+            this.imageList1.Images.SetKeyName(5, "TIF.png");
+            this.imageList1.Images.SetKeyName(6, "image.png");
             // 
             // MainForm
             // 
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.wholeDriveTree);
             this.Controls.Add(this.imagePreviewCheckBox);
             this.Controls.Add(this.interlaceProgressBar);
             this.Controls.Add(this.previewPicBox);
@@ -1140,7 +1160,6 @@
         private System.Windows.Forms.TextBox heightInPixelsTextBox;
         private System.Windows.Forms.TextBox widthInPixelsTextBox;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private Bol.WinControls.ListViewEx pictureListViewEx;
         private System.Windows.Forms.Button replaceButton;
         private System.Windows.Forms.Button clearAllButton;
         private System.Windows.Forms.Button reverseButton;
@@ -1149,9 +1168,7 @@
         private System.Windows.Forms.Button copyPicButton;
         private System.Windows.Forms.Button removePicButton;
         private System.Windows.Forms.Button addPicButton;
-        private System.Windows.Forms.ColumnHeader orderHeader;
         private System.Windows.Forms.OpenFileDialog addPicFileDialog;
-        private System.Windows.Forms.ColumnHeader pathHeader;
         private System.Windows.Forms.Timer reorderTimer;
         private System.Windows.Forms.ComboBox interpol2ComboBox;
         private System.Windows.Forms.ComboBox interpol1ComboBox;
@@ -1172,12 +1189,16 @@
         private System.Windows.Forms.NumericUpDown copyCountNumeric;
         private System.Windows.Forms.SaveFileDialog saveConfigDialog;
         private System.Windows.Forms.OpenFileDialog openConfigDialog;
-        private System.Windows.Forms.ColumnHeader picNameHeader;
         private System.Windows.Forms.Button sortButton;
-        private System.Windows.Forms.ColumnHeader loadedHeader;
         private System.Windows.Forms.ToolStripMenuItem interlaceToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.TreeView wholeDriveTree;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ListView pictureListViewEx;
+        private System.Windows.Forms.ColumnHeader poradi;
+        private System.Windows.Forms.ColumnHeader cesta;
+        private System.Windows.Forms.ColumnHeader nazev;
 
     }
 }

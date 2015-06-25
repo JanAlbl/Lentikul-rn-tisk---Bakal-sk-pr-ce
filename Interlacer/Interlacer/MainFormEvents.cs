@@ -1,6 +1,8 @@
 ﻿using GfxlibWrapper;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,6 +75,7 @@ namespace Interlacer
         /// <param name="e"></param>
         private void reorderTimer_Tick(object sender, EventArgs e)
         {
+
             reorder();
             reorderTimer.Stop();
         }
@@ -84,6 +87,7 @@ namespace Interlacer
         /// <param name="e"></param>
         private void pictureListViewEx_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
+
             if (imagePreviewCheckBox.Checked)
                 setPreview();
             setPictureInfo();
@@ -354,18 +358,16 @@ namespace Interlacer
             }
             else
             {
-                e.Effect = DragDropEffects.None;
-            }
-        }
+                TreeNodeInherited draggedNode = (TreeNodeInherited)e.Data.GetData(typeof(TreeNodeInherited));
+                if (draggedNode == null)
+                {
+                    e.Effect = DragDropEffects.None;
+                    return;
+                }
 
-        /// <summary>
-        /// Pokud se s nějakou položkou seznamu pohne drag and dropem. Zapne se timer, který volá metodu na očíslování položek seznamu.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void pictureListViewEx_DragDrop(object sender, DragEventArgs e)
-        {
-            reorderTimer.Start();
+                e.Effect = DragDropEffects.Move;
+                
+            }
         }
 
         /// <summary>
@@ -606,6 +608,113 @@ namespace Interlacer
         private void interlaceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             interlace();
+        }
+
+        private void wholeDriveTree_BeforeExpand(object sender, TreeViewCancelEventArgs e)
+        {
+            TreeNodeInherited node = (TreeNodeInherited)e.Node;
+            if (node.isPopulated)
+                return;
+
+            DirectoryInfo root = new DirectoryInfo(node.FullPath);
+
+            node.Nodes[0].Remove();
+            populateDirectory(root, node);
+            node.isPopulated = true;
+        }
+
+        private void wholeDriveTree_ItemDrag(object sender, ItemDragEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                DoDragDrop(e.Item, DragDropEffects.Move);
+            }
+        }
+
+        // Set the target drop effect to the effect  
+        // specified in the ItemDrag event handler. 
+        private void wholeDriveTree_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = e.AllowedEffect;
+        }
+
+        // Select the node under the mouse pointer to indicate the  
+        // expected drop location. 
+        private void wholeDriveTree_DragOver(object sender, DragEventArgs e)
+        {
+            // Retrieve the client coordinates of the mouse position.
+            Point targetPoint = wholeDriveTree.PointToClient(new Point(e.X, e.Y));
+
+            // Select the node at the mouse position.
+            wholeDriveTree.SelectedNode = wholeDriveTree.GetNodeAt(targetPoint);
+        }
+
+        private void wholeDriveTree_DragDrop(object sender, DragEventArgs e)
+        {
+            // Retrieve the client coordinates of the drop location.
+            Point targetPoint = wholeDriveTree.PointToClient(new Point(e.X, e.Y));
+
+            // Retrieve the node at the drop location.
+            TreeNodeInherited targetNode = (TreeNodeInherited)wholeDriveTree.GetNodeAt(targetPoint);
+
+            if (targetNode.isDirectory == false)
+                return;
+
+            // Retrieve the node that was dragged.
+            TreeNodeInherited draggedNode = (TreeNodeInherited)e.Data.GetData(typeof(TreeNodeInherited));
+            if (draggedNode == null)
+            {
+                e.Effect = DragDropEffects.None;
+                return;
+            }
+
+            // Confirm that the node at the drop location is not  
+            // the dragged node or a descendant of the dragged node. 
+            if (!draggedNode.Equals(targetNode) && !ContainsNode(draggedNode, targetNode))
+            {
+                // If it is a move operation, remove the node from its current  
+                // location and add it to the node at the drop location. 
+                if (e.Effect == DragDropEffects.Move)
+                {
+                    draggedNode.Remove();
+                    targetNode.Nodes.Add(draggedNode);
+                }
+
+                // If it is a copy operation, clone the dragged node  
+                // and add it to the node at the drop location. 
+                else if (e.Effect == DragDropEffects.Copy)
+                {
+                    targetNode.Nodes.Add((TreeNode)draggedNode.Clone());
+                }
+
+                // repaint
+                //wholeDriveTree.Invalidate();
+
+                // Expand the node at the location  
+                // to show the dropped node.
+                targetNode.Expand();
+            }
+        }
+
+        private String getExtension(String path)
+        {
+            String[] split = path.Split('.');
+
+            return split[split.Length - 1];
+        }
+
+        // Determine whether one node is a parent  
+        // or ancestor of a second node. 
+        private bool ContainsNode(TreeNode node1, TreeNode node2)
+        {
+            // Check the parent node of the second node. 
+            if (node2.Parent == null) return false;
+            if (node2.Parent.Equals(node1)) return true;
+
+            // If the parent node is not null or equal to the first node,  
+            // call the ContainsNode method recursively using the parent of  
+            // the second node. 
+            return ContainsNode(node1, node2.Parent);
         }
     }
 }

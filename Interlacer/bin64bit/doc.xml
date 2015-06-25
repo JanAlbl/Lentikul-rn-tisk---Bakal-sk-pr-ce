@@ -1212,6 +1212,13 @@
             Označí všechny orbázky v listu.
             </summary>
         </member>
+        <member name="M:Interlacer.MainForm.pictureListViewEx_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Pokud se s nějakou položkou seznamu pohne drag and dropem. Zapne se timer, který volá metodu na očíslování položek seznamu.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="F:Interlacer.MainForm.components">
             <summary>
             Required designer variable.
@@ -1431,13 +1438,6 @@
             <summary>
             Metoda vyvolaná při tažení souboru přes hlavní formulář.
             Ověří se, zda přetahovaný soubor/soubory má/mají validní koncovku.
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:Interlacer.MainForm.pictureListViewEx_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
-            <summary>
-            Pokud se s nějakou položkou seznamu pohne drag and dropem. Zapne se timer, který volá metodu na očíslování položek seznamu.
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
