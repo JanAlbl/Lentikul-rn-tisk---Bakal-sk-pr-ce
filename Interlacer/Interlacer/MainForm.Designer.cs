@@ -330,10 +330,12 @@
             this.pictureListViewEx.UseCompatibleStateImageBehavior = false;
             this.pictureListViewEx.View = System.Windows.Forms.View.Details;
             this.pictureListViewEx.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.pictureListViewEx_ItemDrag);
+            this.pictureListViewEx.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.pictureListViewEx_ItemSelectionChanged);
             this.pictureListViewEx.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureListViewEx_DragDrop);
             this.pictureListViewEx.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureListViewEx_DragEnter);
             this.pictureListViewEx.DragOver += new System.Windows.Forms.DragEventHandler(this.pictureListViewEx_DragOver);
             this.pictureListViewEx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pictureListViewEx_KeyDown);
+            this.pictureListViewEx.Leave += new System.EventHandler(this.pictureListViewEx_Leave);
             // 
             // poradi
             // 

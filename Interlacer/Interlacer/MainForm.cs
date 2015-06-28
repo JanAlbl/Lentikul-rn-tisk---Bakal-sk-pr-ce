@@ -31,6 +31,11 @@ namespace Interlacer
         private const String stringOfOutputExenstions = "TIF|*.tif|JPEG|*.jpg;*.jpeg|PNG|*.png|BMP|*.bmp";
 
         /// <summary>
+        /// koncovka konfiguračního souboru
+        /// </summary>
+        private const String configurationExtension = ".int";
+
+        /// <summary>
         /// nazev souboru pro ulozeni nastaveni
         /// </summary>
         private const String settingsFilename = "settings";
@@ -68,7 +73,12 @@ namespace Interlacer
         /// <summary>
         /// instance pro nastavovani tool tipu
         /// </summary>
-        private ToolTip t = new ToolTip();        
+        private ToolTip t = new ToolTip();
+
+        /// <summary>
+        /// počet subitemů v listu pro situace kdy se draguje na prázdný list a neni jak zjistit jejich počet
+        /// </summary>
+       // private int subItemsCount = 4;
 
         /// <summary>
         /// konstruktor pro inicializaci hlavniho formulare
@@ -81,7 +91,6 @@ namespace Interlacer
                 System.Environment.Exit(0);
             }
             InitializeComponent();
-
 
             pictureListViewEx.FullRowSelect = true;
             pictureListViewEx.MultiSelect = true;
@@ -1066,12 +1075,16 @@ namespace Interlacer
 
                 DirectoryInfo rootDir = di.RootDirectory;
                 populateDirectory(rootDir, node);
-                node.isPopulated = true;
             }
         }
 
         private void populateDirectory(DirectoryInfo root, TreeNodeInherited node)
         {
+            if (node.Nodes.Count > 0)
+            {
+                node.Nodes[0].Remove();
+            }
+
             FileInfo[] files = null;
             DirectoryInfo[] subDirs = null;
 
@@ -1093,6 +1106,7 @@ namespace Interlacer
                         continue;
 
                     TreeNodeInherited newDir = new TreeNodeInherited(dirInfo.Name);
+                    newDir.Name = dirInfo.Name;
                     newDir.isDirectory = true;
                     newDir.ImageKey = "Folder.png";
                     newDir.SelectedImageKey = "Folder.png";
@@ -1103,7 +1117,7 @@ namespace Interlacer
 
                 foreach (FileInfo fi in files) {
                     TreeNodeInherited newFile = new TreeNodeInherited(fi.Name);
-
+                    newFile.Name = fi.Name;
                     if (fi.Extension.ToLower().Equals(".jpg") || fi.Extension.ToLower().Equals(".jpeg"))
                     {
                         newFile.ImageKey = "image.png";
@@ -1114,182 +1128,27 @@ namespace Interlacer
                     node.Nodes.Add(newFile);
                 }
             }
+            node.isPopulated = true;
         }
 
-        //==================================
-        private void pictureListViewEx_ItemDrag(object sender, ItemDragEventArgs e)
+        private void loadConfigurationFile(String filename)
         {
-            if (e.Button == MouseButtons.Left)
+            try
             {
-                DoDragDrop(e.Item, DragDropEffects.Move);
-            }
+                List<String> pathPics = projectData.Load(filename);     //načtu si cesty obrázků a v metode Load nastavím do LineData a Interlacing dat požadované data
+                projectData.GetInterlacingData().SetUnits(((StringValuePair<Units>)settings.GetSelectedUnits()).value);     // nastavím jednotky, které jsou momentálně v mainformu nastaveny
+                projectData.GetLineData().SetUnits(((StringValuePair<Units>)settings.GetSelectedUnits()).value);
+                projectData.GetInterlacingData().SetResolutionUnits(((StringValuePair<Units>)settings.GetSelectedResolutionUnits()).value);
+                updateAllComponents();      // updatuju celý mainform aby se provedli změny v gui
+                setPictureViewFromList(pathPics);       // nastavím i cesty k novým obrázkům
 
-        }
-
-        private void pictureListViewEx_DragEnter(object sender, DragEventArgs e)
-        {
-            TreeNodeInherited draggedNode = (TreeNodeInherited)e.Data.GetData(typeof(TreeNodeInherited));
-            ListViewItem draggedItem = (ListViewItem)e.Data.GetData(typeof(ListViewItem));
-
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                string[] filePaths = (string[])(e.Data.GetData(DataFormats.FileDrop));
-                int lastIndnex = pictureListViewEx.Items.Count;
-                foreach (string path in filePaths)
-                {
-                    if (isExtensionValid(path))
-                    {
-                        e.Effect = DragDropEffects.Copy;
-                    }
-                    else
-                    {
-                        e.Effect = DragDropEffects.None;
-                        return;
-                    }
-                }
+                drawLineThickness();
             }
-            else if (draggedNode != null && draggedNode.isImage == true)
+            catch (Exception exc)
             {
-                e.Effect = DragDropEffects.Move;
-            }
-            else if (draggedItem != null)
-            {
-                e.Effect = DragDropEffects.Move;
+                MessageBox.Show(exc.Message);
             }
         }
 
-        /// <summary>
-        /// Pokud se s nějakou položkou seznamu pohne drag and dropem. Zapne se timer, který volá metodu na očíslování položek seznamu.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void pictureListViewEx_DragDrop(object sender, DragEventArgs e)
-        {
-            TreeNodeInherited draggedNode = (TreeNodeInherited)e.Data.GetData(typeof(TreeNodeInherited));
-            ListViewItem draggedItem = (ListViewItem)e.Data.GetData(typeof(ListViewItem));
-
-            // TODO tady se dodelava kam co pridat
-            //
-
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                string[] filePaths = (string[])(e.Data.GetData(DataFormats.FileDrop));
-                int lastIndnex = pictureListViewEx.Items.Count;
-                foreach (string path in filePaths)
-                {
-                    ListViewItem item = new ListViewItem(new[] { Convert.ToString(order), path, getPicName(path), "" });
-                    pictureListViewEx.Items.Add(item);
-                    order++;
-                }
-                reorder();
-                trySetValuesFromPictures(filePaths);
-            }
-            else if (draggedNode != null)
-            {
-
-            }
-            else if (draggedItem != null)
-            {
-                Point targetPoint = pictureListViewEx.PointToClient(new Point(e.X, e.Y));
-                ListViewItem targetItem = pictureListViewEx.GetItemAt(targetPoint.X, targetPoint.Y);
-                int targetIndex = pictureListViewEx.Items.Count;
-                int indexShift = 1;
-
-                if (targetItem != null)
-                    targetIndex = targetItem.Index;
-
-                // selected itemy jsou ty co jsou draglí
-
-                var indeces = pictureListViewEx.SelectedIndices;
-                int[] selectedIndexes = new int[indeces.Count];
-
-
-                for (int i = 0; i < indeces.Count; i++)
-                    selectedIndexes[i] = indeces[i];
-
-                ListViewItem [] draggedItems = new ListViewItem[selectedIndexes.Length];
-
-                for (int i = 0; i < draggedItems.Length; i++)
-                {
-                    draggedItems[i] = new ListViewItem();
-                    for (int j = 0; j < pictureListViewEx.Items[selectedIndexes[i]].SubItems.Count; j++)
-                    {
-                        draggedItems[i].SubItems.Add("");
-                        draggedItems[i].SubItems[j].Text = pictureListViewEx.Items[selectedIndexes[i]].SubItems[j].Text;
-                    }
-                }
-
-                int[] newIndexes = new int[draggedItems.Length];
-
-                for (int i = 0; i < newIndexes.Length; i++)
-                {
-                    if(targetIndex > selectedIndexes[i]) {
-                        if (i >= 1)
-                        {
-                            newIndexes[i] = newIndexes[i - 1] + 1 - indexShift;
-                        }
-                        else
-                        {
-                            newIndexes[i] = targetIndex - indexShift;
-                        }
-                    }
-                    else
-                    {
-                        if (i >= 1)
-                        {
-                            newIndexes[i] = newIndexes[i - 1] + 1;
-                        }
-                        else
-                        {
-                            newIndexes[i] = targetIndex;
-                        }
-                    }   
-                }
-
-                int[] indexesToRemove = new int[draggedItems.Length];
-                for (int i = 0; i < indexesToRemove.Length; i++)
-                {
-                    if (targetIndex > selectedIndexes[i])
-                    {
-                        if(i == 0)
-                            indexesToRemove[i] = selectedIndexes[i];
-                        else
-                            indexesToRemove[i] = selectedIndexes[i] - i;
-                    }
-                    else
-                    {
-                        indexesToRemove[i] = selectedIndexes[i];
-                    }
-                }
-
-                for (int i = 0; i < newIndexes.Length; i++)
-                {
-                    pictureListViewEx.Items[indexesToRemove[i]].Remove();
-                    pictureListViewEx.Items.Insert(newIndexes[i], draggedItems[i]);
-                }
-            }
-            pictureListViewEx.InsertionMark.Index = -1;
-
-            reorderTimer.Start();
-        }
-
-        private void pictureListViewEx_DragOver(object sender, DragEventArgs e)
-        {
-            Point targetPoint = pictureListViewEx.PointToClient(new Point(e.X, e.Y));
-            int index = pictureListViewEx.Items.Count - 1;
-
-            ListViewItem targetItem = pictureListViewEx.GetItemAt(targetPoint.X, targetPoint.Y);
-
-            if (targetItem == null)
-            {
-                pictureListViewEx.InsertionMark.AppearsAfterItem = true;
-            }
-            else
-            {
-                pictureListViewEx.InsertionMark.AppearsAfterItem = false;
-            }
-
-            pictureListViewEx.InsertionMark.Index = pictureListViewEx.InsertionMark.NearestIndex(targetPoint);
-        }
     }
 }

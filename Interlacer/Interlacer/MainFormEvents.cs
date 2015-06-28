@@ -333,44 +333,6 @@ namespace Interlacer
         }
 
         /// <summary>
-        /// Metoda vyvolaná při tažení souboru přes hlavní formulář.
-        /// Ověří se, zda přetahovaný soubor/soubory má/mají validní koncovku.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainForm_DragEnter(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                string[] filePaths = (string[])(e.Data.GetData(DataFormats.FileDrop));
-                int lastIndnex = pictureListViewEx.Items.Count;
-                foreach (string path in filePaths)
-                {
-                    if (isExtensionValid(path))
-                    {
-                        e.Effect = DragDropEffects.Copy;
-                    }
-                    else
-                    {
-                        e.Effect = DragDropEffects.None;
-                    }
-                }
-            }
-            else
-            {
-                TreeNodeInherited draggedNode = (TreeNodeInherited)e.Data.GetData(typeof(TreeNodeInherited));
-                if (draggedNode == null)
-                {
-                    e.Effect = DragDropEffects.None;
-                    return;
-                }
-
-                e.Effect = DragDropEffects.Move;
-                
-            }
-        }
-
-        /// <summary>
         /// Metoda, která se vyvolá při změne hodnoty počtu kopiií, které se mají udělat při stisku tlačítka na kopírování položek seznamu.
         /// Slouží k tomu, aby se vrátil focus na ty vybrané položky, které byli vybrané před zvednutím/zmenšením hodnoty komponenty.
         /// </summary>
@@ -455,13 +417,16 @@ namespace Interlacer
         /// <param name="e"></param>
         private void nactiToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             String filename;
             openConfigDialog.Filter = "int|*.int";
             openConfigDialog.AddExtension = true;
             if (openConfigDialog.ShowDialog() == DialogResult.OK)
                 filename = openConfigDialog.FileName;
             else return;
-            try
+
+            loadConfigurationFile(filename);
+            /*try
             {
                 List<String> pathPics = projectData.Load(filename);     //načtu si cesty obrázků a v metode Load nastavím do LineData a Interlacing dat požadované data
                 projectData.GetInterlacingData().SetUnits(((StringValuePair<Units>)settings.GetSelectedUnits()).value);     // nastavím jednotky, které jsou momentálně v mainformu nastaveny
@@ -475,7 +440,7 @@ namespace Interlacer
             catch (Exception exc)
             {
                 MessageBox.Show(exc.Message);
-            }
+            }*/
         }
 
         /// <summary>
@@ -519,28 +484,7 @@ namespace Interlacer
         {
             clearList();
         }
-        /// <summary>
-        /// Metoda vyvolaná po dokončení akce drag and drop.    
-        /// Pro každou cestu přetahovaného souboru vytvoříme položku v listu.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainForm_DragDrop(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                string[] filePaths = (string[])(e.Data.GetData(DataFormats.FileDrop));
-                int lastIndnex = pictureListViewEx.Items.Count;
-                foreach (string path in filePaths)
-                {
-                    ListViewItem item = new ListViewItem(new[] { Convert.ToString(order), path, getPicName(path), "" });
-                    pictureListViewEx.Items.Add(item);
-                    order++;
-                }
-                reorder();
-                trySetValuesFromPictures(filePaths);
-            }
-        }
+        
 
         /// <summary>
         /// Metoda vyvolaná při stisku tlačítka pro přidání obrázku.
@@ -618,9 +562,7 @@ namespace Interlacer
 
             DirectoryInfo root = new DirectoryInfo(node.FullPath);
 
-            node.Nodes[0].Remove();
             populateDirectory(root, node);
-            node.isPopulated = true;
         }
 
         private void wholeDriveTree_ItemDrag(object sender, ItemDragEventArgs e)
@@ -715,6 +657,24 @@ namespace Interlacer
             // call the ContainsNode method recursively using the parent of  
             // the second node. 
             return ContainsNode(node1, node2.Parent);
+        } 
+
+        /// <summary>
+        /// Metoda vyvolaná při ztrátě focusu na komponentu.
+        /// Zachová vyznačení vybraných položek, které uživatel měl vybrané než ztratil focus.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void pictureListViewEx_Leave(object sender, EventArgs e)
+        {
+            if (pictureListViewEx.SelectedItems.Count == 0)
+                return;
+
+            pictureListViewEx.Focus();
+            for (int i = 0; i < pictureListViewEx.SelectedItems.Count; i++)
+            {
+                pictureListViewEx.SelectedItems[i].Selected = true;
+            }
         }
     }
 }

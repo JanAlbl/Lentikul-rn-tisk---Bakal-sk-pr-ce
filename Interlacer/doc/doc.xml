@@ -1019,6 +1019,11 @@
             retezec koncovek pro vystupni file dialog
             </summary>
         </member>
+        <member name="F:Interlacer.MainForm.configurationExtension">
+            <summary>
+            koncovka konfiguračního souboru
+            </summary>
+        </member>
         <member name="F:Interlacer.MainForm.settingsFilename">
             <summary>
             nazev souboru pro ulozeni nastaveni
@@ -1212,13 +1217,6 @@
             Označí všechny orbázky v listu.
             </summary>
         </member>
-        <member name="M:Interlacer.MainForm.pictureListViewEx_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
-            <summary>
-            Pokud se s nějakou položkou seznamu pohne drag and dropem. Zapne se timer, který volá metodu na očíslování položek seznamu.
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
         <member name="F:Interlacer.MainForm.components">
             <summary>
             Required designer variable.
@@ -1235,6 +1233,72 @@
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
+        </member>
+        <member name="M:Interlacer.MainForm.pictureListViewEx_ItemDrag(System.Object,System.Windows.Forms.ItemDragEventArgs)">
+            <summary>
+            Metoda vyvolaná při začátku táhnutí itemu.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Interlacer.MainForm.pictureListViewEx_DragEnter(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Metoda vyvolaná vstupem kurzoru na list.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Interlacer.MainForm.pictureListViewEx_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Metoda vyvolaná při puštění tlačítka neboli ukončení drag and dropu.
+            Na konci se zapne timer pro očíslování pořadí položek listu.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Interlacer.MainForm.pictureListViewEx_DragOver(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Metoda vyvolaná přejetím kurzorem myši přes jednotlivé položky seznamu při drag and dropu.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Interlacer.MainForm.droppedItemIsListItem(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Metoda, která řeší drag and drop na listu pokud tažená data jsou položky listu.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Interlacer.MainForm.droppedItemsAreFiles(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Metoda, která řeší drag and drop na listu pokud tažená data jsou soubory například z total cmd, plochy atd.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Interlacer.MainForm.droppedItemIsTreeNode(System.Windows.Forms.DragEventArgs,Interlacer.TreeNodeInherited)">
+            <summary>
+            Metoda, která řeší drag and drop na listu pokud tažená data jsou uzly stromu.
+            Pokud je cesta v uzlu cesta k obrázku na disku, přidá položku do listu.k
+            
+            </summary>
+            <param name="e"></param>
+            <param name="draggedNode"></param>
+        </member>
+        <member name="M:Interlacer.MainForm.MainForm_DragEnter(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Metoda vyvolaná při tažení souboru přes hlavní formulář.
+            Ověří se, zda přetahovaný soubor/soubory má/mají validní koncovku.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Interlacer.MainForm.MainForm_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Metoda vyvolaná po dokončení akce drag and drop.    
+            Pro každou cestu přetahovaného souboru vytvoříme položku v listu.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:Interlacer.MainForm.reverseButton_Click(System.Object,System.EventArgs)">
             <summary>
@@ -1434,14 +1498,6 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:Interlacer.MainForm.MainForm_DragEnter(System.Object,System.Windows.Forms.DragEventArgs)">
-            <summary>
-            Metoda vyvolaná při tažení souboru přes hlavní formulář.
-            Ověří se, zda přetahovaný soubor/soubory má/mají validní koncovku.
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
         <member name="M:Interlacer.MainForm.copyCountNumeric_ValueChanged(System.Object,System.EventArgs)">
             <summary>
             Metoda, která se vyvolá při změne hodnoty počtu kopiií, které se mají udělat při stisku tlačítka na kopírování položek seznamu.
@@ -1516,14 +1572,6 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:Interlacer.MainForm.MainForm_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
-            <summary>
-            Metoda vyvolaná po dokončení akce drag and drop.    
-            Pro každou cestu přetahovaného souboru vytvoříme položku v listu.
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
         <member name="M:Interlacer.MainForm.addPicButton_Click(System.Object,System.EventArgs)">
             <summary>
             Metoda vyvolaná při stisku tlačítka pro přidání obrázku.
@@ -1550,6 +1598,14 @@
         <member name="M:Interlacer.MainForm.pictureListViewEx_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
             <summary>
             KeyListener pro pro list s obrázky.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Interlacer.MainForm.pictureListViewEx_Leave(System.Object,System.EventArgs)">
+            <summary>
+            Metoda vyvolaná při ztrátě focusu na komponentu.
+            Zachová vyznačení vybraných položek, které uživatel měl vybrané než ztratil focus.
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
