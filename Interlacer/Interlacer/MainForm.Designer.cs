@@ -46,6 +46,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.loadToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.outputImageTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureListViewEx = new System.Windows.Forms.ListView();
@@ -87,6 +88,7 @@
             this.unitsLabel2 = new System.Windows.Forms.Label();
             this.unitsLabel = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.printParamAdjustmentHelp = new System.Windows.Forms.Label();
             this.interpol2ComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.interpol1ComboBox = new System.Windows.Forms.ComboBox();
@@ -268,7 +270,8 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripButton,
-            this.loadToolStripButton});
+            this.loadToolStripButton,
+            this.toolStripButton1});
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             // 
@@ -285,6 +288,13 @@
             resources.ApplyResources(this.loadToolStripButton, "loadToolStripButton");
             this.loadToolStripButton.Name = "loadToolStripButton";
             this.loadToolStripButton.Click += new System.EventHandler(this.nactiToolStripMenuItem_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // outputImageTab
             // 
@@ -615,10 +625,16 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.printParamAdjustmentHelp);
             this.groupBox4.Controls.Add(this.interpol2ComboBox);
             resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
+            // 
+            // printParamAdjustmentHelp
+            // 
+            resources.ApplyResources(this.printParamAdjustmentHelp, "printParamAdjustmentHelp");
+            this.printParamAdjustmentHelp.Name = "printParamAdjustmentHelp";
             // 
             // interpol2ComboBox
             // 
@@ -999,9 +1015,6 @@
             this.wholeDriveTree.Name = "wholeDriveTree";
             this.wholeDriveTree.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.wholeDriveTree_BeforeExpand);
             this.wholeDriveTree.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.wholeDriveTree_ItemDrag);
-            this.wholeDriveTree.DragDrop += new System.Windows.Forms.DragEventHandler(this.wholeDriveTree_DragDrop);
-            this.wholeDriveTree.DragEnter += new System.Windows.Forms.DragEventHandler(this.wholeDriveTree_DragEnter);
-            this.wholeDriveTree.DragOver += new System.Windows.Forms.DragEventHandler(this.wholeDriveTree_DragOver);
             // 
             // imageList1
             // 
@@ -1201,6 +1214,8 @@
         private System.Windows.Forms.ColumnHeader poradi;
         private System.Windows.Forms.ColumnHeader cesta;
         private System.Windows.Forms.ColumnHeader nazev;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.Label printParamAdjustmentHelp;
 
     }
 }

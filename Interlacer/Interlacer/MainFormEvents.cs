@@ -575,7 +575,7 @@ namespace Interlacer
 
         // Set the target drop effect to the effect  
         // specified in the ItemDrag event handler. 
-        private void wholeDriveTree_DragEnter(object sender, DragEventArgs e)
+       /* private void wholeDriveTree_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = e.AllowedEffect;
         }
@@ -638,13 +638,6 @@ namespace Interlacer
             }
         }
 
-        private String getExtension(String path)
-        {
-            String[] split = path.Split('.');
-
-            return split[split.Length - 1];
-        }
-
         // Determine whether one node is a parent  
         // or ancestor of a second node. 
         private bool ContainsNode(TreeNode node1, TreeNode node2)
@@ -657,7 +650,14 @@ namespace Interlacer
             // call the ContainsNode method recursively using the parent of  
             // the second node. 
             return ContainsNode(node1, node2.Parent);
-        } 
+        } */
+
+        private String getExtension(String path)
+        {
+            String[] split = path.Split('.');
+
+            return split[split.Length - 1];
+        }
 
         /// <summary>
         /// Metoda vyvolaná při ztrátě focusu na komponentu.

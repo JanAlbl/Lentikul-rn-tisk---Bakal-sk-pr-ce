@@ -4,6 +4,23 @@
         <name>Interlacer</name>
     </assembly>
     <members>
+        <member name="F:Interlacer.ClipForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Interlacer.ClipForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Interlacer.ClipForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="T:Interlacer.Direction">
             <summary>
             urcuje smer
@@ -1039,6 +1056,11 @@
             reference pro budouci instanci formulare pro nastaveni
             </summary>
         </member>
+        <member name="F:Interlacer.MainForm.clipForm">
+            <summary>
+            Formulář pro ořezávání obrázků.
+            </summary>
+        </member>
         <member name="F:Interlacer.MainForm.order">
             <summary>
             poradi nasledujiciho obrazku v seznamu
@@ -1214,8 +1236,36 @@
         </member>
         <member name="M:Interlacer.MainForm.selectAllPictures">
             <summary>
-            Označí všechny orbázky v listu.
+            Označí všechny obrázky v listu.
             </summary>
+        </member>
+        <member name="M:Interlacer.MainForm.movePicturesDown">
+            <summary>
+            Posune všechny obrázky o jedna dolů.
+            </summary>
+        </member>
+        <member name="M:Interlacer.MainForm.movePicturesUp">
+            <summary>
+            Posune vybrané obrázky o jedna nahoru.
+            </summary>
+        </member>
+        <member name="M:Interlacer.MainForm.copyPictures(System.Int32)">
+            <summary>
+            Zkopíruje vybrané obrázky n-krát.
+            </summary>
+            <param name="copiesCount">počet kopií vybraných položek</param>
+        </member>
+        <member name="M:Interlacer.MainForm.checkLineSettings">
+            <summary>
+            Metoda pro zjištění zda nejsou zaškrtlé vodící čáry ale šířka rámečku nula. Nebo naopak je nastavena šířka rámečku ale nejsou zaškrtlé vodící čáry.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Interlacer.MainForm.findFalseParameters">
+            <summary>
+            Při špatně vyplněních parametrech prokládání najde a přes dialog uživatelovi oznámí které parametry jsou špatně zadané
+            </summary>
+            <returns></returns>
         </member>
         <member name="F:Interlacer.MainForm.components">
             <summary>
@@ -2000,6 +2050,12 @@
               Looks up a localized string similar to Hotovo.
             </summary>
         </member>
+        <member name="P:Interlacer.StringRes_CZ.dpiToolTip">
+             <summary>
+               Looks up a localized string similar to Základní rozlišení tiskového stroje. Typické hodnoty jsou 600 DPI pro  tiskárny HP a Canon, 720 DPI pro tiskárny Epson.
+            (default 0).
+             </summary>
+        </member>
         <member name="P:Interlacer.StringRes_CZ.emptyListError">
             <summary>
               Looks up a localized string similar to Seznam obrázků je prázdný..
@@ -2022,24 +2078,9 @@
             Soubor pravděpodobně neexistuje..
              </summary>
         </member>
-        <member name="P:Interlacer.StringRes_CZ.filterCubic">
+        <member name="P:Interlacer.StringRes_CZ.horizontalLenticuleOrientation">
             <summary>
-              Looks up a localized string similar to Kubický.
-            </summary>
-        </member>
-        <member name="P:Interlacer.StringRes_CZ.filterLanczos">
-            <summary>
-              Looks up a localized string similar to Lanczos.
-            </summary>
-        </member>
-        <member name="P:Interlacer.StringRes_CZ.filterLinear">
-            <summary>
-              Looks up a localized string similar to Lineární.
-            </summary>
-        </member>
-        <member name="P:Interlacer.StringRes_CZ.filterNearestNeighbor">
-            <summary>
-              Looks up a localized string similar to Nejbližší soused.
+              Looks up a localized string similar to Lentikule jsou umístěny vodorovně, obrázek se tedy mění při změně pohledu  shora dolů. Ideální pro výměnu a animaci, NEPOUŽITELNÉ pro 3D..
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.imageDimensionError">
@@ -2067,6 +2108,12 @@
               Looks up a localized string similar to Prokládání selhalo. Pravděpodobnou příčinou je chybné nastavení prokládacích parametrů. Zkontrolujte, zda některý z parametrů není nulový, příliš malý či příliš velký..
             </summary>
         </member>
+        <member name="P:Interlacer.StringRes_CZ.keepAspectRatioToolTip">
+             <summary>
+               Looks up a localized string similar to Při zaškrtnutém poli se výška a šířka obrázku mění souběžně při zachování  poměru stran.
+            (default ON).
+             </summary>
+        </member>
         <member name="P:Interlacer.StringRes_CZ.langCzech">
             <summary>
               Looks up a localized string similar to Čeština.
@@ -2086,6 +2133,17 @@
         <member name="P:Interlacer.StringRes_CZ.loadTooltip">
             <summary>
               Looks up a localized string similar to Načíst projekt.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.lpiToolTip">
+             <summary>
+               Looks up a localized string similar to Vizuální rozteč čoček zjištěná tzv. pitchtestem. Typické hodnoty jsou  přibližně mezi 20 a 100.
+            (default 0).
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.maxImagesUnderLenticuleToolTip">
+            <summary>
+              Looks up a localized string similar to Maximální počet snímků, který lze umístit do lentikulárního obrázku. V  ideálním případě je v lentikulárním obrázku vloženo právě tolik snímků,  přičemž některé se mohou opakovat. Je-li toto číslo například 18, je  vhodné při tvorbě 3-D obrázku vložit 18 pohledů na scénu. Při tvorbě  výměny dvou snímků je vhodné vložit první snímek 9krát, druhý rovněž  9krát. Je-li toto číslo výrazně odlišné od celého čísla (např. 14,6), není  určená tiskárna příliš vhodná pro zvolený lentikulární materiál..
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.memoryError">
@@ -2113,6 +2171,18 @@
               Looks up a localized string similar to Pořadí.
             </summary>
         </member>
+        <member name="P:Interlacer.StringRes_CZ.outputImageHeightToolTip">
+             <summary>
+               Looks up a localized string similar to Výška výstupního obrázku. Finální výtisk může navíc obsahovat vodicí čáry  a být vyšší.
+            (default 0).
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.outputImageWidthToolTip">
+             <summary>
+               Looks up a localized string similar to Šířka výstupního obrázku. Finální výtisk může navíc obsahovat vodicí čáry  a být širší.
+            (default 0).
+             </summary>
+        </member>
         <member name="P:Interlacer.StringRes_CZ.pathListView">
             <summary>
               Looks up a localized string similar to Cesta.
@@ -2123,6 +2193,34 @@
               Looks up a localized string similar to Náhled se nepodařilo vytvořit..
             </summary>
         </member>
+        <member name="P:Interlacer.StringRes_CZ.printParamAdjustmentFilterCubic">
+            <summary>
+              Looks up a localized string similar to Kubický (default).
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.printParamAdjustmentFilterLanczos">
+            <summary>
+              Looks up a localized string similar to Lanczos.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.printParamAdjustmentFilterLinear">
+            <summary>
+              Looks up a localized string similar to Bilineární.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.printParamAdjustmentFilterNearestNeighbor">
+            <summary>
+              Looks up a localized string similar to Nejbližší soused.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.printParamAdjustmentToolTip">
+             <summary>
+               Looks up a localized string similar to Kubický (3D, animace, výměna) (default)
+            Lanczos (3D, animace, výměna)
+            Bilineární (3D, animace, výměna)
+            Nejbližší soused (výměna).
+             </summary>
+        </member>
         <member name="P:Interlacer.StringRes_CZ.removePicTooltip">
             <summary>
               Looks up a localized string similar to Odebrat (Del).
@@ -2131,6 +2229,27 @@
         <member name="P:Interlacer.StringRes_CZ.replaceTooltip">
             <summary>
               Looks up a localized string similar to Nahradit obrázek za jiný (Ctrl + Q).
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.resizeFilterCubic">
+             <summary>
+               Looks up a localized string similar to Kubický (nejlepší) 
+            (default).
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.resizeFilterLanczos">
+            <summary>
+              Looks up a localized string similar to Lanczos.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.resizeFilterLinear">
+            <summary>
+              Looks up a localized string similar to Lineární.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.resizeFilterNearestNeighbor">
+            <summary>
+              Looks up a localized string similar to Nejbližší soused.
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.revertTooltip">
@@ -2152,6 +2271,12 @@
             <summary>
               Looks up a localized string similar to palce.
             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.verticalLenticuleOrientation">
+             <summary>
+               Looks up a localized string similar to Lentikule jsou umístěny svisle, obrázek se tedy mění při změně pohledu  zleva doprava. Nutné pro 3D a velkoplošné lentikulární tisky, méně vhodné  pro výměnu a animaci.
+            (default).
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.wrongFormatError">
             <summary>
@@ -2226,6 +2351,12 @@
               Looks up a localized string similar to Done.
             </summary>
         </member>
+        <member name="P:Interlacer.StringRes_EN.dpiToolTip">
+             <summary>
+               Looks up a localized string similar to Basic resolution of printing machine. Typical values are 600 DPI for HP and Canon printers, 720 DPI for Epson printers.
+            (default 0).
+             </summary>
+        </member>
         <member name="P:Interlacer.StringRes_EN.emptyListError">
             <summary>
               Looks up a localized string similar to List of images is empty.
@@ -2246,24 +2377,9 @@
               Looks up a localized string similar to File {0} could not be opened. File probably does not exist..
             </summary>
         </member>
-        <member name="P:Interlacer.StringRes_EN.filterCubic">
+        <member name="P:Interlacer.StringRes_EN.horizontalLenticuleOrientation">
             <summary>
-              Looks up a localized string similar to Cubic.
-            </summary>
-        </member>
-        <member name="P:Interlacer.StringRes_EN.filterLanczos">
-            <summary>
-              Looks up a localized string similar to Lanczos.
-            </summary>
-        </member>
-        <member name="P:Interlacer.StringRes_EN.filterLinear">
-            <summary>
-              Looks up a localized string similar to Linear.
-            </summary>
-        </member>
-        <member name="P:Interlacer.StringRes_EN.filterNearestNeighbor">
-            <summary>
-              Looks up a localized string similar to Nearest neighbour.
+              Looks up a localized string similar to Lenticules are positioned horizontally, that means image is changing while view is changing from down to top. CANNOT BE USED for 3D..
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.imageDimensionError">
@@ -2291,6 +2407,12 @@
               Looks up a localized string similar to Interlacing failed. Check interlacing parameters..
             </summary>
         </member>
+        <member name="P:Interlacer.StringRes_EN.keepAspectRatioToolTip">
+             <summary>
+               Looks up a localized string similar to When field is checked, both height and width is being changed while keeping their aspect ratio.
+            (default ON).
+             </summary>
+        </member>
         <member name="P:Interlacer.StringRes_EN.langCzech">
             <summary>
               Looks up a localized string similar to Czech.
@@ -2310,6 +2432,16 @@
         <member name="P:Interlacer.StringRes_EN.loadTooltip">
             <summary>
               Looks up a localized string similar to Open project.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.lpiToolTip">
+            <summary>
+              Looks up a localized string similar to Visual span of lenticules obtained by so called pitchtest. Typical values are between 20 and 100..
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.maxImagesUnderLenticuleToolTip">
+            <summary>
+              Looks up a localized string similar to Maximum amout of images, that can be put into lenticule image. Ideally, there is exactly that amout of images, whereas some images can be repeated. If maximum amout is 18, it´s appropriate to put 18 different views on the scene when doing 3D images. When doing flip of two images, it´s appropriate to use first image 9 times and second image 9 times as well.  If maximum amout of images is very distant from whole number (etc. 14.6), chosen printer isn´t appropriate for chosen lenticule material..
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.memoryError">
@@ -2337,6 +2469,18 @@
               Looks up a localized string similar to Order.
             </summary>
         </member>
+        <member name="P:Interlacer.StringRes_EN.outputImageHeightToolTip">
+             <summary>
+               Looks up a localized string similar to Height of output image. Final image may contain alignment lines and be higher.
+            (default 0).
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.outputImageWidthToolTip">
+             <summary>
+               Looks up a localized string similar to Width of output image. Final image may contain alignment lines and be wider.
+            (default 0).
+             </summary>
+        </member>
         <member name="P:Interlacer.StringRes_EN.pathListView">
             <summary>
               Looks up a localized string similar to Path.
@@ -2347,6 +2491,34 @@
               Looks up a localized string similar to Preview could not be created.
             </summary>
         </member>
+        <member name="P:Interlacer.StringRes_EN.printParamAdjustmentFilterCubic">
+            <summary>
+              Looks up a localized string similar to Cubic (default).
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.printParamAdjustmentFilterLanczos">
+            <summary>
+              Looks up a localized string similar to Lanczos.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.printParamAdjustmentFilterLinear">
+            <summary>
+              Looks up a localized string similar to Linear.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.printParamAdjustmentFilterNearestNeighbor">
+            <summary>
+              Looks up a localized string similar to Nearest neighbour.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.printParamAdjustmentToolTip">
+             <summary>
+               Looks up a localized string similar to Cubic (3D, animation, flip) (default)
+            Lanczos (3D, animation, flip)
+            Linear (3D, animation, flip)
+            Nearest neighbour (flip).
+             </summary>
+        </member>
         <member name="P:Interlacer.StringRes_EN.removePicTooltip">
             <summary>
               Looks up a localized string similar to Remove (Del).
@@ -2355,6 +2527,27 @@
         <member name="P:Interlacer.StringRes_EN.replaceTooltip">
             <summary>
               Looks up a localized string similar to Replace image (Ctrl + Q).
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.resizeFilterCubic">
+             <summary>
+               Looks up a localized string similar to Cubic (best) 
+            (default).
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.resizeFilterLanczos">
+            <summary>
+              Looks up a localized string similar to Lanczos.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.resizeFilterLinear">
+            <summary>
+              Looks up a localized string similar to Linear.
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.resizeFilterNearestNeighbor">
+            <summary>
+              Looks up a localized string similar to Nearest neighbour.
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.revertTooltip">
@@ -2376,6 +2569,12 @@
             <summary>
               Looks up a localized string similar to inches.
             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.verticalLenticuleOrientation">
+             <summary>
+               Looks up a localized string similar to Lenticules are positioned vertically, that means image is changing while view is changing from left to right. 
+            (default).
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.wrongFormatError">
             <summary>

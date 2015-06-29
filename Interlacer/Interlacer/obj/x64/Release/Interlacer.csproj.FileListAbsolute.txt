@@ -172,3 +172,4 @@ D:\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.cs-CZ.resour
 D:\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.SettingsForm.cs-CZ.resources
 D:\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.csproj.GenerateResource.Cache
 D:\Zaloha\Interlacer\Interlacer\obj\x64\Release\cs-CZ\Interlacer.resources.dll
+D:\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.ClipForm.resources

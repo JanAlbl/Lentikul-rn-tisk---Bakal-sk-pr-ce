@@ -153,6 +153,16 @@ namespace Interlacer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Základní rozlišení tiskového stroje. Typické hodnoty jsou 600 DPI pro  tiskárny HP a Canon, 720 DPI pro tiskárny Epson.
+        ///(default 0).
+        /// </summary>
+        internal static string dpiToolTip {
+            get {
+                return ResourceManager.GetString("dpiToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Seznam obrázků je prázdný..
         /// </summary>
         internal static string emptyListError {
@@ -191,38 +201,11 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kubický.
+        ///   Looks up a localized string similar to Lentikule jsou umístěny vodorovně, obrázek se tedy mění při změně pohledu  shora dolů. Ideální pro výměnu a animaci, NEPOUŽITELNÉ pro 3D..
         /// </summary>
-        internal static string filterCubic {
+        internal static string horizontalLenticuleOrientation {
             get {
-                return ResourceManager.GetString("filterCubic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Lanczos.
-        /// </summary>
-        internal static string filterLanczos {
-            get {
-                return ResourceManager.GetString("filterLanczos", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Lineární.
-        /// </summary>
-        internal static string filterLinear {
-            get {
-                return ResourceManager.GetString("filterLinear", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Nejbližší soused.
-        /// </summary>
-        internal static string filterNearestNeighbor {
-            get {
-                return ResourceManager.GetString("filterNearestNeighbor", resourceCulture);
+                return ResourceManager.GetString("horizontalLenticuleOrientation", resourceCulture);
             }
         }
         
@@ -272,6 +255,16 @@ namespace Interlacer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Při zaškrtnutém poli se výška a šířka obrázku mění souběžně při zachování  poměru stran.
+        ///(default ON).
+        /// </summary>
+        internal static string keepAspectRatioToolTip {
+            get {
+                return ResourceManager.GetString("keepAspectRatioToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Čeština.
         /// </summary>
         internal static string langCzech {
@@ -305,6 +298,25 @@ namespace Interlacer {
         internal static string loadTooltip {
             get {
                 return ResourceManager.GetString("loadTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vizuální rozteč čoček zjištěná tzv. pitchtestem. Typické hodnoty jsou  přibližně mezi 20 a 100.
+        ///(default 0).
+        /// </summary>
+        internal static string lpiToolTip {
+            get {
+                return ResourceManager.GetString("lpiToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximální počet snímků, který lze umístit do lentikulárního obrázku. V  ideálním případě je v lentikulárním obrázku vloženo právě tolik snímků,  přičemž některé se mohou opakovat. Je-li toto číslo například 18, je  vhodné při tvorbě 3-D obrázku vložit 18 pohledů na scénu. Při tvorbě  výměny dvou snímků je vhodné vložit první snímek 9krát, druhý rovněž  9krát. Je-li toto číslo výrazně odlišné od celého čísla (např. 14,6), není  určená tiskárna příliš vhodná pro zvolený lentikulární materiál..
+        /// </summary>
+        internal static string maxImagesUnderLenticuleToolTip {
+            get {
+                return ResourceManager.GetString("maxImagesUnderLenticuleToolTip", resourceCulture);
             }
         }
         
@@ -354,6 +366,26 @@ namespace Interlacer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Výška výstupního obrázku. Finální výtisk může navíc obsahovat vodicí čáry  a být vyšší.
+        ///(default 0).
+        /// </summary>
+        internal static string outputImageHeightToolTip {
+            get {
+                return ResourceManager.GetString("outputImageHeightToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Šířka výstupního obrázku. Finální výtisk může navíc obsahovat vodicí čáry  a být širší.
+        ///(default 0).
+        /// </summary>
+        internal static string outputImageWidthToolTip {
+            get {
+                return ResourceManager.GetString("outputImageWidthToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cesta.
         /// </summary>
         internal static string pathListView {
@@ -372,6 +404,54 @@ namespace Interlacer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kubický (default).
+        /// </summary>
+        internal static string printParamAdjustmentFilterCubic {
+            get {
+                return ResourceManager.GetString("printParamAdjustmentFilterCubic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lanczos.
+        /// </summary>
+        internal static string printParamAdjustmentFilterLanczos {
+            get {
+                return ResourceManager.GetString("printParamAdjustmentFilterLanczos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bilineární.
+        /// </summary>
+        internal static string printParamAdjustmentFilterLinear {
+            get {
+                return ResourceManager.GetString("printParamAdjustmentFilterLinear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nejbližší soused.
+        /// </summary>
+        internal static string printParamAdjustmentFilterNearestNeighbor {
+            get {
+                return ResourceManager.GetString("printParamAdjustmentFilterNearestNeighbor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kubický (3D, animace, výměna) (default)
+        ///Lanczos (3D, animace, výměna)
+        ///Bilineární (3D, animace, výměna)
+        ///Nejbližší soused (výměna).
+        /// </summary>
+        internal static string printParamAdjustmentToolTip {
+            get {
+                return ResourceManager.GetString("printParamAdjustmentToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Odebrat (Del).
         /// </summary>
         internal static string removePicTooltip {
@@ -386,6 +466,43 @@ namespace Interlacer {
         internal static string replaceTooltip {
             get {
                 return ResourceManager.GetString("replaceTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kubický (nejlepší) 
+        ///(default).
+        /// </summary>
+        internal static string resizeFilterCubic {
+            get {
+                return ResourceManager.GetString("resizeFilterCubic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lanczos.
+        /// </summary>
+        internal static string resizeFilterLanczos {
+            get {
+                return ResourceManager.GetString("resizeFilterLanczos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lineární.
+        /// </summary>
+        internal static string resizeFilterLinear {
+            get {
+                return ResourceManager.GetString("resizeFilterLinear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nejbližší soused.
+        /// </summary>
+        internal static string resizeFilterNearestNeighbor {
+            get {
+                return ResourceManager.GetString("resizeFilterNearestNeighbor", resourceCulture);
             }
         }
         
@@ -422,6 +539,16 @@ namespace Interlacer {
         internal static string unitsInches {
             get {
                 return ResourceManager.GetString("unitsInches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lentikule jsou umístěny svisle, obrázek se tedy mění při změně pohledu  zleva doprava. Nutné pro 3D a velkoplošné lentikulární tisky, méně vhodné  pro výměnu a animaci.
+        ///(default).
+        /// </summary>
+        internal static string verticalLenticuleOrientation {
+            get {
+                return ResourceManager.GetString("verticalLenticuleOrientation", resourceCulture);
             }
         }
         

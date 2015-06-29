@@ -153,6 +153,16 @@ namespace Interlacer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Basic resolution of printing machine. Typical values are 600 DPI for HP and Canon printers, 720 DPI for Epson printers.
+        ///(default 0).
+        /// </summary>
+        internal static string dpiToolTip {
+            get {
+                return ResourceManager.GetString("dpiToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to List of images is empty.
         /// </summary>
         internal static string emptyListError {
@@ -189,38 +199,11 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cubic.
+        ///   Looks up a localized string similar to Lenticules are positioned horizontally, that means image is changing while view is changing from down to top. CANNOT BE USED for 3D..
         /// </summary>
-        internal static string filterCubic {
+        internal static string horizontalLenticuleOrientation {
             get {
-                return ResourceManager.GetString("filterCubic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Lanczos.
-        /// </summary>
-        internal static string filterLanczos {
-            get {
-                return ResourceManager.GetString("filterLanczos", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Linear.
-        /// </summary>
-        internal static string filterLinear {
-            get {
-                return ResourceManager.GetString("filterLinear", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Nearest neighbour.
-        /// </summary>
-        internal static string filterNearestNeighbor {
-            get {
-                return ResourceManager.GetString("filterNearestNeighbor", resourceCulture);
+                return ResourceManager.GetString("horizontalLenticuleOrientation", resourceCulture);
             }
         }
         
@@ -270,6 +253,16 @@ namespace Interlacer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to When field is checked, both height and width is being changed while keeping their aspect ratio.
+        ///(default ON).
+        /// </summary>
+        internal static string keepAspectRatioToolTip {
+            get {
+                return ResourceManager.GetString("keepAspectRatioToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Czech.
         /// </summary>
         internal static string langCzech {
@@ -303,6 +296,24 @@ namespace Interlacer {
         internal static string loadTooltip {
             get {
                 return ResourceManager.GetString("loadTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Visual span of lenticules obtained by so called pitchtest. Typical values are between 20 and 100..
+        /// </summary>
+        internal static string lpiToolTip {
+            get {
+                return ResourceManager.GetString("lpiToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum amout of images, that can be put into lenticule image. Ideally, there is exactly that amout of images, whereas some images can be repeated. If maximum amout is 18, it´s appropriate to put 18 different views on the scene when doing 3D images. When doing flip of two images, it´s appropriate to use first image 9 times and second image 9 times as well.  If maximum amout of images is very distant from whole number (etc. 14.6), chosen printer isn´t appropriate for chosen lenticule material..
+        /// </summary>
+        internal static string maxImagesUnderLenticuleToolTip {
+            get {
+                return ResourceManager.GetString("maxImagesUnderLenticuleToolTip", resourceCulture);
             }
         }
         
@@ -352,6 +363,26 @@ namespace Interlacer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Height of output image. Final image may contain alignment lines and be higher.
+        ///(default 0).
+        /// </summary>
+        internal static string outputImageHeightToolTip {
+            get {
+                return ResourceManager.GetString("outputImageHeightToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Width of output image. Final image may contain alignment lines and be wider.
+        ///(default 0).
+        /// </summary>
+        internal static string outputImageWidthToolTip {
+            get {
+                return ResourceManager.GetString("outputImageWidthToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Path.
         /// </summary>
         internal static string pathListView {
@@ -370,6 +401,54 @@ namespace Interlacer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cubic (default).
+        /// </summary>
+        internal static string printParamAdjustmentFilterCubic {
+            get {
+                return ResourceManager.GetString("printParamAdjustmentFilterCubic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lanczos.
+        /// </summary>
+        internal static string printParamAdjustmentFilterLanczos {
+            get {
+                return ResourceManager.GetString("printParamAdjustmentFilterLanczos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Linear.
+        /// </summary>
+        internal static string printParamAdjustmentFilterLinear {
+            get {
+                return ResourceManager.GetString("printParamAdjustmentFilterLinear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nearest neighbour.
+        /// </summary>
+        internal static string printParamAdjustmentFilterNearestNeighbor {
+            get {
+                return ResourceManager.GetString("printParamAdjustmentFilterNearestNeighbor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cubic (3D, animation, flip) (default)
+        ///Lanczos (3D, animation, flip)
+        ///Linear (3D, animation, flip)
+        ///Nearest neighbour (flip).
+        /// </summary>
+        internal static string printParamAdjustmentToolTip {
+            get {
+                return ResourceManager.GetString("printParamAdjustmentToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove (Del).
         /// </summary>
         internal static string removePicTooltip {
@@ -384,6 +463,43 @@ namespace Interlacer {
         internal static string replaceTooltip {
             get {
                 return ResourceManager.GetString("replaceTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cubic (best) 
+        ///(default).
+        /// </summary>
+        internal static string resizeFilterCubic {
+            get {
+                return ResourceManager.GetString("resizeFilterCubic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lanczos.
+        /// </summary>
+        internal static string resizeFilterLanczos {
+            get {
+                return ResourceManager.GetString("resizeFilterLanczos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Linear.
+        /// </summary>
+        internal static string resizeFilterLinear {
+            get {
+                return ResourceManager.GetString("resizeFilterLinear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nearest neighbour.
+        /// </summary>
+        internal static string resizeFilterNearestNeighbor {
+            get {
+                return ResourceManager.GetString("resizeFilterNearestNeighbor", resourceCulture);
             }
         }
         
@@ -420,6 +536,16 @@ namespace Interlacer {
         internal static string unitsInches {
             get {
                 return ResourceManager.GetString("unitsInches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lenticules are positioned vertically, that means image is changing while view is changing from left to right. 
+        ///(default).
+        /// </summary>
+        internal static string verticalLenticuleOrientation {
+            get {
+                return ResourceManager.GetString("verticalLenticuleOrientation", resourceCulture);
             }
         }
         

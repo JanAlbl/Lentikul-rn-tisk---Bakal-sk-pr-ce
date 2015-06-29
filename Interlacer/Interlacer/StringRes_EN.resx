@@ -149,6 +149,10 @@ Do you wish to continue?</value>
   <data name="doneMessage" xml:space="preserve">
     <value>Done</value>
   </data>
+  <data name="dpiToolTip" xml:space="preserve">
+    <value>Basic resolution of printing machine. Typical values are 600 DPI for HP and Canon printers, 720 DPI for Epson printers.
+(default 0)</value>
+  </data>
   <data name="emptyListError" xml:space="preserve">
     <value>List of images is empty</value>
   </data>
@@ -161,17 +165,8 @@ Do you wish to continue?</value>
   <data name="fileNotFoundError" xml:space="preserve">
     <value>File {0} could not be opened. File probably does not exist.</value>
   </data>
-  <data name="filterCubic" xml:space="preserve">
-    <value>Cubic</value>
-  </data>
-  <data name="filterLanczos" xml:space="preserve">
-    <value>Lanczos</value>
-  </data>
-  <data name="filterLinear" xml:space="preserve">
-    <value>Linear</value>
-  </data>
-  <data name="filterNearestNeighbor" xml:space="preserve">
-    <value>Nearest neighbour</value>
+  <data name="horizontalLenticuleOrientation" xml:space="preserve">
+    <value>Lenticules are positioned horizontally, that means image is changing while view is changing from down to top. CANNOT BE USED for 3D.</value>
   </data>
   <data name="imageDimensionError" xml:space="preserve">
     <value>Image dimensions differ. Do you want to crop them to minimum width and minimum height?</value>
@@ -188,6 +183,10 @@ Do you wish to continue?</value>
   <data name="interlacingError" xml:space="preserve">
     <value>Interlacing failed. Check interlacing parameters.</value>
   </data>
+  <data name="keepAspectRatioToolTip" xml:space="preserve">
+    <value>When field is checked, both height and width is being changed while keeping their aspect ratio.
+(default ON)</value>
+  </data>
   <data name="langCzech" xml:space="preserve">
     <value>Czech</value>
   </data>
@@ -200,6 +199,12 @@ Make sure Visual C++ Redistributable is installed.</value>
   </data>
   <data name="loadTooltip" xml:space="preserve">
     <value>Open project</value>
+  </data>
+  <data name="lpiToolTip" xml:space="preserve">
+    <value>Visual span of lenticules obtained by so called pitchtest. Typical values are between 20 and 100.</value>
+  </data>
+  <data name="maxImagesUnderLenticuleToolTip" xml:space="preserve">
+    <value>Maximum amout of images, that can be put into lenticule image. Ideally, there is exactly that amout of images, whereas some images can be repeated. If maximum amout is 18, it´s appropriate to put 18 different views on the scene when doing 3D images. When doing flip of two images, it´s appropriate to use first image 9 times and second image 9 times as well.  If maximum amout of images is very distant from whole number (etc. 14.6), chosen printer isn´t appropriate for chosen lenticule material.</value>
   </data>
   <data name="memoryError" xml:space="preserve">
     <value>Not enough memory.</value>
@@ -216,17 +221,56 @@ Make sure Visual C++ Redistributable is installed.</value>
   <data name="orderListView" xml:space="preserve">
     <value>Order</value>
   </data>
+  <data name="outputImageHeightToolTip" xml:space="preserve">
+    <value>Height of output image. Final image may contain alignment lines and be higher.
+(default 0)</value>
+  </data>
+  <data name="outputImageWidthToolTip" xml:space="preserve">
+    <value>Width of output image. Final image may contain alignment lines and be wider.
+(default 0)</value>
+  </data>
   <data name="pathListView" xml:space="preserve">
     <value>Path</value>
   </data>
   <data name="previewError" xml:space="preserve">
     <value>Preview could not be created</value>
   </data>
+  <data name="printParamAdjustmentFilterCubic" xml:space="preserve">
+    <value>Cubic (default)</value>
+  </data>
+  <data name="printParamAdjustmentFilterLanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="printParamAdjustmentFilterLinear" xml:space="preserve">
+    <value>Linear</value>
+  </data>
+  <data name="printParamAdjustmentFilterNearestNeighbor" xml:space="preserve">
+    <value>Nearest neighbour</value>
+  </data>
+  <data name="printParamAdjustmentToolTip" xml:space="preserve">
+    <value>Cubic (3D, animation, flip) (default)
+Lanczos (3D, animation, flip)
+Linear (3D, animation, flip)
+Nearest neighbour (flip)</value>
+  </data>
   <data name="removePicTooltip" xml:space="preserve">
     <value>Remove (Del)</value>
   </data>
   <data name="replaceTooltip" xml:space="preserve">
     <value>Replace image (Ctrl + Q)</value>
+  </data>
+  <data name="resizeFilterCubic" xml:space="preserve">
+    <value>Cubic (best) 
+(default)</value>
+  </data>
+  <data name="resizeFilterLanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="resizeFilterLinear" xml:space="preserve">
+    <value>Linear</value>
+  </data>
+  <data name="resizeFilterNearestNeighbor" xml:space="preserve">
+    <value>Nearest neighbour</value>
   </data>
   <data name="revertTooltip" xml:space="preserve">
     <value>Reverse list (Ctrl + R)</value>
@@ -239,6 +283,10 @@ Make sure Visual C++ Redistributable is installed.</value>
   </data>
   <data name="unitsInches" xml:space="preserve">
     <value>inches</value>
+  </data>
+  <data name="verticalLenticuleOrientation" xml:space="preserve">
+    <value>Lenticules are positioned vertically, that means image is changing while view is changing from left to right. 
+(default)</value>
   </data>
   <data name="wrongFormatError" xml:space="preserve">
     <value>File  {0} has wrong format.</value>

@@ -149,6 +149,10 @@ Chcete pokračovat?</value>
   <data name="doneMessage" xml:space="preserve">
     <value>Hotovo</value>
   </data>
+  <data name="dpiToolTip" xml:space="preserve">
+    <value>Základní rozlišení tiskového stroje. Typické hodnoty jsou 600 DPI pro  tiskárny HP a Canon, 720 DPI pro tiskárny Epson.
+(default 0)</value>
+  </data>
   <data name="emptyListError" xml:space="preserve">
     <value>Seznam obrázků je prázdný.</value>
   </data>
@@ -163,17 +167,8 @@ Chcete pokračovat?</value>
     <value>Soubor {0} se nepodařilo otevřít. 
 Soubor pravděpodobně neexistuje.</value>
   </data>
-  <data name="filterCubic" xml:space="preserve">
-    <value>Kubický</value>
-  </data>
-  <data name="filterLanczos" xml:space="preserve">
-    <value>Lanczos</value>
-  </data>
-  <data name="filterLinear" xml:space="preserve">
-    <value>Lineární</value>
-  </data>
-  <data name="filterNearestNeighbor" xml:space="preserve">
-    <value>Nejbližší soused</value>
+  <data name="horizontalLenticuleOrientation" xml:space="preserve">
+    <value>Lentikule jsou umístěny vodorovně, obrázek se tedy mění při změně pohledu  shora dolů. Ideální pro výměnu a animaci, NEPOUŽITELNÉ pro 3D.</value>
   </data>
   <data name="imageDimensionError" xml:space="preserve">
     <value>Obrázky nejsou stejně velké. Chcete je oříznout na nejmenší šířku a nejmenší výšku?</value>
@@ -190,6 +185,10 @@ Soubor pravděpodobně neexistuje.</value>
   <data name="interlacingError" xml:space="preserve">
     <value>Prokládání selhalo. Pravděpodobnou příčinou je chybné nastavení prokládacích parametrů. Zkontrolujte, zda některý z parametrů není nulový, příliš malý či příliš velký.</value>
   </data>
+  <data name="keepAspectRatioToolTip" xml:space="preserve">
+    <value>Při zaškrtnutém poli se výška a šířka obrázku mění souběžně při zachování  poměru stran.
+(default ON)</value>
+  </data>
   <data name="langCzech" xml:space="preserve">
     <value>Čeština</value>
   </data>
@@ -202,6 +201,13 @@ Pravděpodobnou příčinou je chybějící Visual C++ Redistributable</value>
   </data>
   <data name="loadTooltip" xml:space="preserve">
     <value>Načíst projekt</value>
+  </data>
+  <data name="lpiToolTip" xml:space="preserve">
+    <value>Vizuální rozteč čoček zjištěná tzv. pitchtestem. Typické hodnoty jsou  přibližně mezi 20 a 100.
+(default 0)</value>
+  </data>
+  <data name="maxImagesUnderLenticuleToolTip" xml:space="preserve">
+    <value>Maximální počet snímků, který lze umístit do lentikulárního obrázku. V  ideálním případě je v lentikulárním obrázku vloženo právě tolik snímků,  přičemž některé se mohou opakovat. Je-li toto číslo například 18, je  vhodné při tvorbě 3-D obrázku vložit 18 pohledů na scénu. Při tvorbě  výměny dvou snímků je vhodné vložit první snímek 9krát, druhý rovněž  9krát. Je-li toto číslo výrazně odlišné od celého čísla (např. 14,6), není  určená tiskárna příliš vhodná pro zvolený lentikulární materiál.</value>
   </data>
   <data name="memoryError" xml:space="preserve">
     <value>Aplikace nemá k dispozici dostatek operační paměti.</value>
@@ -218,17 +224,56 @@ Pravděpodobnou příčinou je chybějící Visual C++ Redistributable</value>
   <data name="orderListView" xml:space="preserve">
     <value>Pořadí</value>
   </data>
+  <data name="outputImageHeightToolTip" xml:space="preserve">
+    <value>Výška výstupního obrázku. Finální výtisk může navíc obsahovat vodicí čáry  a být vyšší.
+(default 0)</value>
+  </data>
+  <data name="outputImageWidthToolTip" xml:space="preserve">
+    <value>Šířka výstupního obrázku. Finální výtisk může navíc obsahovat vodicí čáry  a být širší.
+(default 0)</value>
+  </data>
   <data name="pathListView" xml:space="preserve">
     <value>Cesta</value>
   </data>
   <data name="previewError" xml:space="preserve">
     <value>Náhled se nepodařilo vytvořit.</value>
   </data>
+  <data name="printParamAdjustmentFilterCubic" xml:space="preserve">
+    <value>Kubický (default)</value>
+  </data>
+  <data name="printParamAdjustmentFilterLanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="printParamAdjustmentFilterLinear" xml:space="preserve">
+    <value>Bilineární</value>
+  </data>
+  <data name="printParamAdjustmentFilterNearestNeighbor" xml:space="preserve">
+    <value>Nejbližší soused</value>
+  </data>
+  <data name="printParamAdjustmentToolTip" xml:space="preserve">
+    <value>Kubický (3D, animace, výměna) (default)
+Lanczos (3D, animace, výměna)
+Bilineární (3D, animace, výměna)
+Nejbližší soused (výměna)</value>
+  </data>
   <data name="removePicTooltip" xml:space="preserve">
     <value>Odebrat (Del)</value>
   </data>
   <data name="replaceTooltip" xml:space="preserve">
     <value>Nahradit obrázek za jiný (Ctrl + Q)</value>
+  </data>
+  <data name="resizeFilterCubic" xml:space="preserve">
+    <value>Kubický (nejlepší) 
+(default)</value>
+  </data>
+  <data name="resizeFilterLanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="resizeFilterLinear" xml:space="preserve">
+    <value>Lineární</value>
+  </data>
+  <data name="resizeFilterNearestNeighbor" xml:space="preserve">
+    <value>Nejbližší soused</value>
   </data>
   <data name="revertTooltip" xml:space="preserve">
     <value>Otočit list obrázků (Ctrl + R)</value>
@@ -241,6 +286,10 @@ Pravděpodobnou příčinou je chybějící Visual C++ Redistributable</value>
   </data>
   <data name="unitsInches" xml:space="preserve">
     <value>palce</value>
+  </data>
+  <data name="verticalLenticuleOrientation" xml:space="preserve">
+    <value>Lentikule jsou umístěny svisle, obrázek se tedy mění při změně pohledu  zleva doprava. Nutné pro 3D a velkoplošné lentikulární tisky, méně vhodné  pro výměnu a animaci.
+(default)</value>
   </data>
   <data name="wrongFormatError" xml:space="preserve">
     <value>Soubor {0} má chybný formát.</value>

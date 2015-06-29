@@ -51,6 +51,11 @@ namespace Interlacer
         private SettingsForm settingsForm;
 
         /// <summary>
+        /// Formulář pro ořezávání obrázků.
+        /// </summary>
+        private ClipForm clipForm;
+
+        /// <summary>
         /// poradi nasledujiciho obrazku v seznamu
         /// </summary>
         private int order = 1;
@@ -248,15 +253,17 @@ namespace Interlacer
                 interpol2ComboBox.Items.Add("");
             }
             /*nastaveni filtru do combo boxu s popisem v aktualne nastavenem jazyce*/
-            interpol1ComboBox.Items[0] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("filterNearestNeighbor"), FilterType.None);
-            interpol1ComboBox.Items[1] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("filterLinear"), FilterType.Triangle);
-            interpol1ComboBox.Items[2] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("filterCubic"), FilterType.Cubic);
-            interpol1ComboBox.Items[3] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("filterLanczos"), FilterType.Lanczos);
-            interpol2ComboBox.Items[0] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("filterNearestNeighbor"), FilterType.None);
-            interpol2ComboBox.Items[1] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("filterLinear"), FilterType.Triangle);
-            interpol2ComboBox.Items[2] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("filterCubic"), FilterType.Cubic);
-            interpol2ComboBox.Items[3] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("filterLanczos"), FilterType.Lanczos);
+            interpol1ComboBox.Items[0] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("resizeFilterNearestNeighbor"), FilterType.None);
+            interpol1ComboBox.Items[1] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("resizeFilterLinear"), FilterType.Triangle);
+            interpol1ComboBox.Items[2] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("resizeFilterCubic"), FilterType.Cubic);
+            interpol1ComboBox.Items[3] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("resizeFilterLanczos"), FilterType.Lanczos);
+
+            interpol2ComboBox.Items[0] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("printParamAdjustmentFilterNearestNeighbor"), FilterType.None);
+            interpol2ComboBox.Items[1] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("printParamAdjustmentFilterLinear"), FilterType.Triangle);
+            interpol2ComboBox.Items[2] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("printParamAdjustmentFilterCubic"), FilterType.Cubic);
+            interpol2ComboBox.Items[3] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("printParamAdjustmentFilterLanczos"), FilterType.Lanczos);
             /*nastaveni tool tipu v aktualne nastavenem jazyce*/
+            t.SetToolTip(printParamAdjustmentHelp, Localization.resourcesStrings.GetString("printParamAdjustmentToolTip"));
             t.SetToolTip(addPicButton, Localization.resourcesStrings.GetString("addPicTooltip"));
             t.SetToolTip(removePicButton, Localization.resourcesStrings.GetString("removePicTooltip"));
             t.SetToolTip(copyPicButton, Localization.resourcesStrings.GetString("copyPicTooltip"));
@@ -268,6 +275,15 @@ namespace Interlacer
             t.SetToolTip(replaceButton, Localization.resourcesStrings.GetString("replaceTooltip"));
             saveToolStripButton.Text = Localization.resourcesStrings.GetString("saveTooltip");
             loadToolStripButton.Text = Localization.resourcesStrings.GetString("loadTooltip");
+            t.SetToolTip(widthLabel, Localization.resourcesStrings.GetString("outputImageWidthToolTip"));
+            t.SetToolTip(heightLabel, Localization.resourcesStrings.GetString("outputImageHeightToolTip"));
+            t.SetToolTip(keepRatioCheckbox, Localization.resourcesStrings.GetString("keepAspectRatioToolTip"));
+            t.SetToolTip(picUnderLenLabel, Localization.resourcesStrings.GetString("maxImagesUnderLenticuleToolTip"));
+            t.SetToolTip(dpiLabel, Localization.resourcesStrings.GetString("dpiToolTip"));
+            t.SetToolTip(lpiLabel, Localization.resourcesStrings.GetString("lpiToolTip"));
+            t.SetToolTip(horizontalRadiobutton, Localization.resourcesStrings.GetString("horizontalLenticuleOrientation"));
+            t.SetToolTip(verticalRadiobutton, Localization.resourcesStrings.GetString("verticalLenticuleOrientation"));
+
             /*Nastaveni sloupcu listview*/
             pictureListViewEx.Columns[0].Text = Localization.resourcesStrings.GetString("orderListView");
             pictureListViewEx.Columns[1].Text = Localization.resourcesStrings.GetString("pathListView");
@@ -726,10 +742,21 @@ namespace Interlacer
         /// </summary>
         private void removePictures()
         {
-            for (int i = 0; i < pictureListViewEx.SelectedItems.Count; i++)
-            {
+            if (pictureListViewEx.Items.Count == 0)
+                return;
+
+            int itemCount = pictureListViewEx.SelectedItems.Count;
+            int firstItem = pictureListViewEx.SelectedItems[0].Index;
+
+            for (int i = 0; i < itemCount; i++)
                 pictureListViewEx.SelectedItems[0].Remove();
-            }
+
+
+            if (firstItem > pictureListViewEx.Items.Count - 1 && pictureListViewEx.Items.Count > 0)
+                pictureListViewEx.Items[pictureListViewEx.Items.Count - 1].Selected = true;
+            else if (pictureListViewEx.Items.Count > 0)
+                pictureListViewEx.Items[firstItem].Selected = true;
+
             setPreview();
             changeMaxLineThickness();
             updateAllComponents();
@@ -738,7 +765,7 @@ namespace Interlacer
         }
 
         /// <summary>
-        /// Označí všechny orbázky v listu.
+        /// Označí všechny obrázky v listu.
         /// </summary>
         private void selectAllPictures()
         {
@@ -748,6 +775,9 @@ namespace Interlacer
             }
         }
 
+        /// <summary>
+        /// Posune všechny obrázky o jedna dolů.
+        /// </summary>
         private void movePicturesDown()
         {
             var indeces = pictureListViewEx.SelectedIndices;
@@ -783,6 +813,9 @@ namespace Interlacer
             }
         }
 
+        /// <summary>
+        /// Posune vybrané obrázky o jedna nahoru.
+        /// </summary>
         private void movePicturesUp()
         {
             var indeces = pictureListViewEx.SelectedIndices;
@@ -824,6 +857,10 @@ namespace Interlacer
             }
         }
 
+        /// <summary>
+        /// Zkopíruje vybrané obrázky n-krát.
+        /// </summary>
+        /// <param name="copiesCount">počet kopií vybraných položek</param>
         private void copyPictures(int copiesCount)
         {
             var indeces = pictureListViewEx.SelectedIndices;  //vybrane radky
@@ -855,6 +892,10 @@ namespace Interlacer
             }
         }
 
+        /// <summary>
+        /// Metoda pro zjištění zda nejsou zaškrtlé vodící čáry ale šířka rámečku nula. Nebo naopak je nastavena šířka rámečku ale nejsou zaškrtlé vodící čáry.
+        /// </summary>
+        /// <returns></returns>
         private Boolean checkLineSettings()
         {
             if ((leftLineCheckBox.Checked || rightLineCheckBox.Checked || topLineCheckBox.Checked || bottomLineCheckBox.Checked) && frameWidthNumeric.Value == 0)
@@ -877,6 +918,10 @@ namespace Interlacer
             return true;
         }
 
+        /// <summary>
+        /// Při špatně vyplněních parametrech prokládání najde a přes dialog uživatelovi oznámí které parametry jsou špatně zadané
+        /// </summary>
+        /// <returns></returns>
         private String findFalseParameters()
         {
             String falseParams = Localization.resourcesStrings.GetString("falseParamsHeadline");
@@ -1148,6 +1193,12 @@ namespace Interlacer
             {
                 MessageBox.Show(exc.Message);
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            clipForm = new ClipForm();
+            clipForm.Show();
         }
 
     }

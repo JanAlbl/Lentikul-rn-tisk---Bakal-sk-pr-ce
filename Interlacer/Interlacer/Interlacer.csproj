@@ -102,6 +102,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClipForm.Designer.cs">
+      <DependentUpon>ClipForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Direction.cs" />
     <Compile Include="Localization.cs" />
     <Compile Include="GfxlibWrapper\FilterType.cs" />
@@ -150,6 +156,9 @@
     </Compile>
     <Compile Include="GfxlibWrapper\Units.cs" />
     <Compile Include="TreeNodeInherited.cs" />
+    <EmbeddedResource Include="ClipForm.resx">
+      <DependentUpon>ClipForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.cs-CZ.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
