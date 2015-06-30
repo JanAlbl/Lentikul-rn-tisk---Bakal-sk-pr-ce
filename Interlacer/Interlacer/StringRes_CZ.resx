@@ -118,7 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="addPicTooltip" xml:space="preserve">
-    <value>Přidat (+)</value>
+    <value>(+)
+Přidá snímek do lentikulárního obrázku</value>
+  </data>
+  <data name="aligmentWidthToolTip" xml:space="preserve">
+    <value>Šířka pasovacích pruhů. Obvykle několik milimetrů.
+(default 0)</value>
   </data>
   <data name="alignLinesWarningMessage" xml:space="preserve">
     <value>Jsou zaškrtlé některé pozice vodících čar, ale šířka rámečku je nula.
@@ -131,8 +136,17 @@ Chcete pokračovat?</value>
   <data name="alignLinesWarningMessageName" xml:space="preserve">
     <value>Varování</value>
   </data>
+  <data name="bottomLinesToolTip" xml:space="preserve">
+    <value>dolní
+(default OFF)</value>
+  </data>
+  <data name="centerAlignmentToolTip" xml:space="preserve">
+    <value>Čárky pasovacích pruhů leží uprostřed čočkek. Při pasování výtisku na  lentikulární materiál je barva pasovacího pruhu vidět při pohledu zpředu.  Ideální pro 3-D.
+(default)</value>
+  </data>
   <data name="clearAllTooltip" xml:space="preserve">
-    <value>Vymazat vše (Ctrl + E)</value>
+    <value>(Ctrl + E)
+Odstraní ze seznamu všechny snímky.</value>
   </data>
   <data name="clearListMessage" xml:space="preserve">
     <value>Jste si jistí?</value>
@@ -144,7 +158,8 @@ Chcete pokračovat?</value>
     <value>Konfigurační soubor {0} je pravděpodobně poškozen.</value>
   </data>
   <data name="copyPicTooltip" xml:space="preserve">
-    <value>Kopírovat (Ctrl + D)</value>
+    <value>(Ctrl + D)
+Zvolený snímek se duplikuje tolikrát, jaké je číslo v "Počtu kopií"</value>
   </data>
   <data name="doneMessage" xml:space="preserve">
     <value>Hotovo</value>
@@ -152,6 +167,9 @@ Chcete pokračovat?</value>
   <data name="dpiToolTip" xml:space="preserve">
     <value>Základní rozlišení tiskového stroje. Typické hodnoty jsou 600 DPI pro  tiskárny HP a Canon, 720 DPI pro tiskárny Epson.
 (default 0)</value>
+  </data>
+  <data name="edgeAlignmentToolTip" xml:space="preserve">
+    <value>Čárky pasovacích pruhů leží na hranici mezi čočkami. Při pasování výtisku  na lentikulární materiál je barva pasovacího pruhu vidět při pohledu ze  strany.</value>
   </data>
   <data name="emptyListError" xml:space="preserve">
     <value>Seznam obrázků je prázdný.</value>
@@ -195,9 +213,29 @@ Soubor pravděpodobně neexistuje.</value>
   <data name="langEnglish" xml:space="preserve">
     <value>Angličtina</value>
   </data>
+  <data name="leftLinesToolTip" xml:space="preserve">
+    <value>Levý
+(default OFF)</value>
+  </data>
   <data name="libraryLoadError" xml:space="preserve">
     <value>Chyba při načítání grafické knihovny.
 Pravděpodobnou příčinou je chybějící Visual C++ Redistributable</value>
+  </data>
+  <data name="lineBackgroundColorToolTip" xml:space="preserve">
+    <value>Barva prostoru mezi čárkami pasovacích pruhů. Typicky bílá.
+(default bílá)</value>
+  </data>
+  <data name="lineColorToolTip" xml:space="preserve">
+    <value>Barva čárek pasovacích pruhů. Typicky černá.
+(default černá)</value>
+  </data>
+  <data name="linesIndentToolTip" xml:space="preserve">
+    <value>Odsazení pruhů od obrázku. Obvykle nula až 5 milimetrů. Hodnota větší než  nula je vhodná při ořezávání finálního lentikulárního tisku.
+(default 0)</value>
+  </data>
+  <data name="lineWidthGroupBox" xml:space="preserve">
+    <value>Tloušťka čárek v pasovacích pruzích. Malé hodnoty jsou vhodné pro přesné  pasování, ale kladou vyšší nároky na tisk.
+(default 25 %)</value>
   </data>
   <data name="loadTooltip" xml:space="preserve">
     <value>Načíst projekt</value>
@@ -213,10 +251,12 @@ Pravděpodobnou příčinou je chybějící Visual C++ Redistributable</value>
     <value>Aplikace nemá k dispozici dostatek operační paměti.</value>
   </data>
   <data name="moveDownTooltip" xml:space="preserve">
-    <value>Posunout o jeden dolů (Ctrl + šipka dolů)</value>
+    <value>(Ctrl + šipka dolů)
+Posune zvolené snímky v seznamu dolů</value>
   </data>
   <data name="moveUpTooltip" xml:space="preserve">
-    <value>Posunout o jeden nahoru (Ctrl + šipka nahoru)</value>
+    <value>(Ctrl + šipka nahoru)
+Posune zvolené snímky v seznamu nahoru</value>
   </data>
   <data name="nameListView" xml:space="preserve">
     <value>Jméno</value>
@@ -257,10 +297,12 @@ Bilineární (3D, animace, výměna)
 Nejbližší soused (výměna)</value>
   </data>
   <data name="removePicTooltip" xml:space="preserve">
-    <value>Odebrat (Del)</value>
+    <value>(Del)
+Odebere zvolené snímky z lentikulárního obrázku</value>
   </data>
   <data name="replaceTooltip" xml:space="preserve">
-    <value>Nahradit obrázek za jiný (Ctrl + Q)</value>
+    <value>Ctrl + Q)
+Nahradí zvolený snímek jiným snímekem z disku</value>
   </data>
   <data name="resizeFilterCubic" xml:space="preserve">
     <value>Kubický (nejlepší) 
@@ -276,13 +318,23 @@ Nejbližší soused (výměna)</value>
     <value>Nejbližší soused</value>
   </data>
   <data name="revertTooltip" xml:space="preserve">
-    <value>Otočit list obrázků (Ctrl + R)</value>
+    <value>(Ctrl + R)
+Otočí seznam snímků. Užitečné zejména pro 3-D, protože snímky musí být v pořadí od nejlevějšího k nejpravějšímu</value>
+  </data>
+  <data name="rightLinesToolTip" xml:space="preserve">
+    <value>Pravý
+(default OFF)</value>
   </data>
   <data name="saveTooltip" xml:space="preserve">
     <value>Uložit projekt</value>
   </data>
   <data name="sortTooltip" xml:space="preserve">
-    <value>Seřadí obrázky podle koncového čísla (Ctrl + S)</value>
+    <value>(Ctrl + S)
+Seřadí seznam snímků. Užitečné zejména pro 3-D a animace, obsahují-li  jejich názvy pořadí. U 3-D nezapomeňte zkontrolovat, zda jsou snímky v  pořadí od nejlevějšího k nejpravějšímu; pokud ne, použijte tlačítko  "Otočit"</value>
+  </data>
+  <data name="topLinesToolTip" xml:space="preserve">
+    <value>Horní
+(default OFF)</value>
   </data>
   <data name="unitsInches" xml:space="preserve">
     <value>palce</value>

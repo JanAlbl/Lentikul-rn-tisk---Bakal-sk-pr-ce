@@ -122,7 +122,7 @@
             this.frameWidthNumeric = new System.Windows.Forms.NumericUpDown();
             this.indentLabel = new System.Windows.Forms.Label();
             this.frameWidthLabel = new System.Windows.Forms.Label();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.lineWidthGroupBox = new System.Windows.Forms.GroupBox();
             this.lineThicknessTrackbar = new System.Windows.Forms.TrackBar();
             this.linePictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -172,7 +172,7 @@
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.indentNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frameWidthNumeric)).BeginInit();
-            this.groupBox9.SuspendLayout();
+            this.lineWidthGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lineThicknessTrackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.linePictureBox)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -672,7 +672,7 @@
             this.tabPage3.Controls.Add(this.groupBox11);
             this.tabPage3.Controls.Add(this.groupBox8);
             this.tabPage3.Controls.Add(this.groupBox10);
-            this.tabPage3.Controls.Add(this.groupBox9);
+            this.tabPage3.Controls.Add(this.lineWidthGroupBox);
             this.tabPage3.Controls.Add(this.linePictureBox);
             resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
@@ -882,12 +882,12 @@
             resources.ApplyResources(this.frameWidthLabel, "frameWidthLabel");
             this.frameWidthLabel.Name = "frameWidthLabel";
             // 
-            // groupBox9
+            // lineWidthGroupBox
             // 
-            this.groupBox9.Controls.Add(this.lineThicknessTrackbar);
-            resources.ApplyResources(this.groupBox9, "groupBox9");
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.TabStop = false;
+            this.lineWidthGroupBox.Controls.Add(this.lineThicknessTrackbar);
+            resources.ApplyResources(this.lineWidthGroupBox, "lineWidthGroupBox");
+            this.lineWidthGroupBox.Name = "lineWidthGroupBox";
+            this.lineWidthGroupBox.TabStop = false;
             // 
             // lineThicknessTrackbar
             // 
@@ -1083,7 +1083,7 @@
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.indentNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frameWidthNumeric)).EndInit();
-            this.groupBox9.ResumeLayout(false);
+            this.lineWidthGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lineThicknessTrackbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.linePictureBox)).EndInit();
             this.groupBox7.ResumeLayout(false);
@@ -1152,7 +1152,7 @@
         private System.Windows.Forms.CheckBox rightLineCheckBox;
         private System.Windows.Forms.CheckBox bottomLineCheckBox;
         private System.Windows.Forms.CheckBox topLineCheckBox;
-        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.GroupBox lineWidthGroupBox;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Label indentLabel;
         private System.Windows.Forms.Label frameWidthLabel;

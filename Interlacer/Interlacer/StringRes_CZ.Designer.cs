@@ -61,11 +61,22 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Přidat (+).
+        ///   Looks up a localized string similar to (+)
+        ///Přidá snímek do lentikulárního obrázku.
         /// </summary>
         internal static string addPicTooltip {
             get {
                 return ResourceManager.GetString("addPicTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Šířka pasovacích pruhů. Obvykle několik milimetrů.
+        ///(default 0).
+        /// </summary>
+        internal static string aligmentWidthToolTip {
+            get {
+                return ResourceManager.GetString("aligmentWidthToolTip", resourceCulture);
             }
         }
         
@@ -99,7 +110,28 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vymazat vše (Ctrl + E).
+        ///   Looks up a localized string similar to dolní
+        ///(default OFF).
+        /// </summary>
+        internal static string bottomLinesToolTip {
+            get {
+                return ResourceManager.GetString("bottomLinesToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Čárky pasovacích pruhů leží uprostřed čočkek. Při pasování výtisku na  lentikulární materiál je barva pasovacího pruhu vidět při pohledu zpředu.  Ideální pro 3-D.
+        ///(default).
+        /// </summary>
+        internal static string centerAlignmentToolTip {
+            get {
+                return ResourceManager.GetString("centerAlignmentToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Ctrl + E)
+        ///Odstraní ze seznamu všechny snímky..
         /// </summary>
         internal static string clearAllTooltip {
             get {
@@ -135,7 +167,8 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kopírovat (Ctrl + D).
+        ///   Looks up a localized string similar to (Ctrl + D)
+        ///Zvolený snímek se duplikuje tolikrát, jaké je číslo v &quot;Počtu kopií&quot;.
         /// </summary>
         internal static string copyPicTooltip {
             get {
@@ -159,6 +192,15 @@ namespace Interlacer {
         internal static string dpiToolTip {
             get {
                 return ResourceManager.GetString("dpiToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Čárky pasovacích pruhů leží na hranici mezi čočkami. Při pasování výtisku  na lentikulární materiál je barva pasovacího pruhu vidět při pohledu ze  strany..
+        /// </summary>
+        internal static string edgeAlignmentToolTip {
+            get {
+                return ResourceManager.GetString("edgeAlignmentToolTip", resourceCulture);
             }
         }
         
@@ -283,12 +325,62 @@ namespace Interlacer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Levý
+        ///(default OFF).
+        /// </summary>
+        internal static string leftLinesToolTip {
+            get {
+                return ResourceManager.GetString("leftLinesToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chyba při načítání grafické knihovny.
         ///Pravděpodobnou příčinou je chybějící Visual C++ Redistributable.
         /// </summary>
         internal static string libraryLoadError {
             get {
                 return ResourceManager.GetString("libraryLoadError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Barva prostoru mezi čárkami pasovacích pruhů. Typicky bílá.
+        ///(default bílá).
+        /// </summary>
+        internal static string lineBackgroundColorToolTip {
+            get {
+                return ResourceManager.GetString("lineBackgroundColorToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Barva čárek pasovacích pruhů. Typicky černá.
+        ///(default černá).
+        /// </summary>
+        internal static string lineColorToolTip {
+            get {
+                return ResourceManager.GetString("lineColorToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Odsazení pruhů od obrázku. Obvykle nula až 5 milimetrů. Hodnota větší než  nula je vhodná při ořezávání finálního lentikulárního tisku.
+        ///(default 0).
+        /// </summary>
+        internal static string linesIndentToolTip {
+            get {
+                return ResourceManager.GetString("linesIndentToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tloušťka čárek v pasovacích pruzích. Malé hodnoty jsou vhodné pro přesné  pasování, ale kladou vyšší nároky na tisk.
+        ///(default 25 %).
+        /// </summary>
+        internal static string lineWidthGroupBox {
+            get {
+                return ResourceManager.GetString("lineWidthGroupBox", resourceCulture);
             }
         }
         
@@ -330,7 +422,8 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Posunout o jeden dolů (Ctrl + šipka dolů).
+        ///   Looks up a localized string similar to (Ctrl + šipka dolů)
+        ///Posune zvolené snímky v seznamu dolů.
         /// </summary>
         internal static string moveDownTooltip {
             get {
@@ -339,7 +432,8 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Posunout o jeden nahoru (Ctrl + šipka nahoru).
+        ///   Looks up a localized string similar to (Ctrl + šipka nahoru)
+        ///Posune zvolené snímky v seznamu nahoru.
         /// </summary>
         internal static string moveUpTooltip {
             get {
@@ -452,7 +546,8 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Odebrat (Del).
+        ///   Looks up a localized string similar to (Del)
+        ///Odebere zvolené snímky z lentikulárního obrázku.
         /// </summary>
         internal static string removePicTooltip {
             get {
@@ -461,7 +556,8 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nahradit obrázek za jiný (Ctrl + Q).
+        ///   Looks up a localized string similar to Ctrl + Q)
+        ///Nahradí zvolený snímek jiným snímekem z disku.
         /// </summary>
         internal static string replaceTooltip {
             get {
@@ -507,11 +603,22 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Otočit list obrázků (Ctrl + R).
+        ///   Looks up a localized string similar to (Ctrl + R)
+        ///Otočí seznam snímků. Užitečné zejména pro 3-D, protože snímky musí být v pořadí od nejlevějšího k nejpravějšímu.
         /// </summary>
         internal static string revertTooltip {
             get {
                 return ResourceManager.GetString("revertTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pravý
+        ///(default OFF).
+        /// </summary>
+        internal static string rightLinesToolTip {
+            get {
+                return ResourceManager.GetString("rightLinesToolTip", resourceCulture);
             }
         }
         
@@ -525,11 +632,22 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Seřadí obrázky podle koncového čísla (Ctrl + S).
+        ///   Looks up a localized string similar to (Ctrl + S)
+        ///Seřadí seznam snímků. Užitečné zejména pro 3-D a animace, obsahují-li  jejich názvy pořadí. U 3-D nezapomeňte zkontrolovat, zda jsou snímky v  pořadí od nejlevějšího k nejpravějšímu; pokud ne, použijte tlačítko  &quot;Otočit&quot;.
         /// </summary>
         internal static string sortTooltip {
             get {
                 return ResourceManager.GetString("sortTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Horní
+        ///(default OFF).
+        /// </summary>
+        internal static string topLinesToolTip {
+            get {
+                return ResourceManager.GetString("topLinesToolTip", resourceCulture);
             }
         }
         

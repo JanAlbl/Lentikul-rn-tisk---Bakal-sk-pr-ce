@@ -284,6 +284,17 @@ namespace Interlacer
             t.SetToolTip(horizontalRadiobutton, Localization.resourcesStrings.GetString("horizontalLenticuleOrientation"));
             t.SetToolTip(verticalRadiobutton, Localization.resourcesStrings.GetString("verticalLenticuleOrientation"));
 
+            t.SetToolTip(frameWidthLabel, Localization.resourcesStrings.GetString("aligmentWidthToolTip"));
+            t.SetToolTip(indentLabel, Localization.resourcesStrings.GetString("linesIndentToolTip"));
+            t.SetToolTip(topLineLabel, Localization.resourcesStrings.GetString("topLinesToolTip"));
+            t.SetToolTip(leftLinelabel, Localization.resourcesStrings.GetString("leftLinesToolTip"));
+            t.SetToolTip(rightLineLabel, Localization.resourcesStrings.GetString("rightLinesToolTip"));
+            t.SetToolTip(bottomLineLabel, Localization.resourcesStrings.GetString("bottomLinesToolTip"));
+            t.SetToolTip(centerRadioButton, Localization.resourcesStrings.GetString("centerAlignmentToolTip"));
+            t.SetToolTip(edgeRadioButton, Localization.resourcesStrings.GetString("edgeAlignmentToolTip"));
+            t.SetToolTip(lineColorLabel, Localization.resourcesStrings.GetString("lineColorToolTip"));
+            t.SetToolTip(lineBackgroundColorLabel, Localization.resourcesStrings.GetString("lineBackgroundColorToolTip"));
+            t.SetToolTip(lineWidthGroupBox, Localization.resourcesStrings.GetString("lineWidthGroupBox"));
             /*Nastaveni sloupcu listview*/
             pictureListViewEx.Columns[0].Text = Localization.resourcesStrings.GetString("orderListView");
             pictureListViewEx.Columns[1].Text = Localization.resourcesStrings.GetString("pathListView");

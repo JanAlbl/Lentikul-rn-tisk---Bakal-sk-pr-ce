@@ -61,11 +61,22 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add (+).
+        ///   Looks up a localized string similar to (+)
+        ///Adds picture into lenticule image.
         /// </summary>
         internal static string addPicTooltip {
             get {
                 return ResourceManager.GetString("addPicTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Width of alignment lines. Usually few milimeters.
+        ///(default 0).
+        /// </summary>
+        internal static string aligmentWidthToolTip {
+            get {
+                return ResourceManager.GetString("aligmentWidthToolTip", resourceCulture);
             }
         }
         
@@ -99,7 +110,28 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clear all (Ctrl + E).
+        ///   Looks up a localized string similar to Bottom
+        ///(default OFF).
+        /// </summary>
+        internal static string bottomLinesToolTip {
+            get {
+                return ResourceManager.GetString("bottomLinesToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alignment lines are in the middle of lenticules. When positioning final image on lenticule material, alignment line´s color is seen from the front. Ideal for 3-D.
+        ///(default).
+        /// </summary>
+        internal static string centerAlignmentToolTip {
+            get {
+                return ResourceManager.GetString("centerAlignmentToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Ctrl + E)
+        ///Removes all pictures from list..
         /// </summary>
         internal static string clearAllTooltip {
             get {
@@ -135,7 +167,8 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy (Ctrl + D).
+        ///   Looks up a localized string similar to (Ctrl + D)
+        ///Chosen pictures are duplicated X times, depends on the number in &quot;Number of copies&quot;.
         /// </summary>
         internal static string copyPicTooltip {
             get {
@@ -159,6 +192,15 @@ namespace Interlacer {
         internal static string dpiToolTip {
             get {
                 return ResourceManager.GetString("dpiToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alignment lines are on the edge between lenticules. When positioning final image on lenticule material, alignment line´s color is seen from the side..
+        /// </summary>
+        internal static string edgeAlignmentToolTip {
+            get {
+                return ResourceManager.GetString("edgeAlignmentToolTip", resourceCulture);
             }
         }
         
@@ -281,12 +323,62 @@ namespace Interlacer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Left
+        ///(default OFF).
+        /// </summary>
+        internal static string leftLinesToolTip {
+            get {
+                return ResourceManager.GetString("leftLinesToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error loading graphics library.
         ///Make sure Visual C++ Redistributable is installed..
         /// </summary>
         internal static string libraryLoadError {
             get {
                 return ResourceManager.GetString("libraryLoadError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color of space between alignment lines. Typically white.
+        ///(default white).
+        /// </summary>
+        internal static string lineBackgroundColorToolTip {
+            get {
+                return ResourceManager.GetString("lineBackgroundColorToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color of alignment lines. Typically black.
+        ///(default black).
+        /// </summary>
+        internal static string lineColorToolTip {
+            get {
+                return ResourceManager.GetString("lineColorToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Odsazení pruhů od obrázku. Usually from zero to five milimeters. Value greater than zero is suitable when clipping final lenticule image.
+        ///(default 0).
+        /// </summary>
+        internal static string linesIndentToolTip {
+            get {
+                return ResourceManager.GetString("linesIndentToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thickness of alignment lines. Small values are suitable for precise positioning of lenticule material, but put higher demands on print.
+        ///(default 25 %).
+        /// </summary>
+        internal static string lineWidthGroupBox {
+            get {
+                return ResourceManager.GetString("lineWidthGroupBox", resourceCulture);
             }
         }
         
@@ -327,7 +419,8 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Move down (Ctrl + down arrow).
+        ///   Looks up a localized string similar to (Ctrl + down arrow)
+        ///Moves chosen pictures down in list..
         /// </summary>
         internal static string moveDownTooltip {
             get {
@@ -336,7 +429,8 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Move up (Ctrl + up arrow).
+        ///   Looks up a localized string similar to (Ctrl + up arrow)
+        ///Moves chosen pictures up in list..
         /// </summary>
         internal static string moveUpTooltip {
             get {
@@ -449,7 +543,8 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove (Del).
+        ///   Looks up a localized string similar to (Del)
+        ///Removes chosen pictures from lenticule image..
         /// </summary>
         internal static string removePicTooltip {
             get {
@@ -458,7 +553,8 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Replace image (Ctrl + Q).
+        ///   Looks up a localized string similar to (Ctrl + Q)
+        ///Replaces chosen picture with another picture from hard disk..
         /// </summary>
         internal static string replaceTooltip {
             get {
@@ -504,11 +600,22 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reverse list (Ctrl + R).
+        ///   Looks up a localized string similar to (Ctrl + R)
+        ///Reverses list of pictures. Usefull especially for 3-D, because pictures must be in order from most left picture to most right picture..
         /// </summary>
         internal static string revertTooltip {
             get {
                 return ResourceManager.GetString("revertTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right
+        ///(default OFF).
+        /// </summary>
+        internal static string rightLinesToolTip {
+            get {
+                return ResourceManager.GetString("rightLinesToolTip", resourceCulture);
             }
         }
         
@@ -522,11 +629,21 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sort images by their ending number (Ctrl + S).
+        ///   Looks up a localized string similar to Sort images by their ending number (Ctrl + S) Sorts list of pictures. Usefull especially for 3-D and animation, if pictures names contain order. Don´t forget to chech when wokring with 3-D if pictures are in order from most left to most right picture. If not, use button &quot;Reverse&quot;..
         /// </summary>
         internal static string sortTooltip {
             get {
                 return ResourceManager.GetString("sortTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top
+        ///(default OFF).
+        /// </summary>
+        internal static string topLinesToolTip {
+            get {
+                return ResourceManager.GetString("topLinesToolTip", resourceCulture);
             }
         }
         

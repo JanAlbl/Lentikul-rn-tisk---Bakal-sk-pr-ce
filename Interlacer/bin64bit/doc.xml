@@ -1999,9 +1999,16 @@
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.addPicTooltip">
-            <summary>
-              Looks up a localized string similar to Přidat (+).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (+)
+            Přidá snímek do lentikulárního obrázku.
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.aligmentWidthToolTip">
+             <summary>
+               Looks up a localized string similar to Šířka pasovacích pruhů. Obvykle několik milimetrů.
+            (default 0).
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.alignLinesWarningMessage">
              <summary>
@@ -2020,10 +2027,23 @@
               Looks up a localized string similar to Varování.
             </summary>
         </member>
+        <member name="P:Interlacer.StringRes_CZ.bottomLinesToolTip">
+             <summary>
+               Looks up a localized string similar to dolní
+            (default OFF).
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.centerAlignmentToolTip">
+             <summary>
+               Looks up a localized string similar to Čárky pasovacích pruhů leží uprostřed čočkek. Při pasování výtisku na  lentikulární materiál je barva pasovacího pruhu vidět při pohledu zpředu.  Ideální pro 3-D.
+            (default).
+             </summary>
+        </member>
         <member name="P:Interlacer.StringRes_CZ.clearAllTooltip">
-            <summary>
-              Looks up a localized string similar to Vymazat vše (Ctrl + E).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (Ctrl + E)
+            Odstraní ze seznamu všechny snímky..
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.clearListMessage">
             <summary>
@@ -2041,9 +2061,10 @@
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.copyPicTooltip">
-            <summary>
-              Looks up a localized string similar to Kopírovat (Ctrl + D).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (Ctrl + D)
+            Zvolený snímek se duplikuje tolikrát, jaké je číslo v &quot;Počtu kopií&quot;.
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.doneMessage">
             <summary>
@@ -2055,6 +2076,11 @@
                Looks up a localized string similar to Základní rozlišení tiskového stroje. Typické hodnoty jsou 600 DPI pro  tiskárny HP a Canon, 720 DPI pro tiskárny Epson.
             (default 0).
              </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.edgeAlignmentToolTip">
+            <summary>
+              Looks up a localized string similar to Čárky pasovacích pruhů leží na hranici mezi čočkami. Při pasování výtisku  na lentikulární materiál je barva pasovacího pruhu vidět při pohledu ze  strany..
+            </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.emptyListError">
             <summary>
@@ -2124,10 +2150,40 @@
               Looks up a localized string similar to Angličtina.
             </summary>
         </member>
+        <member name="P:Interlacer.StringRes_CZ.leftLinesToolTip">
+             <summary>
+               Looks up a localized string similar to Levý
+            (default OFF).
+             </summary>
+        </member>
         <member name="P:Interlacer.StringRes_CZ.libraryLoadError">
              <summary>
                Looks up a localized string similar to Chyba při načítání grafické knihovny.
             Pravděpodobnou příčinou je chybějící Visual C++ Redistributable.
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.lineBackgroundColorToolTip">
+             <summary>
+               Looks up a localized string similar to Barva prostoru mezi čárkami pasovacích pruhů. Typicky bílá.
+            (default bílá).
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.lineColorToolTip">
+             <summary>
+               Looks up a localized string similar to Barva čárek pasovacích pruhů. Typicky černá.
+            (default černá).
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.linesIndentToolTip">
+             <summary>
+               Looks up a localized string similar to Odsazení pruhů od obrázku. Obvykle nula až 5 milimetrů. Hodnota větší než  nula je vhodná při ořezávání finálního lentikulárního tisku.
+            (default 0).
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.lineWidthGroupBox">
+             <summary>
+               Looks up a localized string similar to Tloušťka čárek v pasovacích pruzích. Malé hodnoty jsou vhodné pro přesné  pasování, ale kladou vyšší nároky na tisk.
+            (default 25 %).
              </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.loadTooltip">
@@ -2152,14 +2208,16 @@
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.moveDownTooltip">
-            <summary>
-              Looks up a localized string similar to Posunout o jeden dolů (Ctrl + šipka dolů).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (Ctrl + šipka dolů)
+            Posune zvolené snímky v seznamu dolů.
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.moveUpTooltip">
-            <summary>
-              Looks up a localized string similar to Posunout o jeden nahoru (Ctrl + šipka nahoru).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (Ctrl + šipka nahoru)
+            Posune zvolené snímky v seznamu nahoru.
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.nameListView">
             <summary>
@@ -2222,14 +2280,16 @@
              </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.removePicTooltip">
-            <summary>
-              Looks up a localized string similar to Odebrat (Del).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (Del)
+            Odebere zvolené snímky z lentikulárního obrázku.
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.replaceTooltip">
-            <summary>
-              Looks up a localized string similar to Nahradit obrázek za jiný (Ctrl + Q).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Ctrl + Q)
+            Nahradí zvolený snímek jiným snímekem z disku.
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.resizeFilterCubic">
              <summary>
@@ -2253,9 +2313,16 @@
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.revertTooltip">
-            <summary>
-              Looks up a localized string similar to Otočit list obrázků (Ctrl + R).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (Ctrl + R)
+            Otočí seznam snímků. Užitečné zejména pro 3-D, protože snímky musí být v pořadí od nejlevějšího k nejpravějšímu.
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.rightLinesToolTip">
+             <summary>
+               Looks up a localized string similar to Pravý
+            (default OFF).
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.saveTooltip">
             <summary>
@@ -2263,9 +2330,16 @@
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.sortTooltip">
-            <summary>
-              Looks up a localized string similar to Seřadí obrázky podle koncového čísla (Ctrl + S).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (Ctrl + S)
+            Seřadí seznam snímků. Užitečné zejména pro 3-D a animace, obsahují-li  jejich názvy pořadí. U 3-D nezapomeňte zkontrolovat, zda jsou snímky v  pořadí od nejlevějšího k nejpravějšímu; pokud ne, použijte tlačítko  &quot;Otočit&quot;.
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.topLinesToolTip">
+             <summary>
+               Looks up a localized string similar to Horní
+            (default OFF).
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.unitsInches">
             <summary>
@@ -2300,9 +2374,16 @@
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.addPicTooltip">
-            <summary>
-              Looks up a localized string similar to Add (+).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (+)
+            Adds picture into lenticule image.
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.aligmentWidthToolTip">
+             <summary>
+               Looks up a localized string similar to Width of alignment lines. Usually few milimeters.
+            (default 0).
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.alignLinesWarningMessage">
              <summary>
@@ -2321,10 +2402,23 @@
               Looks up a localized string similar to Warning.
             </summary>
         </member>
+        <member name="P:Interlacer.StringRes_EN.bottomLinesToolTip">
+             <summary>
+               Looks up a localized string similar to Bottom
+            (default OFF).
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.centerAlignmentToolTip">
+             <summary>
+               Looks up a localized string similar to Alignment lines are in the middle of lenticules. When positioning final image on lenticule material, alignment line´s color is seen from the front. Ideal for 3-D.
+            (default).
+             </summary>
+        </member>
         <member name="P:Interlacer.StringRes_EN.clearAllTooltip">
-            <summary>
-              Looks up a localized string similar to Clear all (Ctrl + E).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (Ctrl + E)
+            Removes all pictures from list..
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.clearListMessage">
             <summary>
@@ -2342,9 +2436,10 @@
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.copyPicTooltip">
-            <summary>
-              Looks up a localized string similar to Copy (Ctrl + D).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (Ctrl + D)
+            Chosen pictures are duplicated X times, depends on the number in &quot;Number of copies&quot;.
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.doneMessage">
             <summary>
@@ -2356,6 +2451,11 @@
                Looks up a localized string similar to Basic resolution of printing machine. Typical values are 600 DPI for HP and Canon printers, 720 DPI for Epson printers.
             (default 0).
              </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.edgeAlignmentToolTip">
+            <summary>
+              Looks up a localized string similar to Alignment lines are on the edge between lenticules. When positioning final image on lenticule material, alignment line´s color is seen from the side..
+            </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.emptyListError">
             <summary>
@@ -2423,10 +2523,40 @@
               Looks up a localized string similar to English.
             </summary>
         </member>
+        <member name="P:Interlacer.StringRes_EN.leftLinesToolTip">
+             <summary>
+               Looks up a localized string similar to Left
+            (default OFF).
+             </summary>
+        </member>
         <member name="P:Interlacer.StringRes_EN.libraryLoadError">
              <summary>
                Looks up a localized string similar to Error loading graphics library.
             Make sure Visual C++ Redistributable is installed..
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.lineBackgroundColorToolTip">
+             <summary>
+               Looks up a localized string similar to Color of space between alignment lines. Typically white.
+            (default white).
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.lineColorToolTip">
+             <summary>
+               Looks up a localized string similar to Color of alignment lines. Typically black.
+            (default black).
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.linesIndentToolTip">
+             <summary>
+               Looks up a localized string similar to Odsazení pruhů od obrázku. Usually from zero to five milimeters. Value greater than zero is suitable when clipping final lenticule image.
+            (default 0).
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.lineWidthGroupBox">
+             <summary>
+               Looks up a localized string similar to Thickness of alignment lines. Small values are suitable for precise positioning of lenticule material, but put higher demands on print.
+            (default 25 %).
              </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.loadTooltip">
@@ -2450,14 +2580,16 @@
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.moveDownTooltip">
-            <summary>
-              Looks up a localized string similar to Move down (Ctrl + down arrow).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (Ctrl + down arrow)
+            Moves chosen pictures down in list..
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.moveUpTooltip">
-            <summary>
-              Looks up a localized string similar to Move up (Ctrl + up arrow).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (Ctrl + up arrow)
+            Moves chosen pictures up in list..
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.nameListView">
             <summary>
@@ -2520,14 +2652,16 @@
              </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.removePicTooltip">
-            <summary>
-              Looks up a localized string similar to Remove (Del).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (Del)
+            Removes chosen pictures from lenticule image..
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.replaceTooltip">
-            <summary>
-              Looks up a localized string similar to Replace image (Ctrl + Q).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (Ctrl + Q)
+            Replaces chosen picture with another picture from hard disk..
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.resizeFilterCubic">
              <summary>
@@ -2551,9 +2685,16 @@
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.revertTooltip">
-            <summary>
-              Looks up a localized string similar to Reverse list (Ctrl + R).
-            </summary>
+             <summary>
+               Looks up a localized string similar to (Ctrl + R)
+            Reverses list of pictures. Usefull especially for 3-D, because pictures must be in order from most left picture to most right picture..
+             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.rightLinesToolTip">
+             <summary>
+               Looks up a localized string similar to Right
+            (default OFF).
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.saveTooltip">
             <summary>
@@ -2562,8 +2703,14 @@
         </member>
         <member name="P:Interlacer.StringRes_EN.sortTooltip">
             <summary>
-              Looks up a localized string similar to Sort images by their ending number (Ctrl + S).
+              Looks up a localized string similar to Sort images by their ending number (Ctrl + S) Sorts list of pictures. Usefull especially for 3-D and animation, if pictures names contain order. Don´t forget to chech when wokring with 3-D if pictures are in order from most left to most right picture. If not, use button &quot;Reverse&quot;..
             </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.topLinesToolTip">
+             <summary>
+               Looks up a localized string similar to Top
+            (default OFF).
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.unitsInches">
             <summary>
