@@ -53,6 +53,7 @@
             this.poradi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cesta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nazev = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imageFound = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.copyCountLabel = new System.Windows.Forms.Label();
             this.copyCountNumeric = new System.Windows.Forms.NumericUpDown();
             this.replaceButton = new System.Windows.Forms.Button();
@@ -149,6 +150,8 @@
             this.openConfigDialog = new System.Windows.Forms.OpenFileDialog();
             this.wholeDriveTree = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.expandCollapseTimer = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.outputImageTab.SuspendLayout();
@@ -307,6 +310,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.pictureListViewEx);
             this.tabPage1.Controls.Add(this.copyCountLabel);
             this.tabPage1.Controls.Add(this.copyCountNumeric);
@@ -331,16 +335,21 @@
             // 
             // pictureListViewEx
             // 
+            this.pictureListViewEx.AllowDrop = true;
             this.pictureListViewEx.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.poradi,
             this.cesta,
-            this.nazev});
+            this.nazev,
+            this.imageFound});
+            this.pictureListViewEx.FullRowSelect = true;
+            this.pictureListViewEx.GridLines = true;
             resources.ApplyResources(this.pictureListViewEx, "pictureListViewEx");
             this.pictureListViewEx.Name = "pictureListViewEx";
             this.pictureListViewEx.UseCompatibleStateImageBehavior = false;
             this.pictureListViewEx.View = System.Windows.Forms.View.Details;
             this.pictureListViewEx.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.pictureListViewEx_ItemDrag);
             this.pictureListViewEx.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.pictureListViewEx_ItemSelectionChanged);
+            this.pictureListViewEx.Click += new System.EventHandler(this.pictureListViewEx_Click_1);
             this.pictureListViewEx.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureListViewEx_DragDrop);
             this.pictureListViewEx.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureListViewEx_DragEnter);
             this.pictureListViewEx.DragOver += new System.Windows.Forms.DragEventHandler(this.pictureListViewEx_DragOver);
@@ -358,6 +367,10 @@
             // nazev
             // 
             resources.ApplyResources(this.nazev, "nazev");
+            // 
+            // imageFound
+            // 
+            resources.ApplyResources(this.imageFound, "imageFound");
             // 
             // copyCountLabel
             // 
@@ -1028,6 +1041,18 @@
             this.imageList1.Images.SetKeyName(5, "TIF.png");
             this.imageList1.Images.SetKeyName(6, "image.png");
             // 
+            // expandCollapseTimer
+            // 
+            this.expandCollapseTimer.Interval = 10;
+            this.expandCollapseTimer.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -1216,6 +1241,9 @@
         private System.Windows.Forms.ColumnHeader nazev;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.Label printParamAdjustmentHelp;
+        private System.Windows.Forms.ColumnHeader imageFound;
+        private System.Windows.Forms.Timer expandCollapseTimer;
+        private System.Windows.Forms.Button button1;
 
     }
 }

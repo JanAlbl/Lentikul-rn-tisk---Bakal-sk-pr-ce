@@ -97,9 +97,6 @@ namespace Interlacer
             }
             InitializeComponent();
 
-            pictureListViewEx.FullRowSelect = true;
-            pictureListViewEx.MultiSelect = true;
-            pictureListViewEx.AllowDrop = true;
             wholeDriveTree.AllowDrop = true;
             /*nastaveni defaultnich hodnot*/
             projectData.GetInterlacingData().KeepAspectRatio(keepRatioCheckbox.Checked);
@@ -125,7 +122,6 @@ namespace Interlacer
             drawLineThickness();
 
             mapDriversToTree();
-            
         }
 
         /// <summary>
@@ -436,6 +432,9 @@ namespace Interlacer
         /// </summary>
         private void reorder()
         {
+            if (!isExpanded)
+                return;
+
             order = 1;
 
             for (int i = 0; i < pictureListViewEx.Items.Count; i++)
@@ -882,7 +881,8 @@ namespace Interlacer
                 {
                     for (int j = 0; j < copiesCount; j++)
                     {
-                        ListViewItem item = pictureListViewEx.Items.Insert(indeces[i] + 1, Convert.ToString(order)); //vlozeni noveho radku do listView a prirazeno tohoto radku do promenne item
+                        ListViewItem item = pictureListViewEx.Items.Insert(indeces[i] + 1, 
+                            pictureListViewEx.Items[indeces[i]].SubItems[orderSubItemIndex].Text);  //Convert.ToString(order)); vlozeni noveho radku do listView a prirazeno tohoto radku do promenne item
                         for (int k = 1; k < pictureListViewEx.Items[0].SubItems.Count; k++)  //pruchod jednotlivych prvku radku (sloupecku)
                         {
                             ListViewItem.ListViewSubItem subItem = item.SubItems.Add(new ListViewItem.ListViewSubItem());  //pridani novehu subItemu (pro kazdy sloupec) a prirazeni do promenne subItem
@@ -1084,7 +1084,7 @@ namespace Interlacer
                         selectedIndex = Convert.ToInt32(indeces[0]) + 1;
                     }
                     int numOfPics = chosenPictures.Count();
-                    ListViewItem item = new ListViewItem(new[] { Convert.ToString(order), chosenPictures[i], getPicName(chosenPictures[i]), "" });
+                    ListViewItem item = new ListViewItem(new[] { Convert.ToString(chosenPictures.Length), chosenPictures[i], getPicName(chosenPictures[i]), "" });
                     pictureListViewEx.Items.Insert(selectedIndex, item);
                     reorder();
                     pictureListViewEx.Focus();
@@ -1210,6 +1210,101 @@ namespace Interlacer
         {
             clipForm = new ClipForm();
             clipForm.Show();
+        }
+
+        int _rowIndex;
+        private void pictureListViewEx_Click_1(object sender, EventArgs e)
+        {
+
+
+
+            /*Point mousePosition = pictureListViewEx.PointToClient(Control.MousePosition);
+            ListViewHitTestInfo hit = pictureListViewEx.HitTest(mousePosition);
+            int columnindex = hit.Item.SubItems.IndexOf(hit.SubItem);
+
+            if (columnindex != 0)
+                return;
+
+            _rowIndex = hit.Item.Index;
+            expandCollapseTimer.Start();*/
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            pictureListViewEx.Items[_rowIndex].Selected = false;
+            expandCollapseTimer.Stop();
+        }
+
+        private int orderSubItemIndex = 0;
+        private int pathSubItemIndex = 1;
+        private int picNameSubItemIndex = 2;
+        private int imageFoundSubItemIndex = 3;
+        private Boolean isExpanded = true;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int itemCount = pictureListViewEx.Items.Count;
+
+            if (isExpanded)
+                collapseList(itemCount);
+            else
+                expandList(itemCount);
+        }
+
+        private void expandList(int itemCount)
+        {
+            int expandedItems = 0;
+            int index = 0;
+
+            while (expandedItems < itemCount)
+            {
+                for (int i = 1; i < Convert.ToInt32(pictureListViewEx.Items[index].SubItems[orderSubItemIndex].Text); i++)
+                {
+                    ListViewItem newItem = pictureListViewEx.Items[index].Clone() as ListViewItem;
+                    pictureListViewEx.Items.Insert(index, newItem);
+                    index += 1;
+                }
+
+                index += 1;
+                expandedItems += 1;
+            }
+
+            isExpanded = true;
+            reorder();
+        }
+
+        private void collapseList(int itemCount)
+        {
+            // vynulování pořadí
+            for (int i = 0; i < itemCount; i++)
+                pictureListViewEx.Items[i].SubItems[orderSubItemIndex].Text = Convert.ToString(1);
+
+            int removedCount = 0;
+
+            int iteratedItems = 1;
+            int index = 1;
+            while (iteratedItems < itemCount)
+            {
+                if (pictureListViewEx.Items[index - 1].SubItems[pathSubItemIndex].Text.Equals
+                    (pictureListViewEx.Items[index].SubItems[pathSubItemIndex].Text))
+                {
+                    pictureListViewEx.Items[index].Remove();
+                    removedCount += 1;
+                    try
+                    {
+                        pictureListViewEx.Items[index - 1].SubItems[orderSubItemIndex].Text =
+                        Convert.ToString(Convert.ToInt32(pictureListViewEx.Items[index - 1].SubItems[orderSubItemIndex].Text) + 1);
+                    } catch (FormatException exception) { }
+                }
+                else
+                {
+                    index += 1;
+                    removedCount = 0;
+                }
+
+                iteratedItems += 1;
+            }
+
+            isExpanded = false;
         }
 
     }
