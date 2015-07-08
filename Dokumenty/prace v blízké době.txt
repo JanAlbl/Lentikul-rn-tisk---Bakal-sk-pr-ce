@@ -1,0 +1,42 @@
+1) pøidání jednotek (cm, palce, mm) finální velikost s pasovacími èárami
+2) + (zmìòte barvu na šedou nebo modrou)
+3) - (zmìòte barvu na šedou nebo modrou)
+4) Nahradit (zmìòte ikonku!)
+5) Øazení (zkuste do ikonky pøidat pod sebe 01 a 99, podobnì jako má øadicí  ikonka v Excelu pod sebou písmena A, Z)
+6) Vymazat vše(zmìòte barvu na èervenou)
+7) Zkrátit dlouhé øádky u tooltip (enter)
+8) Tlouška èárek v pasovacích pruzích. Malé hodnoty jsou vhodné pro pøesné  pasování, ale kladou vyšší nároky na tisk. (default 25 %)
+9) napsat lobazovi e serem na Mpixel a e se sejdem 16.7 v 10h
+10) zkopírovat tohle: 
+
+
+
+ private void tryLoadPictures(String configPath)
+        {
+            for (int i = 0; i < pictureListViewEx.Items.Count; i++)
+            {
+                Picture pic = new Picture(pictureListViewEx.Items[i].SubItems[1].Text);
+                try
+                {
+                    pic.Ping();  //pokus o nacteni
+                }
+                catch  //pokud soubor nelze nacist
+                {
+                    String parsePath = configPath.Replace(getPicName(configPath), getPicName(pictureListViewEx.Items[i].SubItems[1].Text));
+                    pic = new Picture(parsePath);
+                    try
+                    {
+                        pic.Ping();
+                        pictureListViewEx.Items[i].SubItems[1].Text = parsePath.Replace("\\\\", "\\");
+                    }
+                    catch
+                    {
+                        pictureListViewEx.Items[i].SubItems[3].Text = "X";
+                    }    
+                }
+            }
+        }
+
+private void setPictureViewFromList(List<String> pathPics, String configPath)
+
+loadConfigurationFile(
