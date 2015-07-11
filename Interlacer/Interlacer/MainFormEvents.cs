@@ -87,24 +87,9 @@ namespace Interlacer
         /// <param name="e"></param>
         private void pictureListViewEx_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            /*Point mousePosition = pictureListViewEx.PointToClient(Control.MousePosition);
-            ListViewHitTestInfo hit = pictureListViewEx.HitTest(mousePosition);
-            if (hit.Item == null || hit.SubItem == null)
-            {
-                return;
-            }
-
-            int columnindex = hit.Item.SubItems.IndexOf(hit.SubItem);
-            if (columnindex == 0)
-            {
-                int rowIndex = hit.Item.Index;
-                pictureListViewEx.Items[rowIndex].Selected = false;
-                return;
-            }*/   
 
             if (imagePreviewCheckBox.Checked)
                 setPreview();
-
             setPictureInfo();
         }
 

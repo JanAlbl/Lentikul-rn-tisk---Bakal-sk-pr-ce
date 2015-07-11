@@ -1098,7 +1098,7 @@
             <param name="path">cesta k souboru</param>
             <returns>true pokud je koncovka validni, false pokud neni</returns>
         </member>
-        <member name="M:Interlacer.MainForm.tryLoadPictures">
+        <member name="M:Interlacer.MainForm.tryLoadPictures(System.String)">
             <summary>
             metoda pro overeni validnich nazvu obrazku pri nacteni projektu
             </summary>
@@ -1197,7 +1197,7 @@
             </summary>
             <returns>seznam cest vsech obrazku</returns>
         </member>
-        <member name="M:Interlacer.MainForm.setPictureViewFromList(System.Collections.Generic.List{System.String})">
+        <member name="M:Interlacer.MainForm.setPictureViewFromList(System.Collections.Generic.List{System.String},System.String)">
             <summary>
             vymaze listView s obrzky a prida do nej obrazky z listu, ktery je predan parametrem
             </summary>

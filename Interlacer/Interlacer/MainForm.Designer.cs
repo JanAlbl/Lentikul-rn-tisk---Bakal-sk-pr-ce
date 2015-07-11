@@ -49,6 +49,13 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.outputImageTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.listButtonFlowlayout = new System.Windows.Forms.FlowLayoutPanel();
+            this.replaceButton = new System.Windows.Forms.Button();
+            this.sortButton = new System.Windows.Forms.Button();
+            this.moveUpButton = new System.Windows.Forms.Button();
+            this.moveDownButton = new System.Windows.Forms.Button();
+            this.reverseButton = new System.Windows.Forms.Button();
+            this.clearAllButton = new System.Windows.Forms.Button();
             this.pictureListViewEx = new System.Windows.Forms.ListView();
             this.poradi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cesta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -56,12 +63,7 @@
             this.imageFound = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.copyCountLabel = new System.Windows.Forms.Label();
             this.copyCountNumeric = new System.Windows.Forms.NumericUpDown();
-            this.replaceButton = new System.Windows.Forms.Button();
-            this.clearAllButton = new System.Windows.Forms.Button();
-            this.reverseButton = new System.Windows.Forms.Button();
-            this.moveDownButton = new System.Windows.Forms.Button();
-            this.sortButton = new System.Windows.Forms.Button();
-            this.moveUpButton = new System.Windows.Forms.Button();
+            this.expandCollapse = new System.Windows.Forms.Button();
             this.copyPicButton = new System.Windows.Forms.Button();
             this.removePicButton = new System.Windows.Forms.Button();
             this.addPicButton = new System.Windows.Forms.Button();
@@ -150,12 +152,13 @@
             this.openConfigDialog = new System.Windows.Forms.OpenFileDialog();
             this.wholeDriveTree = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.expandCollapseTimer = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.interlaceProgressBarFlowLayout = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.outputImageTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.listButtonFlowlayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.copyCountNumeric)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lpiNumeric)).BeginInit();
@@ -180,6 +183,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.linePictureBox)).BeginInit();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.previewPicBox)).BeginInit();
+            this.interlaceProgressBarFlowLayout.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -310,16 +315,11 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.listButtonFlowlayout);
             this.tabPage1.Controls.Add(this.pictureListViewEx);
             this.tabPage1.Controls.Add(this.copyCountLabel);
             this.tabPage1.Controls.Add(this.copyCountNumeric);
-            this.tabPage1.Controls.Add(this.replaceButton);
-            this.tabPage1.Controls.Add(this.clearAllButton);
-            this.tabPage1.Controls.Add(this.reverseButton);
-            this.tabPage1.Controls.Add(this.moveDownButton);
-            this.tabPage1.Controls.Add(this.sortButton);
-            this.tabPage1.Controls.Add(this.moveUpButton);
+            this.tabPage1.Controls.Add(this.expandCollapse);
             this.tabPage1.Controls.Add(this.copyPicButton);
             this.tabPage1.Controls.Add(this.removePicButton);
             this.tabPage1.Controls.Add(this.addPicButton);
@@ -333,23 +333,72 @@
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             // 
+            // listButtonFlowlayout
+            // 
+            this.listButtonFlowlayout.Controls.Add(this.replaceButton);
+            this.listButtonFlowlayout.Controls.Add(this.sortButton);
+            this.listButtonFlowlayout.Controls.Add(this.moveUpButton);
+            this.listButtonFlowlayout.Controls.Add(this.moveDownButton);
+            this.listButtonFlowlayout.Controls.Add(this.reverseButton);
+            this.listButtonFlowlayout.Controls.Add(this.clearAllButton);
+            resources.ApplyResources(this.listButtonFlowlayout, "listButtonFlowlayout");
+            this.listButtonFlowlayout.Name = "listButtonFlowlayout";
+            // 
+            // replaceButton
+            // 
+            resources.ApplyResources(this.replaceButton, "replaceButton");
+            this.replaceButton.Name = "replaceButton";
+            this.replaceButton.UseVisualStyleBackColor = true;
+            this.replaceButton.Click += new System.EventHandler(this.replaceButton_Click);
+            // 
+            // sortButton
+            // 
+            resources.ApplyResources(this.sortButton, "sortButton");
+            this.sortButton.Name = "sortButton";
+            this.sortButton.UseVisualStyleBackColor = true;
+            this.sortButton.Click += new System.EventHandler(this.sortButton_Click);
+            // 
+            // moveUpButton
+            // 
+            resources.ApplyResources(this.moveUpButton, "moveUpButton");
+            this.moveUpButton.Name = "moveUpButton";
+            this.moveUpButton.UseVisualStyleBackColor = true;
+            this.moveUpButton.Click += new System.EventHandler(this.moveUpButton_Click);
+            // 
+            // moveDownButton
+            // 
+            resources.ApplyResources(this.moveDownButton, "moveDownButton");
+            this.moveDownButton.Name = "moveDownButton";
+            this.moveDownButton.UseVisualStyleBackColor = true;
+            this.moveDownButton.Click += new System.EventHandler(this.moveDownButton_Click);
+            // 
+            // reverseButton
+            // 
+            resources.ApplyResources(this.reverseButton, "reverseButton");
+            this.reverseButton.Name = "reverseButton";
+            this.reverseButton.UseVisualStyleBackColor = true;
+            this.reverseButton.Click += new System.EventHandler(this.reverseButton_Click);
+            // 
+            // clearAllButton
+            // 
+            resources.ApplyResources(this.clearAllButton, "clearAllButton");
+            this.clearAllButton.Name = "clearAllButton";
+            this.clearAllButton.UseVisualStyleBackColor = true;
+            this.clearAllButton.Click += new System.EventHandler(this.clearAllButton_Click);
+            // 
             // pictureListViewEx
             // 
-            this.pictureListViewEx.AllowDrop = true;
             this.pictureListViewEx.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.poradi,
             this.cesta,
             this.nazev,
             this.imageFound});
-            this.pictureListViewEx.FullRowSelect = true;
-            this.pictureListViewEx.GridLines = true;
             resources.ApplyResources(this.pictureListViewEx, "pictureListViewEx");
             this.pictureListViewEx.Name = "pictureListViewEx";
             this.pictureListViewEx.UseCompatibleStateImageBehavior = false;
             this.pictureListViewEx.View = System.Windows.Forms.View.Details;
             this.pictureListViewEx.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.pictureListViewEx_ItemDrag);
             this.pictureListViewEx.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.pictureListViewEx_ItemSelectionChanged);
-            this.pictureListViewEx.Click += new System.EventHandler(this.pictureListViewEx_Click_1);
             this.pictureListViewEx.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureListViewEx_DragDrop);
             this.pictureListViewEx.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureListViewEx_DragEnter);
             this.pictureListViewEx.DragOver += new System.Windows.Forms.DragEventHandler(this.pictureListViewEx_DragOver);
@@ -393,47 +442,12 @@
             0});
             this.copyCountNumeric.ValueChanged += new System.EventHandler(this.copyCountNumeric_ValueChanged);
             // 
-            // replaceButton
+            // expandCollapse
             // 
-            resources.ApplyResources(this.replaceButton, "replaceButton");
-            this.replaceButton.Name = "replaceButton";
-            this.replaceButton.UseVisualStyleBackColor = true;
-            this.replaceButton.Click += new System.EventHandler(this.replaceButton_Click);
-            // 
-            // clearAllButton
-            // 
-            resources.ApplyResources(this.clearAllButton, "clearAllButton");
-            this.clearAllButton.Name = "clearAllButton";
-            this.clearAllButton.UseVisualStyleBackColor = true;
-            this.clearAllButton.Click += new System.EventHandler(this.clearAllButton_Click);
-            // 
-            // reverseButton
-            // 
-            resources.ApplyResources(this.reverseButton, "reverseButton");
-            this.reverseButton.Name = "reverseButton";
-            this.reverseButton.UseVisualStyleBackColor = true;
-            this.reverseButton.Click += new System.EventHandler(this.reverseButton_Click);
-            // 
-            // moveDownButton
-            // 
-            resources.ApplyResources(this.moveDownButton, "moveDownButton");
-            this.moveDownButton.Name = "moveDownButton";
-            this.moveDownButton.UseVisualStyleBackColor = true;
-            this.moveDownButton.Click += new System.EventHandler(this.moveDownButton_Click);
-            // 
-            // sortButton
-            // 
-            resources.ApplyResources(this.sortButton, "sortButton");
-            this.sortButton.Name = "sortButton";
-            this.sortButton.UseVisualStyleBackColor = true;
-            this.sortButton.Click += new System.EventHandler(this.sortButton_Click);
-            // 
-            // moveUpButton
-            // 
-            resources.ApplyResources(this.moveUpButton, "moveUpButton");
-            this.moveUpButton.Name = "moveUpButton";
-            this.moveUpButton.UseVisualStyleBackColor = true;
-            this.moveUpButton.Click += new System.EventHandler(this.moveUpButton_Click);
+            resources.ApplyResources(this.expandCollapse, "expandCollapse");
+            this.expandCollapse.Name = "expandCollapse";
+            this.expandCollapse.UseVisualStyleBackColor = true;
+            this.expandCollapse.Click += new System.EventHandler(this.expandCollapse_Click);
             // 
             // copyPicButton
             // 
@@ -1041,26 +1055,27 @@
             this.imageList1.Images.SetKeyName(5, "TIF.png");
             this.imageList1.Images.SetKeyName(6, "image.png");
             // 
-            // expandCollapseTimer
+            // interlaceProgressBarFlowLayout
             // 
-            this.expandCollapseTimer.Interval = 10;
-            this.expandCollapseTimer.Tick += new System.EventHandler(this.timer1_Tick);
+            resources.ApplyResources(this.interlaceProgressBarFlowLayout, "interlaceProgressBarFlowLayout");
+            this.interlaceProgressBarFlowLayout.Controls.Add(this.interlaceProgressBar);
+            this.interlaceProgressBarFlowLayout.Name = "interlaceProgressBarFlowLayout";
+            this.interlaceProgressBarFlowLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.interlaceProgressBarFlowLayout_Paint);
             // 
-            // button1
+            // flowLayoutPanel1
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Controls.Add(this.imagePreviewCheckBox);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // MainForm
             // 
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.interlaceProgressBarFlowLayout);
             this.Controls.Add(this.wholeDriveTree);
-            this.Controls.Add(this.imagePreviewCheckBox);
-            this.Controls.Add(this.interlaceProgressBar);
             this.Controls.Add(this.previewPicBox);
             this.Controls.Add(this.interlaceButton);
             this.Controls.Add(this.groupBox7);
@@ -1080,6 +1095,7 @@
             this.outputImageTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.listButtonFlowlayout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.copyCountNumeric)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -1114,6 +1130,9 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.previewPicBox)).EndInit();
+            this.interlaceProgressBarFlowLayout.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1242,8 +1261,10 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.Label printParamAdjustmentHelp;
         private System.Windows.Forms.ColumnHeader imageFound;
-        private System.Windows.Forms.Timer expandCollapseTimer;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button expandCollapse;
+        private System.Windows.Forms.FlowLayoutPanel listButtonFlowlayout;
+        private System.Windows.Forms.FlowLayoutPanel interlaceProgressBarFlowLayout;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 
     }
 }
