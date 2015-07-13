@@ -180,3 +180,5 @@ D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.ClipForm.resource
 D:\Bakalar\Interlacer\bin64bit\Interlacer.exe.config
 D:\Bakalar\Interlacer\Interlacer\obj\x64\Release\Interlacer.exe
 D:\Bakalar\Interlacer\Interlacer\obj\x64\Release\Interlacer.pdb
+C:\Users\Jan\Documents\GitHub\Interlacer\Interlacer\obj\x64\Release\Interlacer.csprojResolveAssemblyReference.cache
+C:\Users\Jan\Documents\GitHub\Interlacer\Interlacer\obj\x64\Release\Interlacer.ClipForm.resources
