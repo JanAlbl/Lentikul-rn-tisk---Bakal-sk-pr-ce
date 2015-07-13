@@ -2079,7 +2079,8 @@
         </member>
         <member name="P:Interlacer.StringRes_CZ.edgeAlignmentToolTip">
             <summary>
-              Looks up a localized string similar to Čárky pasovacích pruhů leží na hranici mezi čočkami. Při pasování výtisku  na lentikulární materiál je barva pasovacího pruhu vidět při pohledu ze  strany..
+              Looks up a localized string similar to Čárky pasovacích pruhů leží na hranici mezi čočkami. Při pasování výtisku  na lentikulární materiál je barva
+            pasovacího pruhu vidět při pohledu ze  strany..
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.emptyListError">
@@ -2106,7 +2107,8 @@
         </member>
         <member name="P:Interlacer.StringRes_CZ.horizontalLenticuleOrientation">
             <summary>
-              Looks up a localized string similar to Lentikule jsou umístěny vodorovně, obrázek se tedy mění při změně pohledu  shora dolů. Ideální pro výměnu a animaci, NEPOUŽITELNÉ pro 3D..
+              Looks up a localized string similar to Lentikule jsou umístěny vodorovně, obrázek se tedy mění při změně pohledu  shora dolů. Ideální
+            pro výměnu a animaci, NEPOUŽITELNÉ pro 3D..
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.imageDimensionError">
@@ -2131,7 +2133,8 @@
         </member>
         <member name="P:Interlacer.StringRes_CZ.interlacingError">
             <summary>
-              Looks up a localized string similar to Prokládání selhalo. Pravděpodobnou příčinou je chybné nastavení prokládacích parametrů. Zkontrolujte, zda některý z parametrů není nulový, příliš malý či příliš velký..
+              Looks up a localized string similar to Prokládání selhalo. Pravděpodobnou příčinou je chybné nastavení prokládacích parametrů. Zkontrolujte,
+            zda některý z parametrů není nulový, příliš malý či příliš velký..
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.keepAspectRatioToolTip">
@@ -2176,7 +2179,8 @@
         </member>
         <member name="P:Interlacer.StringRes_CZ.linesIndentToolTip">
              <summary>
-               Looks up a localized string similar to Odsazení pruhů od obrázku. Obvykle nula až 5 milimetrů. Hodnota větší než  nula je vhodná při ořezávání finálního lentikulárního tisku.
+               Looks up a localized string similar to Odsazení pruhů od obrázku. Obvykle nula až 5 milimetrů. Hodnota větší než  nula je vhodná při ořezávání 
+            finálního lentikulárního tisku.
             (default 0).
              </summary>
         </member>
@@ -2199,7 +2203,11 @@
         </member>
         <member name="P:Interlacer.StringRes_CZ.maxImagesUnderLenticuleToolTip">
             <summary>
-              Looks up a localized string similar to Maximální počet snímků, který lze umístit do lentikulárního obrázku. V  ideálním případě je v lentikulárním obrázku vloženo právě tolik snímků,  přičemž některé se mohou opakovat. Je-li toto číslo například 18, je  vhodné při tvorbě 3-D obrázku vložit 18 pohledů na scénu. Při tvorbě  výměny dvou snímků je vhodné vložit první snímek 9krát, druhý rovněž  9krát. Je-li toto číslo výrazně odlišné od celého čísla (např. 14,6), není  určená tiskárna příliš vhodná pro zvolený lentikulární materiál..
+              Looks up a localized string similar to Maximální počet snímků, který lze umístit do lentikulárního obrázku. V  ideálním případě je v lentikulárním
+            obrázku vloženo právě tolik snímků,  přičemž některé se mohou opakovat. Je-li toto číslo například 18, je 
+            vhodné při tvorbě 3-D obrázku vložit 18 pohledů na scénu. Při tvorbě  výměny dvou snímků je vhodné
+            vložit první snímek 9krát, druhý rovněž  9krát. Je-li toto číslo výrazně odlišné od celého čísla (např. 14,6),
+            není  určená tiskárna příliš vhodná pro zvolený lentikulární materiál..
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.memoryError">
@@ -2332,7 +2340,9 @@
         <member name="P:Interlacer.StringRes_CZ.sortTooltip">
              <summary>
                Looks up a localized string similar to (Ctrl + S)
-            Seřadí seznam snímků. Užitečné zejména pro 3-D a animace, obsahují-li  jejich názvy pořadí. U 3-D nezapomeňte zkontrolovat, zda jsou snímky v  pořadí od nejlevějšího k nejpravějšímu; pokud ne, použijte tlačítko  &quot;Otočit&quot;.
+            Seřadí seznam snímků. Užitečné zejména pro 3-D a animace, obsahují-li  jejich názvy pořadí.
+             U 3-D nezapomeňte zkontrolovat, zda jsou snímky v  pořadí od nejlevějšího k nejpravějšímu
+             pokud ne, použijte tlačítko  &quot;Otočit&quot;.
              </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.topLinesToolTip">
@@ -2348,7 +2358,8 @@
         </member>
         <member name="P:Interlacer.StringRes_CZ.verticalLenticuleOrientation">
              <summary>
-               Looks up a localized string similar to Lentikule jsou umístěny svisle, obrázek se tedy mění při změně pohledu  zleva doprava. Nutné pro 3D a velkoplošné lentikulární tisky, méně vhodné  pro výměnu a animaci.
+               Looks up a localized string similar to Lentikule jsou umístěny svisle, obrázek se tedy mění při změně pohledu  zleva doprava. Nutné pro
+             3D a velkoplošné lentikulární tisky, méně vhodné  pro výměnu a animaci.
             (default).
              </summary>
         </member>
@@ -2478,9 +2489,10 @@
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.horizontalLenticuleOrientation">
-            <summary>
-              Looks up a localized string similar to Lenticules are positioned horizontally, that means image is changing while view is changing from down to top. CANNOT BE USED for 3D..
-            </summary>
+             <summary>
+               Looks up a localized string similar to Lenticules are positioned horizontally, that means image is changing while view is changing from down 
+            to top. CANNOT BE USED for 3D..
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.imageDimensionError">
             <summary>
@@ -2555,7 +2567,8 @@
         </member>
         <member name="P:Interlacer.StringRes_EN.lineWidthGroupBox">
              <summary>
-               Looks up a localized string similar to Thickness of alignment lines. Small values are suitable for precise positioning of lenticule material, but put higher demands on print.
+               Looks up a localized string similar to Thickness of alignment lines. Small values are suitable for precise positioning of lenticule material, but 
+            put higher demands on print.
             (default 25 %).
              </summary>
         </member>
@@ -2571,7 +2584,12 @@
         </member>
         <member name="P:Interlacer.StringRes_EN.maxImagesUnderLenticuleToolTip">
             <summary>
-              Looks up a localized string similar to Maximum amout of images, that can be put into lenticule image. Ideally, there is exactly that amout of images, whereas some images can be repeated. If maximum amout is 18, it´s appropriate to put 18 different views on the scene when doing 3D images. When doing flip of two images, it´s appropriate to use first image 9 times and second image 9 times as well.  If maximum amout of images is very distant from whole number (etc. 14.6), chosen printer isn´t appropriate for chosen lenticule material..
+              Looks up a localized string similar to Maximum amout of images, that can be put into lenticule image. Ideally, there is exactly that
+            amout of images, whereas some images can be repeated. If maximum amout is 18, it´s appropriate
+            to put 18 different views on the scene when doing 3D images. When doing flip of two images,
+            it´s appropriate to use first image 9 times and second image 9 times as well.  If maximum amout
+            of images is very distant from whole number (etc. 14.6), chosen printer isn´t appropriate for chosen
+            lenticule material..
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.memoryError">
@@ -2703,7 +2721,10 @@
         </member>
         <member name="P:Interlacer.StringRes_EN.sortTooltip">
             <summary>
-              Looks up a localized string similar to Sort images by their ending number (Ctrl + S) Sorts list of pictures. Usefull especially for 3-D and animation, if pictures names contain order. Don´t forget to chech when wokring with 3-D if pictures are in order from most left to most right picture. If not, use button &quot;Reverse&quot;..
+              Looks up a localized string similar to Sort images by their ending number (Ctrl + S) Sorts list of pictures. Usefull especially
+            for 3-D and animation, if pictures names contain order. Don´t forget to chech when
+            wokring with 3-D if pictures are in order from most left to most right picture. If not,
+            use button &quot;Reverse&quot;..
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.topLinesToolTip">

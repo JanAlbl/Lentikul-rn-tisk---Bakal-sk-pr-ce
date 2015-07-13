@@ -1,5 +1,5 @@
 1) pøidání jednotek (cm, palce, mm) finální velikost s pasovacími èárami
 2) Nahradit (zmìòte ikonku!)
 3) Øazení (zkuste do ikonky pøidat pod sebe 01 a 99, podobnì jako má øadicí  ikonka v Excelu pod sebou písmena A, Z)
-4) Zkrátit dlouhé øádky u tooltip (enter)
+4) Pøidat tlaèítko, které vyplní list tak aby pod lentikulí byl maximální poèet obrázkù (nìjak rovnomìrnì)
 5) Tlouška èárek v pasovacích pruzích. Malé hodnoty jsou vhodné pro pøesné  pasování, ale kladou vyšší nároky na tisk. (default 25 %)

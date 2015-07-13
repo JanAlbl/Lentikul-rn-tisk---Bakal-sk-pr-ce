@@ -169,7 +169,8 @@ Zvolený snímek se duplikuje tolikrát, jaké je číslo v "Počtu kopií"</val
 (default 0)</value>
   </data>
   <data name="edgeAlignmentToolTip" xml:space="preserve">
-    <value>Čárky pasovacích pruhů leží na hranici mezi čočkami. Při pasování výtisku  na lentikulární materiál je barva pasovacího pruhu vidět při pohledu ze  strany.</value>
+    <value>Čárky pasovacích pruhů leží na hranici mezi čočkami. Při pasování výtisku  na lentikulární materiál je barva
+ pasovacího pruhu vidět při pohledu ze  strany.</value>
   </data>
   <data name="emptyListError" xml:space="preserve">
     <value>Seznam obrázků je prázdný.</value>
@@ -186,7 +187,8 @@ Zvolený snímek se duplikuje tolikrát, jaké je číslo v "Počtu kopií"</val
 Soubor pravděpodobně neexistuje.</value>
   </data>
   <data name="horizontalLenticuleOrientation" xml:space="preserve">
-    <value>Lentikule jsou umístěny vodorovně, obrázek se tedy mění při změně pohledu  shora dolů. Ideální pro výměnu a animaci, NEPOUŽITELNÉ pro 3D.</value>
+    <value>Lentikule jsou umístěny vodorovně, obrázek se tedy mění při změně pohledu  shora dolů. Ideální
+ pro výměnu a animaci, NEPOUŽITELNÉ pro 3D.</value>
   </data>
   <data name="imageDimensionError" xml:space="preserve">
     <value>Obrázky nejsou stejně velké. Chcete je oříznout na nejmenší šířku a nejmenší výšku?</value>
@@ -201,7 +203,8 @@ Soubor pravděpodobně neexistuje.</value>
     <value>Soubor {0} se nepodařilo uložit. Překontrolujte zda máte právo zápisu, nebo dostatek místa.</value>
   </data>
   <data name="interlacingError" xml:space="preserve">
-    <value>Prokládání selhalo. Pravděpodobnou příčinou je chybné nastavení prokládacích parametrů. Zkontrolujte, zda některý z parametrů není nulový, příliš malý či příliš velký.</value>
+    <value>Prokládání selhalo. Pravděpodobnou příčinou je chybné nastavení prokládacích parametrů. Zkontrolujte,
+ zda některý z parametrů není nulový, příliš malý či příliš velký.</value>
   </data>
   <data name="keepAspectRatioToolTip" xml:space="preserve">
     <value>Při zaškrtnutém poli se výška a šířka obrázku mění souběžně při zachování  poměru stran.
@@ -230,7 +233,8 @@ Pravděpodobnou příčinou je chybějící Visual C++ Redistributable</value>
 (default černá)</value>
   </data>
   <data name="linesIndentToolTip" xml:space="preserve">
-    <value>Odsazení pruhů od obrázku. Obvykle nula až 5 milimetrů. Hodnota větší než  nula je vhodná při ořezávání finálního lentikulárního tisku.
+    <value>Odsazení pruhů od obrázku. Obvykle nula až 5 milimetrů. Hodnota větší než  nula je vhodná při ořezávání 
+finálního lentikulárního tisku.
 (default 0)</value>
   </data>
   <data name="lineWidthGroupBox" xml:space="preserve">
@@ -245,7 +249,11 @@ Pravděpodobnou příčinou je chybějící Visual C++ Redistributable</value>
 (default 0)</value>
   </data>
   <data name="maxImagesUnderLenticuleToolTip" xml:space="preserve">
-    <value>Maximální počet snímků, který lze umístit do lentikulárního obrázku. V  ideálním případě je v lentikulárním obrázku vloženo právě tolik snímků,  přičemž některé se mohou opakovat. Je-li toto číslo například 18, je  vhodné při tvorbě 3-D obrázku vložit 18 pohledů na scénu. Při tvorbě  výměny dvou snímků je vhodné vložit první snímek 9krát, druhý rovněž  9krát. Je-li toto číslo výrazně odlišné od celého čísla (např. 14,6), není  určená tiskárna příliš vhodná pro zvolený lentikulární materiál.</value>
+    <value>Maximální počet snímků, který lze umístit do lentikulárního obrázku. V  ideálním případě je v lentikulárním
+ obrázku vloženo právě tolik snímků,  přičemž některé se mohou opakovat. Je-li toto číslo například 18, je 
+ vhodné při tvorbě 3-D obrázku vložit 18 pohledů na scénu. Při tvorbě  výměny dvou snímků je vhodné
+ vložit první snímek 9krát, druhý rovněž  9krát. Je-li toto číslo výrazně odlišné od celého čísla (např. 14,6),
+ není  určená tiskárna příliš vhodná pro zvolený lentikulární materiál.</value>
   </data>
   <data name="memoryError" xml:space="preserve">
     <value>Aplikace nemá k dispozici dostatek operační paměti.</value>
@@ -330,7 +338,9 @@ Otočí seznam snímků. Užitečné zejména pro 3-D, protože snímky musí b�
   </data>
   <data name="sortTooltip" xml:space="preserve">
     <value>(Ctrl + S)
-Seřadí seznam snímků. Užitečné zejména pro 3-D a animace, obsahují-li  jejich názvy pořadí. U 3-D nezapomeňte zkontrolovat, zda jsou snímky v  pořadí od nejlevějšího k nejpravějšímu; pokud ne, použijte tlačítko  "Otočit"</value>
+Seřadí seznam snímků. Užitečné zejména pro 3-D a animace, obsahují-li  jejich názvy pořadí.
+ U 3-D nezapomeňte zkontrolovat, zda jsou snímky v  pořadí od nejlevějšího k nejpravějšímu
+ pokud ne, použijte tlačítko  "Otočit"</value>
   </data>
   <data name="topLinesToolTip" xml:space="preserve">
     <value>Horní
@@ -340,7 +350,8 @@ Seřadí seznam snímků. Užitečné zejména pro 3-D a animace, obsahují-li  
     <value>palce</value>
   </data>
   <data name="verticalLenticuleOrientation" xml:space="preserve">
-    <value>Lentikule jsou umístěny svisle, obrázek se tedy mění při změně pohledu  zleva doprava. Nutné pro 3D a velkoplošné lentikulární tisky, méně vhodné  pro výměnu a animaci.
+    <value>Lentikule jsou umístěny svisle, obrázek se tedy mění při změně pohledu  zleva doprava. Nutné pro
+ 3D a velkoplošné lentikulární tisky, méně vhodné  pro výměnu a animaci.
 (default)</value>
   </data>
   <data name="wrongFormatError" xml:space="preserve">
