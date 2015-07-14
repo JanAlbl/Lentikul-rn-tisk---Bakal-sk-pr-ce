@@ -1299,5 +1299,51 @@ namespace Interlacer
             interlaceProgressBar.Size = new Size(interlaceProgressBarFlowLayout.Size.Width - 5, 29);
         }
 
+        private void fillButton_Click(object sender, EventArgs e)
+        {
+            fillList();
+        }
+
+        private void fillList()
+        {
+            int maxPictures = Convert.ToInt16(picUnderLenTextBox.Text);
+            int picturesInList = pictureListViewEx.Items.Count;
+            int eachCopyCount, restCount;
+
+            try
+            {
+                eachCopyCount = (maxPictures / picturesInList) - 1;
+            }
+            catch
+            {
+                MessageBox.Show("List obrázků je prázdný!");
+                return ;
+            }
+
+            for (int i = 0; i < picturesInList * eachCopyCount; i++)
+            {
+                for (int j = 0; j < eachCopyCount; j++)
+                {
+                    pictureListViewEx.Items.Insert(i, (ListViewItem)pictureListViewEx.Items[i].Clone());
+                    i += 1;
+                }
+            }
+
+            int restAdded = 0;
+            restCount = maxPictures % picturesInList;
+            for (int i = 1; i < picturesInList * eachCopyCount; i++)
+            {
+                if (restAdded == restCount)
+                    break;
+                    
+                if (!pictureListViewEx.Items[i - 1].SubItems[pathSubItemIndex].Text.Equals(pictureListViewEx.Items[i].SubItems[pathSubItemIndex].Text) || i == 1)
+                    pictureListViewEx.Items.Insert(i, (ListViewItem)pictureListViewEx.Items[i].Clone());
+
+                restAdded += 1;
+            }
+
+            reorder();
+        }
+
     }
 }

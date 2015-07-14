@@ -56,6 +56,7 @@
             this.moveDownButton = new System.Windows.Forms.Button();
             this.reverseButton = new System.Windows.Forms.Button();
             this.clearAllButton = new System.Windows.Forms.Button();
+            this.fillButton = new System.Windows.Forms.Button();
             this.pictureListViewEx = new System.Windows.Forms.ListView();
             this.poradi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cesta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -341,6 +342,7 @@
             this.listButtonFlowlayout.Controls.Add(this.moveDownButton);
             this.listButtonFlowlayout.Controls.Add(this.reverseButton);
             this.listButtonFlowlayout.Controls.Add(this.clearAllButton);
+            this.listButtonFlowlayout.Controls.Add(this.fillButton);
             resources.ApplyResources(this.listButtonFlowlayout, "listButtonFlowlayout");
             this.listButtonFlowlayout.Name = "listButtonFlowlayout";
             // 
@@ -385,6 +387,13 @@
             this.clearAllButton.Name = "clearAllButton";
             this.clearAllButton.UseVisualStyleBackColor = true;
             this.clearAllButton.Click += new System.EventHandler(this.clearAllButton_Click);
+            // 
+            // fillButton
+            // 
+            resources.ApplyResources(this.fillButton, "fillButton");
+            this.fillButton.Name = "fillButton";
+            this.fillButton.UseVisualStyleBackColor = true;
+            this.fillButton.Click += new System.EventHandler(this.fillButton_Click);
             // 
             // pictureListViewEx
             // 
@@ -1265,6 +1274,7 @@
         private System.Windows.Forms.FlowLayoutPanel listButtonFlowlayout;
         private System.Windows.Forms.FlowLayoutPanel interlaceProgressBarFlowLayout;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button fillButton;
 
     }
 }
