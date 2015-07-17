@@ -244,6 +244,15 @@ namespace Interlacer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Výška tisku včetně vodicích čar..
+        /// </summary>
+        internal static string heightFinalSize {
+            get {
+                return ResourceManager.GetString("heightFinalSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lentikule jsou umístěny vodorovně, obrázek se tedy mění při změně pohledu  shora dolů. Ideální
         /// pro výměnu a animaci, NEPOUŽITELNÉ pro 3D..
         /// </summary>
@@ -678,6 +687,15 @@ namespace Interlacer {
         internal static string verticalLenticuleOrientation {
             get {
                 return ResourceManager.GetString("verticalLenticuleOrientation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Šířka tisku včetně vodicích čar..
+        /// </summary>
+        internal static string widthFinalSize {
+            get {
+                return ResourceManager.GetString("widthFinalSize", resourceCulture);
             }
         }
         

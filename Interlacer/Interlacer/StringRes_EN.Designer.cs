@@ -241,6 +241,15 @@ namespace Interlacer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Final image height with alignment lines..
+        /// </summary>
+        internal static string heightFinalSize {
+            get {
+                return ResourceManager.GetString("heightFinalSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lenticules are positioned horizontally, that means image is changing while view is changing from down 
         ///to top. CANNOT BE USED for 3D..
         /// </summary>
@@ -673,6 +682,15 @@ namespace Interlacer {
         internal static string verticalLenticuleOrientation {
             get {
                 return ResourceManager.GetString("verticalLenticuleOrientation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Final image width with alignment lines..
+        /// </summary>
+        internal static string widthFinalSize {
+            get {
+                return ResourceManager.GetString("widthFinalSize", resourceCulture);
             }
         }
         

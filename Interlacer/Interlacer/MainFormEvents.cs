@@ -154,6 +154,7 @@ namespace Interlacer
         private void frameWidthNumeric_ValueChanged(object sender, EventArgs e)
         {
             projectData.GetLineData().SetFrameWidth(Convert.ToDouble(frameWidthNumeric.Value));
+            updateAllComponents();
         }
 
         /// <summary>
@@ -165,6 +166,7 @@ namespace Interlacer
         private void indentNumeric_ValueChanged(object sender, EventArgs e)
         {
             projectData.GetLineData().SetIndent(Convert.ToDouble(indentNumeric.Value));
+            updateAllComponents();
         }
 
         /// <summary>
@@ -176,6 +178,7 @@ namespace Interlacer
         private void topLineCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             projectData.GetLineData().SetTop(topLineCheckBox.Checked);
+            updateAllComponents();
         }
 
         /// <summary>
@@ -187,6 +190,7 @@ namespace Interlacer
         private void bottomLineCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             projectData.GetLineData().SetBottom(bottomLineCheckBox.Checked);
+            updateAllComponents();
         }
 
         /// <summary>
@@ -198,6 +202,7 @@ namespace Interlacer
         private void leftLineCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             projectData.GetLineData().SetLeft(leftLineCheckBox.Checked);
+            updateAllComponents();
         }
 
         /// <summary>
@@ -209,6 +214,7 @@ namespace Interlacer
         private void rightLineCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             projectData.GetLineData().SetRight(rightLineCheckBox.Checked);
+            updateAllComponents();
         }
 
         /// <summary>

@@ -357,4 +357,10 @@ Seřadí seznam snímků. Užitečné zejména pro 3-D a animace, obsahují-li  
   <data name="wrongFormatError" xml:space="preserve">
     <value>Soubor {0} má chybný formát.</value>
   </data>
+  <data name="heightFinalSize" xml:space="preserve">
+    <value>Výška tisku včetně vodicích čar.</value>
+  </data>
+  <data name="widthFinalSize" xml:space="preserve">
+    <value>Šířka tisku včetně vodicích čar.</value>
+  </data>
 </root>

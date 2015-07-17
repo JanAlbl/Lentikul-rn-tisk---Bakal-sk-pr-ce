@@ -79,6 +79,7 @@
             this.verticalRadiobutton = new System.Windows.Forms.RadioButton();
             this.horizontalRadiobutton = new System.Windows.Forms.RadioButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.unitsLabel5 = new System.Windows.Forms.Label();
             this.heightInPixelsTextBox = new System.Windows.Forms.TextBox();
             this.widthInPixelsTextBox = new System.Windows.Forms.TextBox();
             this.heightInPixelsLabel = new System.Windows.Forms.Label();
@@ -562,6 +563,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.unitsLabel5);
             this.groupBox6.Controls.Add(this.heightInPixelsTextBox);
             this.groupBox6.Controls.Add(this.widthInPixelsTextBox);
             this.groupBox6.Controls.Add(this.heightInPixelsLabel);
@@ -569,6 +571,11 @@
             resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
+            // 
+            // unitsLabel5
+            // 
+            resources.ApplyResources(this.unitsLabel5, "unitsLabel5");
+            this.unitsLabel5.Name = "unitsLabel5";
             // 
             // heightInPixelsTextBox
             // 
@@ -1275,6 +1282,7 @@
         private System.Windows.Forms.FlowLayoutPanel interlaceProgressBarFlowLayout;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button fillButton;
+        private System.Windows.Forms.Label unitsLabel5;
 
     }
 }

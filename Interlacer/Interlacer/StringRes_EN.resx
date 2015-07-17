@@ -352,4 +352,10 @@ Reverses list of pictures. Usefull especially for 3-D, because pictures must be 
   <data name="wrongFormatError" xml:space="preserve">
     <value>File  {0} has wrong format.</value>
   </data>
+  <data name="heightFinalSize" xml:space="preserve">
+    <value>Final image height with alignment lines.</value>
+  </data>
+  <data name="widthFinalSize" xml:space="preserve">
+    <value>Final image width with alignment lines.</value>
+  </data>
 </root>

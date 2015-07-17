@@ -306,6 +306,8 @@ namespace Interlacer
             t.SetToolTip(lineColorLabel, Localization.resourcesStrings.GetString("lineColorToolTip"));
             t.SetToolTip(lineBackgroundColorLabel, Localization.resourcesStrings.GetString("lineBackgroundColorToolTip"));
             t.SetToolTip(lineWidthGroupBox, Localization.resourcesStrings.GetString("lineWidthGroupBox"));
+            t.SetToolTip(widthInPixelsLabel, Localization.resourcesStrings.GetString("widthFinalSize"));
+            t.SetToolTip(heightInPixelsLabel, Localization.resourcesStrings.GetString("heightFinalSize"));
             /*Nastaveni sloupcu listview*/
             pictureListViewEx.Columns[0].Text = Localization.resourcesStrings.GetString("orderListView");
             pictureListViewEx.Columns[1].Text = Localization.resourcesStrings.GetString("pathListView");
@@ -509,8 +511,38 @@ namespace Interlacer
             bottomLineCheckBox.Checked = projectData.GetLineData().GetBottom();
             centerRadioButton.Checked = projectData.GetLineData().GetCenterPosition();
             edgeRadioButton.Checked = !projectData.GetLineData().GetCenterPosition();
-            widthInPixelsTextBox.Text = Convert.ToString((int)(projectData.GetInterlacingData().GetInchWidth() * projectData.GetInterlacingData().GetDPI()));
-            heightInPixelsTextBox.Text = Convert.ToString((int)(projectData.GetInterlacingData().GetInchHeight() * projectData.GetInterlacingData().GetDPI()));
+            //widthInPixelsTextBox.Text = Convert.ToString((int)(projectData.GetInterlacingData().GetInchWidth() * projectData.GetInterlacingData().GetDPI()));
+            //heightInPixelsTextBox.Text = Convert.ToString((int)(projectData.GetInterlacingData().GetInchHeight() * projectData.GetInterlacingData().GetDPI()));
+            double frameWidth = 0.0;
+            if (projectData.GetLineData().GetLeft())
+            {
+                frameWidth += projectData.GetLineData().GetFrameWidth();
+                frameWidth += projectData.GetLineData().GetIndent();
+            }
+
+            if (projectData.GetLineData().GetRight())
+            {
+                frameWidth += projectData.GetLineData().GetFrameWidth();
+                frameWidth += projectData.GetLineData().GetIndent();
+            }
+            widthInPixelsTextBox.Text = Convert.ToString(Math.Round(projectData.GetInterlacingData().GetWidth() + frameWidth, 3));
+
+            frameWidth = 0.0;
+            if (projectData.GetLineData().GetTop())
+            {
+                frameWidth += projectData.GetLineData().GetFrameWidth();
+                frameWidth += projectData.GetLineData().GetIndent();
+            }
+
+            if (projectData.GetLineData().GetBottom())
+            {
+                frameWidth += projectData.GetLineData().GetFrameWidth();
+                frameWidth += projectData.GetLineData().GetIndent();
+            }
+            heightInPixelsTextBox.Text = Convert.ToString(Math.Round(projectData.GetInterlacingData().GetHeight() + frameWidth, 3));
+
+           // lineThicknessTrackbar.Value = projectData.GetLineData().GetLineThickness();
+            
         }
                 
         /// <summary>
@@ -527,6 +559,7 @@ namespace Interlacer
             unitsLabel2.Text = measureUnits;
             unitsLabel3.Text = measureUnits;
             unitsLabel4.Text = measureUnits;
+            unitsLabel5.Text = measureUnits;
             dpiLabel.Text = resolutionUnits[0];  //nastavi label pro jednotky rozliseni obrazku na prvni cast nazvu jednotek rozliseni
             lpiLabel.Text = resolutionUnits[2];  //nastavi label pro hustotu cocek na druhou cast nazvu jednotek rozliseni
         }
@@ -1108,6 +1141,7 @@ namespace Interlacer
                 trySetValuesFromPictures(chosenPictures);
             }
 
+            lineThicknessTrackbar.Value = Math.Max(1, pictureListViewEx.Items.Count / 4);
             drawLineThickness();
         }
 
@@ -1209,9 +1243,9 @@ namespace Interlacer
                 projectData.GetInterlacingData().SetUnits(((StringValuePair<Units>)settings.GetSelectedUnits()).value);     // nastavím jednotky, které jsou momentálně v mainformu nastaveny
                 projectData.GetLineData().SetUnits(((StringValuePair<Units>)settings.GetSelectedUnits()).value);
                 projectData.GetInterlacingData().SetResolutionUnits(((StringValuePair<Units>)settings.GetSelectedResolutionUnits()).value);
-                updateAllComponents();      // updatuju celý mainform aby se provedli změny v gui
-                setPictureViewFromList(pathPics, filename);       // nastavím i cesty k novým obrázkům
 
+                setPictureViewFromList(pathPics, filename);       // nastavím i cesty k novým obrázkům
+                updateAllComponents();      // updatuju celý mainform aby se provedli změny v gui
                 drawLineThickness();
             }
             catch (Exception exc)
@@ -1320,30 +1354,36 @@ namespace Interlacer
                 return ;
             }
 
-            for (int i = 0; i < picturesInList * eachCopyCount; i++)
+            int index = 0;
+
+            for (int i = 0; index < picturesInList; i++)
             {
                 for (int j = 0; j < eachCopyCount; j++)
                 {
                     pictureListViewEx.Items.Insert(i, (ListViewItem)pictureListViewEx.Items[i].Clone());
                     i += 1;
                 }
+                index++;
             }
 
             int restAdded = 0;
+            int pictureCount = pictureListViewEx.Items.Count;
             restCount = maxPictures % picturesInList;
-            for (int i = 1; i < picturesInList * eachCopyCount; i++)
+            for (int i = 1; i < pictureCount; i++)
             {
                 if (restAdded == restCount)
                     break;
-                    
-                if (!pictureListViewEx.Items[i - 1].SubItems[pathSubItemIndex].Text.Equals(pictureListViewEx.Items[i].SubItems[pathSubItemIndex].Text) || i == 1)
-                    pictureListViewEx.Items.Insert(i, (ListViewItem)pictureListViewEx.Items[i].Clone());
 
-                restAdded += 1;
+                if (!pictureListViewEx.Items[i - 1].SubItems[pathSubItemIndex].Text.Equals(pictureListViewEx.Items[i].SubItems[pathSubItemIndex].Text) || i == 1)
+                {
+                    pictureListViewEx.Items.Insert(i, (ListViewItem)pictureListViewEx.Items[i].Clone());
+                    restAdded += 1;
+                }
             }
 
             reorder();
         }
+
 
     }
 }

@@ -2105,6 +2105,11 @@
             Soubor pravděpodobně neexistuje..
              </summary>
         </member>
+        <member name="P:Interlacer.StringRes_CZ.heightFinalSize">
+            <summary>
+              Looks up a localized string similar to Výška tisku včetně vodicích čar..
+            </summary>
+        </member>
         <member name="P:Interlacer.StringRes_CZ.horizontalLenticuleOrientation">
             <summary>
               Looks up a localized string similar to Lentikule jsou umístěny vodorovně, obrázek se tedy mění při změně pohledu  shora dolů. Ideální
@@ -2363,6 +2368,11 @@
             (default).
              </summary>
         </member>
+        <member name="P:Interlacer.StringRes_CZ.widthFinalSize">
+            <summary>
+              Looks up a localized string similar to Šířka tisku včetně vodicích čar..
+            </summary>
+        </member>
         <member name="P:Interlacer.StringRes_CZ.wrongFormatError">
             <summary>
               Looks up a localized string similar to Soubor {0} má chybný formát..
@@ -2486,6 +2496,11 @@
         <member name="P:Interlacer.StringRes_EN.fileNotFoundError">
             <summary>
               Looks up a localized string similar to File {0} could not be opened. File probably does not exist..
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.heightFinalSize">
+            <summary>
+              Looks up a localized string similar to Final image height with alignment lines..
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.horizontalLenticuleOrientation">
@@ -2743,6 +2758,11 @@
                Looks up a localized string similar to Lenticules are positioned vertically, that means image is changing while view is changing from left to right. 
             (default).
              </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.widthFinalSize">
+            <summary>
+              Looks up a localized string similar to Final image width with alignment lines..
+            </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.wrongFormatError">
             <summary>
