@@ -98,10 +98,6 @@ namespace Interlacer
             }
             InitializeComponent();
 
-            pictureListViewEx.FullRowSelect = true;
-            pictureListViewEx.MultiSelect = true;
-            pictureListViewEx.AllowDrop = true;
-            wholeDriveTree.AllowDrop = true;
             /*nastaveni defaultnich hodnot*/
             projectData.GetInterlacingData().KeepAspectRatio(keepRatioCheckbox.Checked);
             reorderTimer.Stop();
@@ -169,7 +165,7 @@ namespace Interlacer
         {
             for (int i = 0; i < pictureListViewEx.Items.Count; i++)
             {
-                Picture pic = new Picture(pictureListViewEx.Items[i].SubItems[1].Text);
+                Picture pic = new Picture(pictureListViewEx.Items[i].SubItems[pathSubItemIndex].Text);
                 try
                 {
                     pic.Ping();  //pokus o nacteni
@@ -185,7 +181,7 @@ namespace Interlacer
                         pictureListViewEx.Items[i].SubItems[pathSubItemIndex].Text = newPath.Replace("\\\\", "\\");
                     } catch
                     {
-                        pictureListViewEx.Items[i].SubItems[3].Text = "X";
+                        pictureListViewEx.Items[i].SubItems[imageFoundSubItemIndex].Text = "X";
                     }
                 }
             }
@@ -274,7 +270,7 @@ namespace Interlacer
             interpol2ComboBox.Items[2] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("printParamAdjustmentFilterCubic"), FilterType.Cubic);
             interpol2ComboBox.Items[3] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("printParamAdjustmentFilterLanczos"), FilterType.Lanczos);
             /*nastaveni tool tipu v aktualne nastavenem jazyce*/
-            t.SetToolTip(printParamAdjustmentHelp, Localization.resourcesStrings.GetString("printParamAdjustmentToolTip"));
+            t.SetToolTip(groupBox4, Localization.resourcesStrings.GetString("printParamAdjustmentToolTip"));
             t.SetToolTip(addPicButton, Localization.resourcesStrings.GetString("addPicTooltip"));
             t.SetToolTip(removePicButton, Localization.resourcesStrings.GetString("removePicTooltip"));
             t.SetToolTip(copyPicButton, Localization.resourcesStrings.GetString("copyPicTooltip"));
@@ -309,9 +305,9 @@ namespace Interlacer
             t.SetToolTip(finalImageWidthLabel, Localization.resourcesStrings.GetString("widthFinalSize"));
             t.SetToolTip(finalImageHeightLabel, Localization.resourcesStrings.GetString("heightFinalSize"));
             /*Nastaveni sloupcu listview*/
-            pictureListViewEx.Columns[0].Text = Localization.resourcesStrings.GetString("orderListView");
-            pictureListViewEx.Columns[1].Text = Localization.resourcesStrings.GetString("pathListView");
-            pictureListViewEx.Columns[2].Text = Localization.resourcesStrings.GetString("nameListView");
+            pictureListViewEx.Columns[orderSubItemIndex].Text = Localization.resourcesStrings.GetString("orderListView");
+            pictureListViewEx.Columns[pathSubItemIndex].Text = Localization.resourcesStrings.GetString("pathListView");
+            pictureListViewEx.Columns[picNameSubItemIndex].Text = Localization.resourcesStrings.GetString("nameListView");
         }
 
         /// <summary>
@@ -324,7 +320,7 @@ namespace Interlacer
                 ListView.SelectedListViewItemCollection selectedItems = pictureListViewEx.SelectedItems;  //ziskani vybranych radku
                 if (selectedItems.Count > 0)
                 {
-                    previewData.Show(selectedItems[0].SubItems[1].Text);//nastaveni nahledu na prvniho z nich
+                    previewData.Show(selectedItems[0].SubItems[pathSubItemIndex].Text);//nastaveni nahledu na prvniho z nich
                 }
                 else // jinak zobrazit defaultní image picture boxu
                 {
@@ -359,7 +355,7 @@ namespace Interlacer
                 ListView.SelectedListViewItemCollection selectedItems = pictureListViewEx.SelectedItems;  //ziskani aktualne vybranych radku
                 if (selectedItems.Count > 0)
                 {
-                    String path = selectedItems[0].SubItems[1].Text;  //ziskani nazvu souboru prvniho z vybranych
+                    String path = selectedItems[0].SubItems[pathSubItemIndex].Text;  //ziskani nazvu souboru prvniho z vybranych
                     Picture pic = infoData.GetInfo(path);  //ziskani pouze pingnuteho obrazku s informacemi
                     /*nastaveni labelu na spravne hodnoty*/
                     infoDpiLabel.Text = "" + pic.GetXDpi();
@@ -438,7 +434,7 @@ namespace Interlacer
             List<Picture> picList = new List<Picture>();
             for (int i = 0; i < pictureListViewEx.Items.Count; i++)
             {
-                path = pictureListViewEx.Items[i].SubItems[1].Text;
+                path = pictureListViewEx.Items[i].SubItems[pathSubItemIndex].Text;
                 picList.Add(new Picture(path));
             }
             return picList;
@@ -456,7 +452,7 @@ namespace Interlacer
 
             for (int i = 0; i < pictureListViewEx.Items.Count; i++)
             {
-                pictureListViewEx.Items[i].SubItems[0].Text = Convert.ToString(order);
+                pictureListViewEx.Items[i].SubItems[orderSubItemIndex].Text = Convert.ToString(order);
                 order += 1;
             }
         }
@@ -594,7 +590,7 @@ namespace Interlacer
             List<String> list = new List<String>();
             for (int i = 0; i < pictureListViewEx.Items.Count; i++)
             {
-                list.Add(pictureListViewEx.Items[i].SubItems[1].Text);
+                list.Add(pictureListViewEx.Items[i].SubItems[pathSubItemIndex].Text);
             }
             return list;
         }
@@ -630,8 +626,8 @@ namespace Interlacer
             {
                 for(int j = 0; j < pictureListViewEx.Items.Count - 1; j++) 
                 {
-                    int firstValue = getIntegerFromString(pictureListViewEx.Items[j + 1].SubItems[2].Text);
-                    int secondValue = getIntegerFromString(pictureListViewEx.Items[j].SubItems[2].Text);                    
+                    int firstValue = getIntegerFromString(pictureListViewEx.Items[j + 1].SubItems[picNameSubItemIndex].Text);
+                    int secondValue = getIntegerFromString(pictureListViewEx.Items[j].SubItems[picNameSubItemIndex].Text);                    
                     if(firstValue < secondValue)
                     {
                         string tmp;
@@ -705,9 +701,9 @@ namespace Interlacer
             if (result == DialogResult.OK)
             {
                 string chosenPicture = addPicFileDialog.FileName;
-                pictureListViewEx.SelectedItems[0].SubItems[1].Text = chosenPicture;
-                pictureListViewEx.SelectedItems[0].SubItems[2].Text = getPicName(chosenPicture);
-                pictureListViewEx.SelectedItems[0].SubItems[3].Text = "";
+                pictureListViewEx.SelectedItems[0].SubItems[pathSubItemIndex].Text = chosenPicture;
+                pictureListViewEx.SelectedItems[0].SubItems[picNameSubItemIndex].Text = getPicName(chosenPicture);
+                pictureListViewEx.SelectedItems[0].SubItems[imageFoundSubItemIndex].Text = "";
                 // Vrácení focus na nově vloženou položku
                 pictureListViewEx.Focus();
                 pictureListViewEx.SelectedItems[0].Selected = true;
@@ -1160,6 +1156,13 @@ namespace Interlacer
             }
         }
 
+        private String getExtension(String path)
+        {
+            String[] split = path.Split('.');
+
+            return split[split.Length - 1];
+        }
+
         private void mapDriversToTree()
         {
             string[] drives = System.Environment.GetLogicalDrives();
@@ -1219,10 +1222,29 @@ namespace Interlacer
                     newDir.Nodes.Add(new TreeNodeInherited("Dummy"));
                 }
 
-                foreach (FileInfo fi in files) {
+                foreach (FileInfo fi in files) 
+                {
                     TreeNodeInherited newFile = new TreeNodeInherited(fi.Name);
                     newFile.Name = fi.Name;
                     if (fi.Extension.ToLower().Equals(".jpg") || fi.Extension.ToLower().Equals(".jpeg"))
+                    {
+                        newFile.ImageKey = "image.png";
+                        newFile.SelectedImageKey = "image.png";
+                        newFile.isImage = true;
+                    }
+                    else if (fi.Extension.ToLower().Equals(".png"))
+                    {
+                        newFile.ImageKey = "image.png";
+                        newFile.SelectedImageKey = "image.png";
+                        newFile.isImage = true;
+                    }
+                    else if (fi.Extension.ToLower().Equals(".tif"))
+                    {
+                        newFile.ImageKey = "image.png";
+                        newFile.SelectedImageKey = "image.png";
+                        newFile.isImage = true;
+                    }
+                    else if (fi.Extension.ToLower().Equals(".bmp"))
                     {
                         newFile.ImageKey = "image.png";
                         newFile.SelectedImageKey = "image.png";
@@ -1252,22 +1274,6 @@ namespace Interlacer
             {
                 MessageBox.Show(exc.Message);
             }
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            clipForm = new ClipForm();
-            clipForm.Show();
-        }
-
-        private void expandCollapse_Click(object sender, EventArgs e)
-        {
-            int itemCount = pictureListViewEx.Items.Count;
-
-            if (isExpanded)
-                collapseList(itemCount);
-            else
-                expandList(itemCount);
         }
 
         private void collapseList(int itemCount)
@@ -1328,16 +1334,6 @@ namespace Interlacer
             reorder();
         }
 
-        private void interlaceProgressBarFlowLayout_Paint(object sender, PaintEventArgs e)
-        {
-            interlaceProgressBar.Size = new Size(interlaceProgressBarFlowLayout.Size.Width - 5, 29);
-        }
-
-        private void fillButton_Click(object sender, EventArgs e)
-        {
-            fillList();
-        }
-
         private void fillList()
         {
             int maxPictures = Convert.ToInt16(picUnderLenTextBox.Text);
@@ -1350,7 +1346,7 @@ namespace Interlacer
             }
             catch
             {
-                MessageBox.Show("List obrázků je prázdný!");
+                MessageBox.Show(Localization.resourcesStrings.GetString("fillButtonWarning")," ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return ;
             }
 

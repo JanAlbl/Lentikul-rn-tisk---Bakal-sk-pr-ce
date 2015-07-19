@@ -2097,6 +2097,11 @@
             Soubor pravděpodobně neexistuje..
              </summary>
         </member>
+        <member name="P:Interlacer.StringRes_CZ.fillButtonWarning">
+            <summary>
+              Looks up a localized string similar to V seznamu nejsou žádné obrázky!.
+            </summary>
+        </member>
         <member name="P:Interlacer.StringRes_CZ.heightFinalSize">
             <summary>
               Looks up a localized string similar to Výška tisku včetně vodicích čar..
@@ -2488,6 +2493,11 @@
         <member name="P:Interlacer.StringRes_EN.fileNotFoundError">
             <summary>
               Looks up a localized string similar to File {0} could not be opened. File probably does not exist..
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.fillButtonWarning">
+            <summary>
+              Looks up a localized string similar to There are no pictures in list!.
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.heightFinalSize">

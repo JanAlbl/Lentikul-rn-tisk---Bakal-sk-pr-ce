@@ -363,4 +363,7 @@ Seřadí seznam snímků. Užitečné zejména pro 3-D a animace, obsahují-li  
   <data name="widthFinalSize" xml:space="preserve">
     <value>Šířka tisku včetně vodicích čar.</value>
   </data>
+  <data name="fillButtonWarning" xml:space="preserve">
+    <value>V seznamu nejsou žádné obrázky!</value>
+  </data>
 </root>

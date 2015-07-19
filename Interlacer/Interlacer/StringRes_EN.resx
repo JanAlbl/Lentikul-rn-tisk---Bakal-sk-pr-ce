@@ -358,4 +358,7 @@ Reverses list of pictures. Usefull especially for 3-D, because pictures must be 
   <data name="widthFinalSize" xml:space="preserve">
     <value>Final image width with alignment lines.</value>
   </data>
+  <data name="fillButtonWarning" xml:space="preserve">
+    <value>There are no pictures in list!</value>
+  </data>
 </root>

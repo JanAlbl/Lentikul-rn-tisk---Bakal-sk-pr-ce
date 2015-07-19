@@ -245,3 +245,9 @@ F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.csproj.Gene
 F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\cs-CZ\Interlacer.resources.dll
 F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\cs\Interlacer.resources.dll
 F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\en\Interlacer.resources.dll
+D:\Bak. prace\Interlacer\bin64bit\cs\Interlacer.resources.dll
+D:\Bak. prace\Interlacer\bin64bit\en\Interlacer.resources.dll
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.cs.resources
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.en.resources
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\cs\Interlacer.resources.dll
+D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\en\Interlacer.resources.dll

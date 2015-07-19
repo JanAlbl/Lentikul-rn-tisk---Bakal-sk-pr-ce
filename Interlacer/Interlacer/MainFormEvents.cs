@@ -677,11 +677,31 @@ namespace Interlacer
              return ContainsNode(node1, node2.Parent);
          } */
 
-        private String getExtension(String path)
-        {
-            String[] split = path.Split('.');
 
-            return split[split.Length - 1];
+        private void interlaceProgressBarFlowLayout_Paint(object sender, PaintEventArgs e)
+        {
+            interlaceProgressBar.Size = new Size(interlaceProgressBarFlowLayout.Size.Width - 5, 29);
+        }
+
+        private void fillButton_Click(object sender, EventArgs e)
+        {
+            fillList();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            clipForm = new ClipForm();
+            clipForm.Show();
+        }
+
+        private void expandCollapse_Click(object sender, EventArgs e)
+        {
+            int itemCount = pictureListViewEx.Items.Count;
+
+            if (isExpanded)
+                collapseList(itemCount);
+            else
+                expandList(itemCount);
         }
     }
 }
