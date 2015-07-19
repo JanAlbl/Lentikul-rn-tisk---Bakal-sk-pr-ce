@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace Interlacer
@@ -15,7 +16,7 @@ namespace Interlacer
     public partial class MainForm : Form
     {
         private void Form1_Load(object sender, EventArgs e)
-        {         
+        {
             DoubleBuffered = true;
         }
 
@@ -87,7 +88,6 @@ namespace Interlacer
         /// <param name="e"></param>
         private void pictureListViewEx_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-
             if (imagePreviewCheckBox.Checked)
                 setPreview();
             setPictureInfo();
@@ -381,7 +381,7 @@ namespace Interlacer
             if (saveConfigDialog.ShowDialog() == DialogResult.OK)
                 filename = saveConfigDialog.FileName;
             else return;
-            String[] split = filename.Split('.');    
+            String[] split = filename.Split('.');
             int lastIndex = split.Length - 1;
             if (split[lastIndex].Equals("int"))         // pokud už končí nepřidávam koncovku
                 saveConfigDialog.AddExtension = false;
@@ -423,7 +423,7 @@ namespace Interlacer
         /// <param name="e"></param>
         private void nactiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             String filename;
             openConfigDialog.Filter = "int|*.int";
             openConfigDialog.AddExtension = true;
@@ -490,7 +490,7 @@ namespace Interlacer
         {
             clearList();
         }
-        
+
 
         /// <summary>
         /// Metoda vyvolaná při stisku tlačítka pro přidání obrázku.
@@ -532,25 +532,44 @@ namespace Interlacer
         /// <param name="e"></param>
         private void pictureListViewEx_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Delete) {
+            if (e.KeyCode == Keys.Delete)
+            {
                 removePictures();
-            } else if (e.KeyCode == Keys.Add || e.KeyCode == Keys.D1) {
+            }
+            else if (e.KeyCode == Keys.Add || e.KeyCode == Keys.D1)
+            {
                 addPicToList();
-            } else if (e.Control && e.KeyCode == Keys.Down) {
+            }
+            else if (e.Control && e.KeyCode == Keys.Down)
+            {
                 movePicturesDown();
-            } else if (e.Control && e.KeyCode == Keys.Up) {
+            }
+            else if (e.Control && e.KeyCode == Keys.Up)
+            {
                 movePicturesUp();
-            } else if (e.Control && e.KeyCode == Keys.A) {
+            }
+            else if (e.Control && e.KeyCode == Keys.A)
+            {
                 selectAllPictures();
-            } else if (e.Control && e.KeyCode == Keys.D) {
+            }
+            else if (e.Control && e.KeyCode == Keys.D)
+            {
                 copyPictures(1);
-            } else if (e.Control && e.KeyCode == Keys.Q) {
+            }
+            else if (e.Control && e.KeyCode == Keys.Q)
+            {
                 replacePicture();
-            } else if (e.Control && e.KeyCode == Keys.S) {
+            }
+            else if (e.Control && e.KeyCode == Keys.S)
+            {
                 sortListView();
-            } else if (e.Control && e.KeyCode == Keys.R) {
+            }
+            else if (e.Control && e.KeyCode == Keys.R)
+            {
                 revertList();
-            } else if (e.Control && e.KeyCode == Keys.E) {
+            }
+            else if (e.Control && e.KeyCode == Keys.E)
+            {
                 clearList();
             }
         }
@@ -581,106 +600,88 @@ namespace Interlacer
 
         // Set the target drop effect to the effect  
         // specified in the ItemDrag event handler. 
-       /* private void wholeDriveTree_DragEnter(object sender, DragEventArgs e)
-        {
-            e.Effect = e.AllowedEffect;
-        }
+        /* private void wholeDriveTree_DragEnter(object sender, DragEventArgs e)
+         {
+             e.Effect = e.AllowedEffect;
+         }
 
-        // Select the node under the mouse pointer to indicate the  
-        // expected drop location. 
-        private void wholeDriveTree_DragOver(object sender, DragEventArgs e)
-        {
-            // Retrieve the client coordinates of the mouse position.
-            Point targetPoint = wholeDriveTree.PointToClient(new Point(e.X, e.Y));
+         // Select the node under the mouse pointer to indicate the  
+         // expected drop location. 
+         private void wholeDriveTree_DragOver(object sender, DragEventArgs e)
+         {
+             // Retrieve the client coordinates of the mouse position.
+             Point targetPoint = wholeDriveTree.PointToClient(new Point(e.X, e.Y));
 
-            // Select the node at the mouse position.
-            wholeDriveTree.SelectedNode = wholeDriveTree.GetNodeAt(targetPoint);
-        }
+             // Select the node at the mouse position.
+             wholeDriveTree.SelectedNode = wholeDriveTree.GetNodeAt(targetPoint);
+         }
 
-        private void wholeDriveTree_DragDrop(object sender, DragEventArgs e)
-        {
-            // Retrieve the client coordinates of the drop location.
-            Point targetPoint = wholeDriveTree.PointToClient(new Point(e.X, e.Y));
+         private void wholeDriveTree_DragDrop(object sender, DragEventArgs e)
+         {
+             // Retrieve the client coordinates of the drop location.
+             Point targetPoint = wholeDriveTree.PointToClient(new Point(e.X, e.Y));
 
-            // Retrieve the node at the drop location.
-            TreeNodeInherited targetNode = (TreeNodeInherited)wholeDriveTree.GetNodeAt(targetPoint);
+             // Retrieve the node at the drop location.
+             TreeNodeInherited targetNode = (TreeNodeInherited)wholeDriveTree.GetNodeAt(targetPoint);
 
-            if (targetNode.isDirectory == false)
-                return;
+             if (targetNode.isDirectory == false)
+                 return;
 
-            // Retrieve the node that was dragged.
-            TreeNodeInherited draggedNode = (TreeNodeInherited)e.Data.GetData(typeof(TreeNodeInherited));
-            if (draggedNode == null)
-            {
-                e.Effect = DragDropEffects.None;
-                return;
-            }
+             // Retrieve the node that was dragged.
+             TreeNodeInherited draggedNode = (TreeNodeInherited)e.Data.GetData(typeof(TreeNodeInherited));
+             if (draggedNode == null)
+             {
+                 e.Effect = DragDropEffects.None;
+                 return;
+             }
 
-            // Confirm that the node at the drop location is not  
-            // the dragged node or a descendant of the dragged node. 
-            if (!draggedNode.Equals(targetNode) && !ContainsNode(draggedNode, targetNode))
-            {
-                // If it is a move operation, remove the node from its current  
-                // location and add it to the node at the drop location. 
-                if (e.Effect == DragDropEffects.Move)
-                {
-                    draggedNode.Remove();
-                    targetNode.Nodes.Add(draggedNode);
-                }
+             // Confirm that the node at the drop location is not  
+             // the dragged node or a descendant of the dragged node. 
+             if (!draggedNode.Equals(targetNode) && !ContainsNode(draggedNode, targetNode))
+             {
+                 // If it is a move operation, remove the node from its current  
+                 // location and add it to the node at the drop location. 
+                 if (e.Effect == DragDropEffects.Move)
+                 {
+                     draggedNode.Remove();
+                     targetNode.Nodes.Add(draggedNode);
+                 }
 
-                // If it is a copy operation, clone the dragged node  
-                // and add it to the node at the drop location. 
-                else if (e.Effect == DragDropEffects.Copy)
-                {
-                    targetNode.Nodes.Add((TreeNode)draggedNode.Clone());
-                }
+                 // If it is a copy operation, clone the dragged node  
+                 // and add it to the node at the drop location. 
+                 else if (e.Effect == DragDropEffects.Copy)
+                 {
+                     targetNode.Nodes.Add((TreeNode)draggedNode.Clone());
+                 }
 
-                // repaint
-                //wholeDriveTree.Invalidate();
+                 // repaint
+                 //wholeDriveTree.Invalidate();
 
-                // Expand the node at the location  
-                // to show the dropped node.
-                targetNode.Expand();
-            }
-        }
+                 // Expand the node at the location  
+                 // to show the dropped node.
+                 targetNode.Expand();
+             }
+         }
 
-        // Determine whether one node is a parent  
-        // or ancestor of a second node. 
-        private bool ContainsNode(TreeNode node1, TreeNode node2)
-        {
-            // Check the parent node of the second node. 
-            if (node2.Parent == null) return false;
-            if (node2.Parent.Equals(node1)) return true;
+         // Determine whether one node is a parent  
+         // or ancestor of a second node. 
+         private bool ContainsNode(TreeNode node1, TreeNode node2)
+         {
+             // Check the parent node of the second node. 
+             if (node2.Parent == null) return false;
+             if (node2.Parent.Equals(node1)) return true;
 
-            // If the parent node is not null or equal to the first node,  
-            // call the ContainsNode method recursively using the parent of  
-            // the second node. 
-            return ContainsNode(node1, node2.Parent);
-        } */
+             // If the parent node is not null or equal to the first node,  
+             // call the ContainsNode method recursively using the parent of  
+             // the second node. 
+             return ContainsNode(node1, node2.Parent);
+         } */
 
         private String getExtension(String path)
         {
             String[] split = path.Split('.');
 
             return split[split.Length - 1];
-        }
-
-        /// <summary>
-        /// Metoda vyvolaná při ztrátě focusu na komponentu.
-        /// Zachová vyznačení vybraných položek, které uživatel měl vybrané než ztratil focus.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void pictureListViewEx_Leave(object sender, EventArgs e)
-        {
-            if (pictureListViewEx.SelectedItems.Count == 0)
-                return;
-
-            pictureListViewEx.Focus();
-            for (int i = 0; i < pictureListViewEx.SelectedItems.Count; i++)
-            {
-                pictureListViewEx.SelectedItems[i].Selected = true;
-            }
         }
     }
 }

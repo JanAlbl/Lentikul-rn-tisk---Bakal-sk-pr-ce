@@ -1652,14 +1652,6 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:Interlacer.MainForm.pictureListViewEx_Leave(System.Object,System.EventArgs)">
-            <summary>
-            Metoda vyvolaná při ztrátě focusu na komponentu.
-            Zachová vyznačení vybraných položek, které uživatel měl vybrané než ztratil focus.
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
         <member name="P:Interlacer.MainForm.CreateParams">
             <summary>
             Zabrani blikani GUI pri prekreslovani

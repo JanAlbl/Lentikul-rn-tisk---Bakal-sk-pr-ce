@@ -306,8 +306,8 @@ namespace Interlacer
             t.SetToolTip(lineColorLabel, Localization.resourcesStrings.GetString("lineColorToolTip"));
             t.SetToolTip(lineBackgroundColorLabel, Localization.resourcesStrings.GetString("lineBackgroundColorToolTip"));
             t.SetToolTip(lineWidthGroupBox, Localization.resourcesStrings.GetString("lineWidthGroupBox"));
-            t.SetToolTip(widthInPixelsLabel, Localization.resourcesStrings.GetString("widthFinalSize"));
-            t.SetToolTip(heightInPixelsLabel, Localization.resourcesStrings.GetString("heightFinalSize"));
+            t.SetToolTip(finalImageWidthLabel, Localization.resourcesStrings.GetString("widthFinalSize"));
+            t.SetToolTip(finalImageHeightLabel, Localization.resourcesStrings.GetString("heightFinalSize"));
             /*Nastaveni sloupcu listview*/
             pictureListViewEx.Columns[0].Text = Localization.resourcesStrings.GetString("orderListView");
             pictureListViewEx.Columns[1].Text = Localization.resourcesStrings.GetString("pathListView");
@@ -525,7 +525,7 @@ namespace Interlacer
                 frameWidth += projectData.GetLineData().GetFrameWidth();
                 frameWidth += projectData.GetLineData().GetIndent();
             }
-            widthInPixelsTextBox.Text = Convert.ToString(Math.Round(projectData.GetInterlacingData().GetWidth() + frameWidth, 3));
+            finalImageWidthTextBox.Text = Convert.ToString(Math.Round(projectData.GetInterlacingData().GetWidth() + frameWidth, 3));
 
             frameWidth = 0.0;
             if (projectData.GetLineData().GetTop())
@@ -539,7 +539,7 @@ namespace Interlacer
                 frameWidth += projectData.GetLineData().GetFrameWidth();
                 frameWidth += projectData.GetLineData().GetIndent();
             }
-            heightInPixelsTextBox.Text = Convert.ToString(Math.Round(projectData.GetInterlacingData().GetHeight() + frameWidth, 3));
+            finalImageHeightTextBox.Text = Convert.ToString(Math.Round(projectData.GetInterlacingData().GetHeight() + frameWidth, 3));
 
            // lineThicknessTrackbar.Value = projectData.GetLineData().GetLineThickness();
             
@@ -1384,6 +1384,6 @@ namespace Interlacer
             reorder();
         }
 
-
+        
     }
 }

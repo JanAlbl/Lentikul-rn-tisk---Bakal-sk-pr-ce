@@ -1,5 +1,5 @@
-﻿Build started 11.6.2015 17:22:44.
-     1>Project "D:\Bak. prace\Interlacer\Gfxlib\Gfxlib.vcxproj" on node 3 (Rebuild target(s)).
+﻿Build started 18.7.2015 14:19:00.
+     1>Project "D:\Bak. prace\Zaloha\Interlacer\Gfxlib\Gfxlib.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D GFXLIB_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"x64\Release\Gfxlib.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt stdafx.cpp
          stdafx.cpp
@@ -11,9 +11,9 @@
             Creating library ..\bin64bit\Gfxlib.lib and object ..\bin64bit\Gfxlib.exp
          Generating code
          Finished generating code
-         Gfxlib.vcxproj -> D:\Bak. prace\Interlacer\Gfxlib\..\bin64bit\Gfxlib.dll
-     1>Done Building Project "D:\Bak. prace\Interlacer\Gfxlib\Gfxlib.vcxproj" (Rebuild target(s)).
+         Gfxlib.vcxproj -> D:\Bak. prace\Zaloha\Interlacer\Gfxlib\..\bin64bit\Gfxlib.dll
+     1>Done Building Project "D:\Bak. prace\Zaloha\Interlacer\Gfxlib\Gfxlib.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:23.26
+Time Elapsed 00:00:12.31

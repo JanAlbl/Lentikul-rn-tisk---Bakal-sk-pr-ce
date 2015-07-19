@@ -197,3 +197,51 @@ D:\Bakalar\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.cs-CZ.resou
 D:\Bakalar\Interlacer\Interlacer\obj\x64\Release\Interlacer.SettingsForm.cs-CZ.resources
 D:\Bakalar\Interlacer\Interlacer\obj\x64\Release\Interlacer.csproj.GenerateResource.Cache
 D:\Bakalar\Interlacer\Interlacer\obj\x64\Release\cs-CZ\Interlacer.resources.dll
+D:\Bak. prace\Zaloha\Interlacer\bin64bit\Interlacer.exe.config
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.exe
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.pdb
+D:\Bak. prace\Zaloha\Interlacer\bin64bit\Interlacer.exe
+D:\Bak. prace\Zaloha\Interlacer\bin64bit\Interlacer.pdb
+D:\Bak. prace\Zaloha\Interlacer\bin64bit\doc.xml
+D:\Bak. prace\Zaloha\Interlacer\bin64bit\cs-CZ\Interlacer.resources.dll
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.csprojResolveAssemblyReference.cache
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.ClipForm.resources
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.resources
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.Properties.Resources.resources
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.SettingsForm.resources
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.StringRes_CZ.resources
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.StringRes_EN.resources
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.cs-CZ.resources
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.SettingsForm.cs-CZ.resources
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.csproj.GenerateResource.Cache
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\cs-CZ\Interlacer.resources.dll
+D:\Bak. prace\Zaloha\Interlacer\bin64bit\cs\Interlacer.resources.dll
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.cs.resources
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\cs\Interlacer.resources.dll
+D:\Bak. prace\Zaloha\Interlacer\bin64bit\en\Interlacer.resources.dll
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.en.resources
+D:\Bak. prace\Zaloha\Interlacer\Interlacer\obj\x64\Release\en\Interlacer.resources.dll
+F:\GitHub\Bakalarka\Interlacer\bin64bit\Interlacer.exe.config
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.exe
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.pdb
+F:\GitHub\Bakalarka\Interlacer\bin64bit\Interlacer.exe
+F:\GitHub\Bakalarka\Interlacer\bin64bit\Interlacer.pdb
+F:\GitHub\Bakalarka\Interlacer\bin64bit\doc.xml
+F:\GitHub\Bakalarka\Interlacer\bin64bit\cs-CZ\Interlacer.resources.dll
+F:\GitHub\Bakalarka\Interlacer\bin64bit\cs\Interlacer.resources.dll
+F:\GitHub\Bakalarka\Interlacer\bin64bit\en\Interlacer.resources.dll
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.csprojResolveAssemblyReference.cache
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.ClipForm.resources
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.resources
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.Properties.Resources.resources
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.SettingsForm.resources
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.StringRes_CZ.resources
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.StringRes_EN.resources
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.cs-CZ.resources
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.cs.resources
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.en.resources
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.SettingsForm.cs-CZ.resources
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\Interlacer.csproj.GenerateResource.Cache
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\cs-CZ\Interlacer.resources.dll
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\cs\Interlacer.resources.dll
+F:\GitHub\Bakalarka\Interlacer\Interlacer\obj\x64\Release\en\Interlacer.resources.dll
