@@ -537,7 +537,7 @@ namespace Interlacer
             }
             finalImageHeightTextBox.Text = Convert.ToString(Math.Round(projectData.GetInterlacingData().GetHeight() + frameWidth, 3));
 
-           // lineThicknessTrackbar.Value = projectData.GetLineData().GetLineThickness();
+            lineThicknessTrackbar.Value = projectData.GetLineData().GetLineThickness();
             
         }
                 

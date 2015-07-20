@@ -169,6 +169,7 @@ namespace Interlacer
                  || !dictionary.ContainsKey("RIGHT")
                  || !dictionary.ContainsKey("BOTTOM")
                  || !dictionary.ContainsKey("CENTER_POSITION")
+                 || !dictionary.ContainsKey("LINE_THICKNESS")
                 )
                 return false;
             if (!validateLoadUnits(dictionary))
@@ -206,7 +207,8 @@ namespace Interlacer
                 || !IsNumeric(dictionary["BACKGROUND_COLOR"])
                 || !IsNumeric(dictionary["INDENT"])
                 || !IsNumeric(dictionary["FRAME_WIDTH"])
-                || !IsNumeric(dictionary["LINE_COLOR"]))
+                || !IsNumeric(dictionary["LINE_COLOR"])
+                || !IsNumeric(dictionary["LINE_THICKNESS"]))
                 return false;
             return true;
         }
@@ -310,7 +312,9 @@ namespace Interlacer
                 this.lineData.SetLineColor(Color.FromArgb(Convert.ToInt32(dictionary["LINE_COLOR"])));
             if (dictionary["BACKGROUND_COLOR"] != null)
                 this.lineData.SetBackgroundColor(Color.FromArgb(Convert.ToInt32(dictionary["BACKGROUND_COLOR"])));
-
+            if (dictionary["LINE_THICKNESS"] != null)
+                this.lineData.SetLineThickness(Convert.ToInt32(dictionary["LINE_THICKNESS"]));
+            
             setLinePosition(dictionary);
         }
 
@@ -434,6 +438,7 @@ namespace Interlacer
                 "BACKGROUND_COLOR\t" + this.lineData.GetBackgroundColor().ToArgb() + Environment.NewLine +
                 "FRAME_WIDTH\t" + this.lineData.GetFrameWidth() + Environment.NewLine +
                 "INDENT\t" + this.lineData.GetIndent() + Environment.NewLine +
+                "LINE_THICKNESS\t" + this.lineData.GetLineThickness() + Environment.NewLine +
                 "LEFT\t" + this.lineData.GetLeft() + Environment.NewLine +
                 "TOP\t" + this.lineData.GetTop() + Environment.NewLine +
                 "RIGHT\t" + this.lineData.GetRight() + Environment.NewLine +

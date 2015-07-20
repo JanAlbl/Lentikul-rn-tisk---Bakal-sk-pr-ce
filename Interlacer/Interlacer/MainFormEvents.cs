@@ -686,6 +686,7 @@ namespace Interlacer
         private void fillButton_Click(object sender, EventArgs e)
         {
             fillList();
+            updateAllComponents();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)

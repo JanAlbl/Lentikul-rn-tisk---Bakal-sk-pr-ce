@@ -251,3 +251,9 @@ D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.cs.resou
 D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.en.resources
 D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\cs\Interlacer.resources.dll
 D:\Bak. prace\Interlacer\Interlacer\obj\x64\Release\en\Interlacer.resources.dll
+C:\Users\Jan\Documents\GitHub\Interlacer\bin64bit\cs\Interlacer.resources.dll
+C:\Users\Jan\Documents\GitHub\Interlacer\bin64bit\en\Interlacer.resources.dll
+C:\Users\Jan\Documents\GitHub\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.cs.resources
+C:\Users\Jan\Documents\GitHub\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.en.resources
+C:\Users\Jan\Documents\GitHub\Interlacer\Interlacer\obj\x64\Release\cs\Interlacer.resources.dll
+C:\Users\Jan\Documents\GitHub\Interlacer\Interlacer\obj\x64\Release\en\Interlacer.resources.dll
