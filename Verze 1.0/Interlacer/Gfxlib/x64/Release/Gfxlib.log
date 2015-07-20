@@ -1,0 +1,19 @@
+﻿Build started 18.7.2015 14:19:00.
+     1>Project "D:\Bak. prace\Zaloha\Interlacer\Gfxlib\Gfxlib.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D GFXLIB_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"x64\Release\Gfxlib.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D GFXLIB_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"x64\Release\Gfxlib.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt Gfxlib.cpp
+         Gfxlib.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"..\bin64bit\Gfxlib.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib CORE_RL_bzlib_.lib CORE_RL_cairo_.lib CORE_RL_coders_.lib CORE_RL_croco_.lib CORE_RL_exr_.lib CORE_RL_ffi_.lib CORE_RL_filters_.lib CORE_RL_glib_.lib CORE_RL_jp2_.lib CORE_RL_jpeg_.lib CORE_RL_lcms_.lib CORE_RL_librsvg_.lib CORE_RL_libxml_.lib CORE_RL_lqr_.lib CORE_RL_Magick++_.lib CORE_RL_magick_.lib CORE_RL_openjpeg_.lib CORE_RL_pango_.lib CORE_RL_pixman_.lib CORE_RL_png_.lib CORE_RL_tiff_.lib CORE_RL_ttf_.lib CORE_RL_wand_.lib CORE_RL_webp_.lib CORE_RL_zlib_.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\bin64bit\Gfxlib.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\bin64bit\Gfxlib.lib" /MACHINE:X64 /ignore:4099 /DLL x64\Release\Gfxlib.obj
+         x64\Release\stdafx.obj
+            Creating library ..\bin64bit\Gfxlib.lib and object ..\bin64bit\Gfxlib.exp
+         Generating code
+         Finished generating code
+         Gfxlib.vcxproj -> D:\Bak. prace\Zaloha\Interlacer\Gfxlib\..\bin64bit\Gfxlib.dll
+     1>Done Building Project "D:\Bak. prace\Zaloha\Interlacer\Gfxlib\Gfxlib.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:12.31

@@ -1,0 +1,1 @@
+Magick: NoDecodeDelegateForThisImageFormat `' @ error/constitute.c/ReadImage/501

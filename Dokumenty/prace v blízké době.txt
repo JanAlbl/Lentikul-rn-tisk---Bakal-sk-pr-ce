@@ -1,8 +1,5 @@
-1) smìr prokládání text vodorovnì svisle horizontálnì jen to pøepsat
 2) eventy na number box.?? fakt nevim co tim myslel :D
-3) mam nìjak rozhozené tlaèítko zachování pomìru
 4) chtìl to vykreslení èáry pod lentikulí aby bylo pøes celé bez krajù
-5) když dam 40dpi 11lpi nasypu 4 obrázky zmáènku fill tak tam pøibude jeden obrázek pøi každém kliku
 6) po nahrání konfigurace by se mìl aktualizovat i ten výkres èar.. trackbar už jede.. 
 
 

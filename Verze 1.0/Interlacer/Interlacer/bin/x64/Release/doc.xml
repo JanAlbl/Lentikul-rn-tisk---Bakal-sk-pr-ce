@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Interlacer</name>
+    </assembly>
+    <members>
+        <member name="T:GfxlibWrapper.GfxlibCommunicator">
+            <summary>
+            staticka trida obsahujici funkce pro komunikaci s grafickou knihovnou prostrednictvim DLL
+            </summary>
+        </member>
+        <member name="T:Interlacer.MainForm">
+            <summary>
+            Hlavni formular programu
+            </summary>
+        </member>
+        <member name="M:Interlacer.MainForm.#ctor">
+            <summary>
+            konstruktor pro inicializaci formulare
+            </summary>
+        </member>
+        <member name="F:Interlacer.MainForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Interlacer.MainForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Interlacer.MainForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:GfxlibWrapper.Picture.width">
+            <summary>
+            sirka v pixelech
+            </summary>
+        </member>
+        <member name="F:GfxlibWrapper.Picture.height">
+            <summary>
+            vyska v pixelech
+            </summary>
+        </member>
+        <member name="F:GfxlibWrapper.Picture.pixelData">
+            <summary>
+            pole obsahujici informace o jednotlivych pixelech
+            </summary>
+        </member>
+        <member name="F:GfxlibWrapper.Picture.filename">
+            <summary>
+            nazev souboru pro nacteni
+            </summary>
+        </member>
+        <member name="F:GfxlibWrapper.Picture.imagePtr">
+            <summary>
+            ukazatel na objekt C++ tridy Magick::Image
+            </summary>
+        </member>
+        <member name="M:GfxlibWrapper.Picture.#ctor(System.Int32,System.Int32)">
+            <summary>
+            vytvori bitmapu o zadane velikosti
+            </summary>
+            <param name="width">sirka v pixelech</param>
+            <param name="height">vyska v pixelech</param>
+        </member>
+        <member name="M:GfxlibWrapper.Picture.#ctor(System.String)">
+            <summary>
+            nastavi jmeno vstupniho souboru
+            </summary>
+            <param name="filename">jmeno vstupniho souboru</param>
+        </member>
+        <member name="M:GfxlibWrapper.Picture.Load">
+            <summary>
+            nacte bitmapu ze zadaneho souboru
+            </summary>
+        </member>
+        <member name="M:GfxlibWrapper.Picture.GetWidth">
+            <summary>
+            getter sirky bitmapy
+            </summary>
+            <returns>sirka bitmapy v pixelech</returns>
+        </member>
+        <member name="M:GfxlibWrapper.Picture.GetHeight">
+            <summary>
+            getter vysky v pixelech
+            </summary>
+            <returns>vyska bitmapy v pixelech</returns>
+        </member>
+        <member name="M:GfxlibWrapper.Picture.Save(System.String)">
+            <summary>
+            ulozi bitmapu
+            </summary>
+            <param name="saveFilename">nazev vystupniho souboru</param>
+        </member>
+        <member name="M:GfxlibWrapper.Picture.SetPixel(System.Int32,System.Int32,System.Int64)">
+            <summary>
+            nastavi hodnotu konkretniho pixelu
+            </summary>
+            <param name="x">x souradnice</param>
+            <param name="y">y souradnice</param>
+            <param name="pxValue">hodnota pixelu ve formatu ORGB, kde O je pruhlednost (opacity),
+            cim je vetsi, tim je pixel pruhlednejsi, hodnota je 8 bytová - napr. 0x0000FFFF00000000 je cervena</param>
+        </member>
+        <member name="M:GfxlibWrapper.Picture.GetPixel(System.Int32,System.Int32)">
+            <summary>
+            vrati hodnotu konkretniho pixelu
+            </summary>
+            <param name="x">x souradnice</param>
+            <param name="y">y souradnice</param>
+            <returns>hodnota pixelu na danych souradnicich</returns>
+        </member>
+        <member name="M:GfxlibWrapper.Picture.Resize(System.Int32,System.Int32,GfxlibWrapper.Picture.FilterType)">
+            <summary>
+            zmeni velikost bitmapy
+            </summary>
+            <param name="newWidth">nova sirka</param>
+            <param name="newHeight">nova vyska</param>
+            <param name="filterType">typ filteru</param>
+        </member>
+        <member name="M:GfxlibWrapper.Picture.Destroy">
+            <summary>
+            znici obrazek a dealokuje pamet, kterou vyuziva
+            </summary>
+        </member>
+        <member name="M:GfxlibWrapper.Picture.CopyColumn(GfxlibWrapper.Picture,System.Int32,System.Int32)">
+            <summary>
+            zkopiruje sloupec pixelu z jinoho obrazku do tohoto
+            </summary>
+            <param name="source">zdrojovy obrazek</param>
+            <param name="sourceColumn">index zdrojoveho sloupce</param>
+            <param name="destColumn">index ciloveho sloupce tohoto obrazku</param>
+        </member>
+        <member name="T:GfxlibWrapper.Picture.FilterType">
+            <summary>
+            trida reprezentujici typ filteru pouziteho pro resize
+            </summary>
+        </member>
+        <member name="M:Interlacer.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:Interlacer.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Interlacer.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Interlacer.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
