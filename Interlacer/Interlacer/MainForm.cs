@@ -1163,6 +1163,7 @@ namespace Interlacer
             return split[split.Length - 1];
         }
 
+        TreeView wholeDriveTree = new TreeView();
         private void mapDriversToTree()
         {
             string[] drives = System.Environment.GetLogicalDrives();
@@ -1378,8 +1379,6 @@ namespace Interlacer
             }
 
             reorder();
-        }
-
-        
+        } 
     }
 }

@@ -151,7 +151,6 @@
             this.savePicFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.saveConfigDialog = new System.Windows.Forms.SaveFileDialog();
             this.openConfigDialog = new System.Windows.Forms.OpenFileDialog();
-            this.wholeDriveTree = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.interlaceProgressBarFlowLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -1043,18 +1042,6 @@
             this.reorderTimer.Interval = 10;
             this.reorderTimer.Tick += new System.EventHandler(this.reorderTimer_Tick);
             // 
-            // wholeDriveTree
-            // 
-            this.wholeDriveTree.AllowDrop = true;
-            this.wholeDriveTree.BackColor = System.Drawing.SystemColors.Control;
-            this.wholeDriveTree.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.wholeDriveTree, "wholeDriveTree");
-            this.wholeDriveTree.ImageList = this.imageList1;
-            this.wholeDriveTree.ItemHeight = 18;
-            this.wholeDriveTree.Name = "wholeDriveTree";
-            this.wholeDriveTree.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.wholeDriveTree_BeforeExpand);
-            this.wholeDriveTree.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.wholeDriveTree_ItemDrag);
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -1087,7 +1074,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.interlaceProgressBarFlowLayout);
-            this.Controls.Add(this.wholeDriveTree);
             this.Controls.Add(this.previewPicBox);
             this.Controls.Add(this.interlaceButton);
             this.Controls.Add(this.groupBox7);
@@ -1264,7 +1250,6 @@
         private System.Windows.Forms.ToolStripMenuItem interlaceToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.TreeView wholeDriveTree;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ListView pictureListViewEx;
         private System.Windows.Forms.ColumnHeader poradi;
