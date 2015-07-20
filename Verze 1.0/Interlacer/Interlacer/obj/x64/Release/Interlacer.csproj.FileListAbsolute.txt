@@ -281,3 +281,27 @@ D:\Lentikularni_tisk-Bakalarska_prace\Interlacer\bin64bit\en\Interlacer.resource
 D:\Lentikularni_tisk-Bakalarska_prace\Interlacer\Interlacer\obj\x64\Release\cs-CZ\Interlacer.resources.dll
 D:\Lentikularni_tisk-Bakalarska_prace\Interlacer\Interlacer\obj\x64\Release\cs\Interlacer.resources.dll
 D:\Lentikularni_tisk-Bakalarska_prace\Interlacer\Interlacer\obj\x64\Release\en\Interlacer.resources.dll
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\bin64bit\Interlacer.exe.config
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\Interlacer.exe
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\Interlacer.pdb
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\bin64bit\Interlacer.exe
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\bin64bit\Interlacer.pdb
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\bin64bit\doc.xml
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\bin64bit\cs-CZ\Interlacer.resources.dll
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\bin64bit\cs\Interlacer.resources.dll
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\bin64bit\en\Interlacer.resources.dll
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\Interlacer.csprojResolveAssemblyReference.cache
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\Interlacer.ClipForm.resources
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.resources
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\Interlacer.Properties.Resources.resources
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\Interlacer.SettingsForm.resources
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\Interlacer.StringRes_CZ.resources
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\Interlacer.StringRes_EN.resources
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.cs-CZ.resources
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.cs.resources
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\Interlacer.MainForm.en.resources
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\Interlacer.SettingsForm.cs-CZ.resources
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\Interlacer.csproj.GenerateResource.Cache
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\cs-CZ\Interlacer.resources.dll
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\cs\Interlacer.resources.dll
+D:\Lentikularni_tisk-Bakalarska_prace\Verze 1.0\Interlacer\Interlacer\obj\x64\Release\en\Interlacer.resources.dll
