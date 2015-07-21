@@ -479,8 +479,9 @@ namespace Interlacer
             lpiNumeric.Text = Convert.ToString(projectData.GetInterlacingData().GetLenticuleDensity());
             frameWidthNumeric.Text = Convert.ToString(projectData.GetLineData().GetFrameWidth());
             indentNumeric.Text = Convert.ToString(projectData.GetLineData().GetIndent());
-            lineThicknessTrackbar.Maximum = pictureListViewEx.Items.Count;
-            lineThicknessTrackbar.Value = projectData.GetLineData().GetLineThickness();
+
+            changeMaxLineThickness();
+            actualPicsUnderLenLabel.Text = "" + projectData.GetLineData().GetLineThickness();
 
             double pictureResolution = projectData.GetInterlacingData().GetPictureResolution();
             double lenticuleDensity = projectData.GetInterlacingData().GetLenticuleDensity();
@@ -488,9 +489,7 @@ namespace Interlacer
             {
                 picUnderLenTextBox.Text = Convert.ToString(Math.Floor(pictureResolution / lenticuleDensity));
             }
-            changeMaxLineThickness();
-            actualPicsUnderLenLabel.Text = "" + projectData.GetLineData().GetLineThickness();
-
+            
             // Pokud se ze seznamu odebrali obrázky a šířka čar byla větší než je teď maximální hodnota, 
             // nová hodnota se nastaví na maximální hodnotu trackbaru
             if (projectData.GetInterlacingData().GetDirection() == Direction.Horizontal)
