@@ -1352,7 +1352,7 @@ namespace Interlacer
             try
             {
                 eachCopyCount = (maxPictures / picturesInList) - 1;
-                if (eachCopyCount <= 0)
+                if (eachCopyCount < 0)
                     return;
             }
             catch
