@@ -426,12 +426,12 @@ namespace Interlacer
             if (lineThicknessTrackbar.Maximum < lineThicknessTrackbar.Value)
             {
                 lineThicknessTrackbar.Value = lineThicknessTrackbar.Maximum;
-                projectData.GetLineData().SetLineThickness(lineThicknessTrackbar.Maximum);
-            }
-            if (lineThicknessTrackbar.Value != projectData.GetLineData().GetLineThickness())
                 projectData.GetLineData().SetLineThickness(lineThicknessTrackbar.Value);
-            
-
+            }
+            else
+            {
+                projectData.GetLineData().SetLineThickness(lineThicknessTrackbar.Value);
+            }
         }      
 
         /// <summary>
@@ -479,6 +479,8 @@ namespace Interlacer
             lpiNumeric.Text = Convert.ToString(projectData.GetInterlacingData().GetLenticuleDensity());
             frameWidthNumeric.Text = Convert.ToString(projectData.GetLineData().GetFrameWidth());
             indentNumeric.Text = Convert.ToString(projectData.GetLineData().GetIndent());
+            lineThicknessTrackbar.Maximum = pictureListViewEx.Items.Count;
+            lineThicknessTrackbar.Value = projectData.GetLineData().GetLineThickness();
 
             double pictureResolution = projectData.GetInterlacingData().GetPictureResolution();
             double lenticuleDensity = projectData.GetInterlacingData().GetLenticuleDensity();
@@ -488,13 +490,9 @@ namespace Interlacer
             }
             changeMaxLineThickness();
             actualPicsUnderLenLabel.Text = "" + projectData.GetLineData().GetLineThickness();
+
             // Pokud se ze seznamu odebrali obrázky a šířka čar byla větší než je teď maximální hodnota, 
             // nová hodnota se nastaví na maximální hodnotu trackbaru
-            if (Convert.ToInt32(actualPicsUnderLenLabel.Text) > lineThicknessTrackbar.Maximum)
-            {
-                lineThicknessTrackbar.Value = lineThicknessTrackbar.Maximum;
-                actualPicsUnderLenLabel.Text = Convert.ToString(lineThicknessTrackbar.Value);
-            }
             if (projectData.GetInterlacingData().GetDirection() == Direction.Horizontal)
             {
                 horizontalRadiobutton.Checked = true;
@@ -547,7 +545,6 @@ namespace Interlacer
             }
             finalImageHeightTextBox.Text = Convert.ToString(Math.Round(projectData.GetInterlacingData().GetHeight() + frameWidth, 3));
 
-            lineThicknessTrackbar.Value = projectData.GetLineData().GetLineThickness(); 
             
         }
                 
@@ -808,14 +805,12 @@ namespace Interlacer
         {
             if (pictureListViewEx.Items.Count == 0)
                 return;
-            
 
             int itemCount = pictureListViewEx.SelectedItems.Count;
             int firstItem = pictureListViewEx.SelectedItems[0].Index;
 
             for (int i = 0; i < itemCount; i++)
                 pictureListViewEx.SelectedItems[0].Remove();
-
 
             if (firstItem > pictureListViewEx.Items.Count - 1 && pictureListViewEx.Items.Count > 0)
                 pictureListViewEx.Items[pictureListViewEx.Items.Count - 1].Selected = true;

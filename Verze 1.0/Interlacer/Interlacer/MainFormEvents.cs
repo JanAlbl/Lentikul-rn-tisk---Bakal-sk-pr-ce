@@ -284,10 +284,8 @@ namespace Interlacer
         /// <param name="e"></param>
         private void lineThicknessTrackbar_ValueChanged(object sender, EventArgs e)
         {
-            changeMaxLineThickness();
             actualPicsUnderLenLabel.Text = Convert.ToString(lineThicknessTrackbar.Value);
             projectData.GetLineData().SetLineThickness(lineThicknessTrackbar.Value);
-            
             drawLineThickness();
         }
 
@@ -433,21 +431,6 @@ namespace Interlacer
             else return;
 
             loadConfigurationFile(filename);
-            /*try
-            {
-                List<String> pathPics = projectData.Load(filename);     //načtu si cesty obrázků a v metode Load nastavím do LineData a Interlacing dat požadované data
-                projectData.GetInterlacingData().SetUnits(((StringValuePair<Units>)settings.GetSelectedUnits()).value);     // nastavím jednotky, které jsou momentálně v mainformu nastaveny
-                projectData.GetLineData().SetUnits(((StringValuePair<Units>)settings.GetSelectedUnits()).value);
-                projectData.GetInterlacingData().SetResolutionUnits(((StringValuePair<Units>)settings.GetSelectedResolutionUnits()).value);
-                updateAllComponents();      // updatuju celý mainform aby se provedli změny v gui
-                setPictureViewFromList(pathPics);       // nastavím i cesty k novým obrázkům
-
-                drawLineThickness();
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }*/
         }
 
         /// <summary>
