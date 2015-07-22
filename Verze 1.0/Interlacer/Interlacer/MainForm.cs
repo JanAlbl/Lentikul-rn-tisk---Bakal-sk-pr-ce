@@ -480,6 +480,8 @@ namespace Interlacer
             frameWidthNumeric.Text = Convert.ToString(projectData.GetLineData().GetFrameWidth());
             indentNumeric.Text = Convert.ToString(projectData.GetLineData().GetIndent());
 
+            lineThicknessTrackbar.Maximum = pictureListViewEx.Items.Count - 1;
+            lineThicknessTrackbar.Value = projectData.GetLineData().GetLineThickness();
             changeMaxLineThickness();
             actualPicsUnderLenLabel.Text = "" + projectData.GetLineData().GetLineThickness();
 
