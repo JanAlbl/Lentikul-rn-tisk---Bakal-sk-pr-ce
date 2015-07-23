@@ -2038,9 +2038,10 @@
              </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.clearListMessage">
-            <summary>
-              Looks up a localized string similar to Jste si jistí?.
-            </summary>
+             <summary>
+               Looks up a localized string similar to Opravdu chcete smazat seznam  
+            snímků?.
+             </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.clearListMessageName">
             <summary>
@@ -2096,6 +2097,11 @@
                Looks up a localized string similar to Soubor {0} se nepodařilo otevřít. 
             Soubor pravděpodobně neexistuje..
              </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_CZ.fillButtonToolTip">
+            <summary>
+              Looks up a localized string similar to Vyplní seznam snímků tak, aby obsahoval přesný počet snímků jaký se vejde pod lentikuli..
+            </summary>
         </member>
         <member name="P:Interlacer.StringRes_CZ.fillButtonWarning">
             <summary>
@@ -2440,7 +2446,7 @@
         </member>
         <member name="P:Interlacer.StringRes_EN.clearListMessage">
             <summary>
-              Looks up a localized string similar to Are you sure?.
+              Looks up a localized string similar to Are you sure you want to clear list of pictures??.
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.clearListMessageName">
@@ -2493,6 +2499,11 @@
         <member name="P:Interlacer.StringRes_EN.fileNotFoundError">
             <summary>
               Looks up a localized string similar to File {0} could not be opened. File probably does not exist..
+            </summary>
+        </member>
+        <member name="P:Interlacer.StringRes_EN.fillButtonToolTip">
+            <summary>
+              Looks up a localized string similar to Fills the list of pictures so there is exact amout of pictures that fits under lenticule..
             </summary>
         </member>
         <member name="P:Interlacer.StringRes_EN.fillButtonWarning">

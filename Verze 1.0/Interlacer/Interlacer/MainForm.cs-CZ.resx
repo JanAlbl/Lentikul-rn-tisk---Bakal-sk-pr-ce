@@ -117,25 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="souborMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
-  </data>
-  <data name="souborMenuItem.Text" xml:space="preserve">
-    <value>Soubor</value>
-  </data>
-  <data name="nastaeníToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="nastaeníToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nastavení</value>
-  </data>
-  <data name="oProgramuToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
-  </data>
-  <data name="oProgramuToolStripMenuItem.Text" xml:space="preserve">
-    <value>O programu</value>
-  </data>
   <data name="ulozToolStripMenuItem.Text" xml:space="preserve">
     <value>Uložit</value>
   </data>
@@ -145,11 +126,24 @@
   <data name="zavřítToolStripMenuItem.Text" xml:space="preserve">
     <value>Zavřít</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="souborMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 20</value>
+  </data>
+  <data name="souborMenuItem.Text" xml:space="preserve">
+    <value>Soubor</value>
+  </data>
   <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 22</value>
   </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Předvolby</value>
+  </data>
+  <data name="nastaeníToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 20</value>
+  </data>
+  <data name="nastaeníToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nastavení</value>
   </data>
   <data name="nápovědaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 22</value>
@@ -163,34 +157,40 @@
   <data name="oProgramuToolStripMenuItem1.Text" xml:space="preserve">
     <value>O programu...</value>
   </data>
+  <data name="oProgramuToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 20</value>
+  </data>
+  <data name="oProgramuToolStripMenuItem.Text" xml:space="preserve">
+    <value>O programu</value>
+  </data>
   <data name="saveToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        HTLHHCAOxU7LFDSbi25sMyoMSuUmIpRbwVR6ofcKCCgVEWoBqWApl1Iuw2QSN40X9g0ZSgXy7junX+uK
-        tAp9kl++77znPe/zcDjpObOsijjX57antE/+eaFW82NJq2bEbNZMTExoRs3j9J7CjPdUzRnm8QnNieou
-        TWBerSZCaSzbrfw9MrpQ/yqxcaxdqp6mqPJ+CMyvhe8UOrAqiHsF/DmXaHK0PaTqXMcrDXR/9PluYKh6
-        gaHsaWWUtL9LrKZWuMyE9pX1wkaOGqLE9WQUQEC2GtakV9Bk1RlJ1bmOlLXQ/XtLuiBCYaLZqTC1METt
-        bxG75xUuM6JvS7vhk4xyYArqyCiAT/GxV7KKJqOmnVSdK0Z1je6PVHXADpnRRriss2K7UvkKsbTX19IO
-        xDzXBb4pKmDwqskoAL9UFaxMkNCkqfWk6lyH5Fq6f7fcAHiuPZI2LrG0V5hYh3YrO+EjthR2FFwgowB8
-        2BL48DifJuViM6k610FxLd3PkOohTNz2HKFiQwSxfaZQkQ4x5O3gmSiBcG4lGQVwuloPyReaaWpMt0jV
-        sfqHKyG5MRGizsdA3LU0ONZ40kZMXSKEFesgRHDDRGyfKVigQxEyAx3AM6EY+u8hMnJ6Ev0ZAEW310+J
-        AJ+LLONBsKAFQs+2uBFrizZzdWiHRE8HoG7f0lg+eOPbP10yu+dDdt8ch0SWcmFr0XXYymteR6wt2sxt
-        QqGC6/Blgdr2P58JGab5kNU7xyF7SvIhiNcEQYVN64m1RZu5DWjLmQZgKlshuqQVos7pZ8Rpkxtk9sx1
-        yDeqXKB8AgvrJwfQosACLbhKutEN34X3HbJLkWPpLayzDxCQr0YB+XXgKmmd7nCq6wOH7JRz6L5NeZMC
-        bMpVo025V8BVUtoXwMnOeQ4Jl2ZZevMu2wfYkK1GG7Ivg6skGRZCasd8h2wXZ9J9/pxJAfw5amR967kC
-        u9UDktrcHLJNdJr0VtkH8EmpQusyq8BVEloWA1vv7pAQwSm6b23GcwEq0dqMSoiWNkJF5wBUdd2eEayW
-        JTjEAod8VZSOzSshTBg3OUA5WpNeDgODw+RH9cUamzBD0g0viLvuMTOa3O8QeyqADPmmlcHD4Sf08EE0
-        DP237r4QpSELv2gWz4ijDYuevRW9cQDvlBJbgL/uDcIN482XoB+4hkj4VbtkWvxydZmMWFvklSRDXkkq
-        eEACTEdDo/fgtwY//Lpd9lIcvLQatvG/9yfWFnmyZciTLccBHtNDqdt7qb7tpSmszoPDNSteyCHMxpxk
-        8Eo6a/8QrmJJEcYWYOTxKDz4+9G0EHbE4r9ulVPCRHuB8lnFktgHWHREjJbHi20B8Dc+jI2PT4vh0SE4
-        VvsFHLjoOSUJ2lA4LK8BymdZnHByABFaGieCB48sAYx9AyC/0DhteGoxRFV4w75yLzv2V/rCH8gEPyvr
-        gfKZIgAXUR8U90kAV1TSnQt7yz+2o6KXR5+LkV+lP1wWH530DFgD3NRmAGpOd4mHuhSILfO1mceXrYZB
-        XSp97oe8gqkDLI/ltVEncrL3Q1FupMuk5TOBiUMwS1dDOt5b6yHsNBwgdXwLmzePNlYqla8JBAL35DPC
-        A5+dENz1Y/FHVrIyn/ixcs1+8fynC1j8MYol8anjVtay+BNT8f8e6prgnH1jQfGxT6lZlpn8EZ9ELjrE
-        4eedEQo9OBzO67MUCsU7IpHoYHFxsUgsFl/BtGL6cKhbeL2D6/fx+UG8R5ghzCM+nz9Mgff/UliPSW1I
-        KBT+Q11DXYuP72AGMH342IDrdXgVY37CvDcLPxez8YVv4CBvY9M5EolkoVQqXYEbffB+PW4KwBcH4TUE
-        H2/H60687sIrA9eZFNSequF9BOkJIdcEUDOoWZiVOJgHrs2lvDBvAsDs/wAaZDPUx3ObnQAAAABJRU5E
+        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
         rkJggg==
 </value>
   </data>
@@ -200,30 +200,30 @@
   <data name="loadToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
         YII=
 </value>
   </data>
@@ -244,9 +244,6 @@
         kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
         TgDQASA1MVpwzwAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Výstupní obrázek</value>
   </data>
   <data name="replaceButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -929,7 +926,7 @@
   <data name="clearAllButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAAd0SU1FB98HDRMiFMz+j+MAAAMfSURBVHhe7Zu7btVAEIb3EfIAXMKl4BYINwFd
+        DAAACwwBP0AiyAAAAAd0SU1FB98HDRMiFMz+j+MAAAMfSURBVHhe7Zu7btVAEIb3EfIAXMKl4BYINwFd
         HiWPwAMgdCpEQYEQFQ28ARKioCIUCCEKQAghCkQaCkQTREFBs8z4zEhmPeszdnZnfTj7S58UxXO8//yK
         7fGx46qqqqqqqvLo03m3BuwAfiT42TXa3fKJGpAaG8IO7W75JDQzCtrd8klqZgy0u+XT2EbGfm5yGtvI
         2M9l1Z9rzpfi91Xnv136N5RFkO10koxZ8+uK818vyg2HkO10kgyV4sdl5z8LTbch2+kkGSkJHhbfe4Ig
@@ -1007,7 +1004,7 @@
   <data name="removePicButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAAd0SU1FB98HDRMPDhG2LHYAAAS1SURBVGhD7Zr9T9VVHMc//0orW9qWFZqCYgwT
+        DAAACwwBP0AiyAAAAAd0SU1FB98HDRMPDhG2LHYAAAS1SURBVGhD7Zr9T9VVHMc//0orW9qWFZqCYgwT
         QdONlqjBmEwsLJGAWVnOyh42HTiz0umsufWweLiXC1ztB7Ncc9KyqGzzAe4jpZIjIsAlhHw754tnnXPu
         +z7w5D3fCz+8xs5n9/t5f173fB9gX8iyrBkFLKYysKjTfWQXdZYsoMCLKyfMQW/Ykn9OFN+WdPK/kEV/
         tnwEZ40HLMoM/vwtdZams7DciPBYcDFZMlHE5+VeEVTkUMemNOraU0w3fz0H544GLApGh/+h8O6N5Ctb
@@ -1033,7 +1030,7 @@
   <data name="addPicButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAAd0SU1FB98HDRMKGwEcPNgAAAJnSURBVHhe7ZoxTsQwFAX30FAgcQIqoKCk3IaC
+        DAAACwwBP0AiyAAAAAd0SU1FB98HDRMKGwEcPNgAAAJnSURBVHhe7ZoxTsQwFAX30FAgcQIqoKCk3IaC
         Bgk6zsAR6BEcYZGlF8n6Gna//e04KzzSdHHyJttEgt1kMplMJv24f/k8RNRtzgsKaaFuv11odA/1uG1B
         Q3t5efuynZdAA3ua4nM1Yww0sLf2BQx7CTSutxS/qFnrQON6e/P8iuG5mtcXGreGFExqZh9oWIlvH4+H
         n++vo6Zr7DkKPabmtsWOqpGCSXuOIk+p2e2wo2qkWDI/Q3EeNbsN+aCIFEvmZyjOq+bHyMdEpVhyuZ6i
@@ -1047,14 +1044,11 @@
         SUVORK5CYII=
 </value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Rozlišení obrázku</value>
-  </data>
   <data name="picUnderLenLabel.Text" xml:space="preserve">
     <value>Snímků pod lentikulí</value>
   </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Směr prokládání</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Rozlišení obrázku</value>
   </data>
   <data name="verticalRadiobutton.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 17</value>
@@ -1068,8 +1062,8 @@
   <data name="horizontalRadiobutton.Text" xml:space="preserve">
     <value>Vodorovně</value>
   </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Finální velikost obrázku</value>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Směr lentikulí</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="finalImageHeightLabel.AutoSize" type="System.Boolean, mscorlib">
@@ -1091,8 +1085,8 @@
   <data name="finalImageWidthLabel.Text" xml:space="preserve">
     <value>Šířka</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Rozměry výstupního obrázku</value>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Finální velikost obrázku</value>
   </data>
   <data name="heightLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 13</value>
@@ -1112,20 +1106,20 @@
   <data name="keepRatioCheckbox.Text" xml:space="preserve">
     <value>Zachovat poměr stran</value>
   </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Rozměry výstupního obrázku</value>
+  </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>Interpolace pro finální převzorkování</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Interpolace pro prvotní změnu velikosti</value>
   </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Vodící čáry</value>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Výstupní obrázek</value>
   </data>
   <data name="groupBox13.Text" xml:space="preserve">
     <value>Obsazeno snímků pod lentikulí</value>
-  </data>
-  <data name="groupBox12.Text" xml:space="preserve">
-    <value>Barva čar a pozadí</value>
   </data>
   <data name="lineBackgroundColorLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -1139,8 +1133,8 @@
   <data name="lineColorLabel.Text" xml:space="preserve">
     <value>Čáry</value>
   </data>
-  <data name="groupBox11.Text" xml:space="preserve">
-    <value>Pozice čáry pod lentikulí</value>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>Barva čar a pozadí</value>
   </data>
   <data name="edgeRadioButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 17</value>
@@ -1154,8 +1148,8 @@
   <data name="centerRadioButton.Text" xml:space="preserve">
     <value>Střed</value>
   </data>
-  <data name="groupBox8.Text" xml:space="preserve">
-    <value>Pozice čar</value>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Pozice čáry pod lentikulí</value>
   </data>
   <data name="rightLineLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 79</value>
@@ -1193,8 +1187,8 @@
   <data name="topLineLabel.Text" xml:space="preserve">
     <value>Horní</value>
   </data>
-  <data name="groupBox10.Text" xml:space="preserve">
-    <value>Vodící čáry</value>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Pozice čar</value>
   </data>
   <data name="indentLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 48</value>
@@ -1210,6 +1204,9 @@
   </data>
   <data name="frameWidthLabel.Text" xml:space="preserve">
     <value>Šířka rámečku</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Vodící čáry</value>
   </data>
   <data name="linePictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2877,14 +2874,11 @@
         VOmJAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Vodící čáry</value>
+  </data>
   <data name="groupBox7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="groupBox7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 120</value>
-  </data>
-  <data name="groupBox7.Text" xml:space="preserve">
-    <value>Informace o obrázku</value>
   </data>
   <data name="infoHeightLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>145, 86</value>
@@ -2922,11 +2916,14 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Jméno souboru:</value>
   </data>
+  <data name="groupBox7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 120</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Informace o obrázku</value>
+  </data>
   <data name="interlaceButton.Text" xml:space="preserve">
     <value>Proložit</value>
-  </data>
-  <data name="previewPicBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="previewPicBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5449,7 +5446,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAa
-        DwAAAk1TRnQBSQFMAgEBBwEAAWgBAgFoAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        DwAAAk1TRnQBSQFMAgEBBwEAAXABAgFwAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -5515,9 +5512,6 @@
         AcABAQGAAQECAAGAAQEBwAEBAYABAQIAAYABAQHAAQEBgAEDAgABgAEBAcABAQGAAQcBAAEDAYABAwHA
         AQEBgAEPAQABfwHAAQMBwAEBAcABHwL/AcABAwL/Cw==
 </value>
-  </data>
-  <data name="interlaceProgressBarFlowLayout.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

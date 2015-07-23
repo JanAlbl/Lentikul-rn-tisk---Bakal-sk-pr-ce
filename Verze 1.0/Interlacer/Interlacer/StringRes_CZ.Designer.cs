@@ -140,7 +140,8 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Jste si jistí?.
+        ///   Looks up a localized string similar to Opravdu chcete smazat seznam  
+        ///snímků?.
         /// </summary>
         internal static string clearListMessage {
             get {
@@ -240,6 +241,15 @@ namespace Interlacer {
         internal static string fileNotFoundError {
             get {
                 return ResourceManager.GetString("fileNotFoundError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vyplní seznam snímků tak, aby obsahoval přesný počet snímků jaký se vejde pod lentikuli..
+        /// </summary>
+        internal static string fillButtonToolTip {
+            get {
+                return ResourceManager.GetString("fillButtonToolTip", resourceCulture);
             }
         }
         

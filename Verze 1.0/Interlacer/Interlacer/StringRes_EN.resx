@@ -149,7 +149,7 @@ Do you wish to continue?</value>
 Removes all pictures from list.</value>
   </data>
   <data name="clearListMessage" xml:space="preserve">
-    <value>Are you sure?</value>
+    <value>Are you sure you want to clear list of pictures??</value>
   </data>
   <data name="clearListMessageName" xml:space="preserve">
     <value>Clear list</value>
@@ -360,5 +360,8 @@ Reverses list of pictures. Usefull especially for 3-D, because pictures must be 
   </data>
   <data name="fillButtonWarning" xml:space="preserve">
     <value>There are no pictures in list!</value>
+  </data>
+  <data name="fillButtonToolTip" xml:space="preserve">
+    <value>Fills the list of pictures so there is exact amout of pictures that fits under lenticule.</value>
   </data>
 </root>

@@ -140,7 +140,7 @@ namespace Interlacer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure?.
+        ///   Looks up a localized string similar to Are you sure you want to clear list of pictures??.
         /// </summary>
         internal static string clearListMessage {
             get {
@@ -237,6 +237,15 @@ namespace Interlacer {
         internal static string fileNotFoundError {
             get {
                 return ResourceManager.GetString("fileNotFoundError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fills the list of pictures so there is exact amout of pictures that fits under lenticule..
+        /// </summary>
+        internal static string fillButtonToolTip {
+            get {
+                return ResourceManager.GetString("fillButtonToolTip", resourceCulture);
             }
         }
         

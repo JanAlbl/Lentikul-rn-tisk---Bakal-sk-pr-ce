@@ -149,7 +149,8 @@ Chcete pokračovat?</value>
 Odstraní ze seznamu všechny snímky.</value>
   </data>
   <data name="clearListMessage" xml:space="preserve">
-    <value>Jste si jistí?</value>
+    <value>Opravdu chcete smazat seznam  
+snímků?</value>
   </data>
   <data name="clearListMessageName" xml:space="preserve">
     <value>Vymazat list</value>
@@ -365,5 +366,8 @@ Seřadí seznam snímků. Užitečné zejména pro 3-D a animace, obsahují-li  
   </data>
   <data name="fillButtonWarning" xml:space="preserve">
     <value>V seznamu nejsou žádné obrázky!</value>
+  </data>
+  <data name="fillButtonToolTip" xml:space="preserve">
+    <value>Vyplní seznam snímků tak, aby obsahoval přesný počet snímků jaký se vejde pod lentikuli.</value>
   </data>
 </root>
