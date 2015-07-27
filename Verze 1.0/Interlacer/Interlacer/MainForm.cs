@@ -106,7 +106,8 @@ namespace Interlacer
             backgroundColorButton.BackColor = Color.White;
             projectData.GetLineData().SetLineColor(Color.Black);
             projectData.GetLineData().SetBackgroundColor(Color.White);
-            edgeRadioButton.Checked = true;
+            projectData.GetLineData().SetCenterPosition(true);
+            centerRadioButton.Checked = true;
             projectData.GetLineData().SetLineThickness(1);
             actualPicsUnderLenLabel.Text = Convert.ToString(lineThicknessTrackbar.Value);
             loadSettings();  //nacteni akutalniho nastaveni do atributu settings
