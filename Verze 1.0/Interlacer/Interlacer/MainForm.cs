@@ -762,9 +762,10 @@ namespace Interlacer
             Graphics imgContext = Graphics.FromImage(bufferImage);
             imgContext.SmoothingMode = SmoothingMode.AntiAlias;
             imgContext.FillRectangle(backgroundBrush, 0, 0, linePictureBox.Width - 1, linePictureBox.Height - 1);
-            imgContext.DrawRectangle(outLinePen, 0, 0, linePictureBox.Width - 1, linePictureBox.Height - 1);
+            //imgContext.DrawRectangle(outLinePen, 0, 0, linePictureBox.Width - 1, linePictureBox.Height - 1);
 
-            int indentTop = 30; int indentBottom = 10;  int indentLeft = 10;
+            //30                                10              10
+            int indentTop = 0; int indentBottom = 0;  int indentLeft = 0;
 
             int columnWidth = (bufferImage.Width - 2 * indentLeft) / (lineThicknessTrackbar.Maximum + 1);
             int columnHeight = bufferImage.Height - indentTop - indentBottom;
