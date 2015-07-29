@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="addPicTooltip" xml:space="preserve">
+    <value>(+)
+Adds picture into lenticule image</value>
+  </data>
+  <data name="aligmentWidthToolTip" xml:space="preserve">
+    <value>Width of alignment lines. Usually few milimeters.
+(default 0)</value>
+  </data>
+  <data name="alignLinesWarningMessage" xml:space="preserve">
+    <value>Some positions for alignment lines are checked, but frame width is zero.
+Do you wish to continue?</value>
+  </data>
+  <data name="alignLinesWarningMessage2" xml:space="preserve">
+    <value>No positions for alignment lines are checked, but frame width is greater than zero.
+Do you wish to continue?</value>
+  </data>
+  <data name="alignLinesWarningMessageName" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="bottomLinesToolTip" xml:space="preserve">
+    <value>Bottom
+(default OFF)</value>
+  </data>
+  <data name="centerAlignmentToolTip" xml:space="preserve">
+    <value>Alignment lines are in the middle of lenticules. When positioning final image on lenticule material, alignment line´s color is seen from the front. Ideal for 3-D.
+(default)</value>
+  </data>
+  <data name="clearAllTooltip" xml:space="preserve">
+    <value>(Ctrl + E)
+Removes all pictures from list.</value>
+  </data>
+  <data name="clearListMessage" xml:space="preserve">
+    <value>Are you sure you want to clear list of pictures??</value>
+  </data>
+  <data name="clearListMessageName" xml:space="preserve">
+    <value>Clear list</value>
+  </data>
+  <data name="configFileCorruptError" xml:space="preserve">
+    <value>Configuration file {0} may be corrupted.</value>
+  </data>
+  <data name="copyPicTooltip" xml:space="preserve">
+    <value>(Ctrl + D)
+Chosen pictures are duplicated X times, depends on the number in "Number of copies"</value>
+  </data>
+  <data name="doneMessage" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="dpiToolTip" xml:space="preserve">
+    <value>Basic resolution of printing machine. Typical values are 600 DPI for HP and Canon printers, 720 DPI for Epson printers.
+(default 0)</value>
+  </data>
+  <data name="edgeAlignmentToolTip" xml:space="preserve">
+    <value>Alignment lines are on the edge between lenticules. When positioning final image on lenticule material, alignment line´s color is seen from the side.</value>
+  </data>
+  <data name="emptyListError" xml:space="preserve">
+    <value>List of images is empty</value>
+  </data>
+  <data name="falseParamsHeadline" xml:space="preserve">
+    <value>These parameters have false values:</value>
+  </data>
+  <data name="falseParamsMessageName" xml:space="preserve">
+    <value>False interlacing parameters</value>
+  </data>
+  <data name="fileNotFoundError" xml:space="preserve">
+    <value>File {0} could not be opened. File probably does not exist.</value>
+  </data>
+  <data name="horizontalLenticuleOrientation" xml:space="preserve">
+    <value>Lenticules are positioned horizontally, that means image is changing while view is changing from down 
+to top. CANNOT BE USED for 3D.</value>
+  </data>
+  <data name="imageDimensionError" xml:space="preserve">
+    <value>Image dimensions differ. Do you want to crop them to minimum width and minimum height?</value>
+  </data>
+  <data name="imageLoadError" xml:space="preserve">
+    <value>File {0} could not be loaded.</value>
+  </data>
+  <data name="imageSaveError" xml:space="preserve">
+    <value>Image {0} could not be saved.</value>
+  </data>
+  <data name="imageSaveError2" xml:space="preserve">
+    <value>File {0} could not be saved. Check writing privileges and make sure there is enough space.</value>
+  </data>
+  <data name="interlacingError" xml:space="preserve">
+    <value>Interlacing failed. Check interlacing parameters.</value>
+  </data>
+  <data name="keepAspectRatioToolTip" xml:space="preserve">
+    <value>When field is checked, both height and width is being changed while keeping their aspect ratio.
+(default ON)</value>
+  </data>
+  <data name="langCzech" xml:space="preserve">
+    <value>Czech</value>
+  </data>
+  <data name="langEnglish" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="leftLinesToolTip" xml:space="preserve">
+    <value>Left
+(default OFF)</value>
+  </data>
+  <data name="libraryLoadError" xml:space="preserve">
+    <value>Error loading graphics library.
+Make sure Visual C++ Redistributable is installed.</value>
+  </data>
+  <data name="lineBackgroundColorToolTip" xml:space="preserve">
+    <value>Color of space between alignment lines. Typically white.
+(default white)</value>
+  </data>
+  <data name="lineColorToolTip" xml:space="preserve">
+    <value>Color of alignment lines. Typically black.
+(default black)</value>
+  </data>
+  <data name="linesIndentToolTip" xml:space="preserve">
+    <value>Odsazení pruhů od obrázku. Usually from zero to five milimeters. Value greater than zero is suitable when clipping final lenticule image.
+(default 0)</value>
+  </data>
+  <data name="lineWidthGroupBox" xml:space="preserve">
+    <value>Thickness of alignment lines. Small values are suitable for precise positioning of lenticule material, but 
+put higher demands on print.
+(default 25 %)</value>
+  </data>
+  <data name="loadTooltip" xml:space="preserve">
+    <value>Open project</value>
+  </data>
+  <data name="lpiToolTip" xml:space="preserve">
+    <value>Visual span of lenticules obtained by so called pitchtest. Typical values are between 20 and 100.</value>
+  </data>
+  <data name="maxImagesUnderLenticuleToolTip" xml:space="preserve">
+    <value>Maximum amout of images, that can be put into lenticule image. Ideally, there is exactly that
+ amout of images, whereas some images can be repeated. If maximum amout is 18, it´s appropriate
+ to put 18 different views on the scene when doing 3D images. When doing flip of two images,
+ it´s appropriate to use first image 9 times and second image 9 times as well.  If maximum amout
+ of images is very distant from whole number (etc. 14.6), chosen printer isn´t appropriate for chosen
+ lenticule material.</value>
+  </data>
+  <data name="memoryError" xml:space="preserve">
+    <value>Not enough memory.</value>
+  </data>
+  <data name="moveDownTooltip" xml:space="preserve">
+    <value>(Ctrl + down arrow)
+Moves chosen pictures down in list.</value>
+  </data>
+  <data name="moveUpTooltip" xml:space="preserve">
+    <value>(Ctrl + up arrow)
+Moves chosen pictures up in list.</value>
+  </data>
+  <data name="nameListView" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="orderListView" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="outputImageHeightToolTip" xml:space="preserve">
+    <value>Height of output image. Final image may contain alignment lines and be higher.
+(default 0)</value>
+  </data>
+  <data name="outputImageWidthToolTip" xml:space="preserve">
+    <value>Width of output image. Final image may contain alignment lines and be wider.
+(default 0)</value>
+  </data>
+  <data name="pathListView" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="previewError" xml:space="preserve">
+    <value>Preview could not be created</value>
+  </data>
+  <data name="printParamAdjustmentFilterCubic" xml:space="preserve">
+    <value>Cubic (default)</value>
+  </data>
+  <data name="printParamAdjustmentFilterLanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="printParamAdjustmentFilterLinear" xml:space="preserve">
+    <value>Linear</value>
+  </data>
+  <data name="printParamAdjustmentFilterNearestNeighbor" xml:space="preserve">
+    <value>Nearest neighbour</value>
+  </data>
+  <data name="printParamAdjustmentToolTip" xml:space="preserve">
+    <value>Cubic (3D, animation, flip) (default)
+Lanczos (3D, animation, flip)
+Linear (3D, animation, flip)
+Nearest neighbour (flip)</value>
+  </data>
+  <data name="removePicTooltip" xml:space="preserve">
+    <value>(Del)
+Removes chosen pictures from lenticule image.</value>
+  </data>
+  <data name="replaceTooltip" xml:space="preserve">
+    <value>(Ctrl + Q)
+Replaces chosen picture with another picture from hard disk.</value>
+  </data>
+  <data name="resizeFilterCubic" xml:space="preserve">
+    <value>Cubic (best) 
+(default)</value>
+  </data>
+  <data name="resizeFilterLanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="resizeFilterLinear" xml:space="preserve">
+    <value>Linear</value>
+  </data>
+  <data name="resizeFilterNearestNeighbor" xml:space="preserve">
+    <value>Nearest neighbour</value>
+  </data>
+  <data name="revertTooltip" xml:space="preserve">
+    <value>(Ctrl + R)
+Reverses list of pictures. Usefull especially for 3-D, because pictures must be in order from most left picture to most right picture.</value>
+  </data>
+  <data name="rightLinesToolTip" xml:space="preserve">
+    <value>Right
+(default OFF)</value>
+  </data>
+  <data name="saveTooltip" xml:space="preserve">
+    <value>Save project</value>
+  </data>
+  <data name="sortTooltip" xml:space="preserve">
+    <value>Sort images by their ending number (Ctrl + S) Sorts list of pictures. Usefull especially
+ for 3-D and animation, if pictures names contain order. Don´t forget to chech when
+ wokring with 3-D if pictures are in order from most left to most right picture. If not,
+ use button "Reverse".</value>
+  </data>
+  <data name="topLinesToolTip" xml:space="preserve">
+    <value>Top
+(default OFF)</value>
+  </data>
+  <data name="unitsInches" xml:space="preserve">
+    <value>inches</value>
+  </data>
+  <data name="verticalLenticuleOrientation" xml:space="preserve">
+    <value>Lenticules are positioned vertically, that means image is changing while view is changing from left to right. 
+(default)</value>
+  </data>
+  <data name="wrongFormatError" xml:space="preserve">
+    <value>File  {0} has wrong format.</value>
+  </data>
+  <data name="heightFinalSize" xml:space="preserve">
+    <value>Final image height with alignment lines.</value>
+  </data>
+  <data name="widthFinalSize" xml:space="preserve">
+    <value>Final image width with alignment lines.</value>
+  </data>
+  <data name="fillButtonWarning" xml:space="preserve">
+    <value>There are no pictures in list!</value>
+  </data>
+  <data name="fillButtonToolTip" xml:space="preserve">
+    <value>Fills the list of pictures so there is exact amout of pictures that fits under lenticule.</value>
+  </data>
+</root>

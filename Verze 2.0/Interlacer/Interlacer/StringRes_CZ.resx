@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="addPicTooltip" xml:space="preserve">
+    <value>(+)
+Přidá snímek do lentikulárního obrázku</value>
+  </data>
+  <data name="aligmentWidthToolTip" xml:space="preserve">
+    <value>Šířka pasovacích pruhů. Obvykle několik milimetrů.
+(default 0)</value>
+  </data>
+  <data name="alignLinesWarningMessage" xml:space="preserve">
+    <value>Jsou zaškrtlé některé pozice vodících čar, ale šířka rámečku je nula.
+Chcete pokračovat?</value>
+  </data>
+  <data name="alignLinesWarningMessage2" xml:space="preserve">
+    <value>Nejsou zaškrtlé žádné pozice vodících čar, ale šířka rámečku je větší než nula.
+Chcete pokračovat?</value>
+  </data>
+  <data name="alignLinesWarningMessageName" xml:space="preserve">
+    <value>Varování</value>
+  </data>
+  <data name="bottomLinesToolTip" xml:space="preserve">
+    <value>dolní
+(default OFF)</value>
+  </data>
+  <data name="centerAlignmentToolTip" xml:space="preserve">
+    <value>Čárky pasovacích pruhů leží uprostřed čočkek. Při pasování výtisku na  lentikulární materiál je barva pasovacího pruhu vidět při pohledu zpředu.  Ideální pro 3-D.
+(default)</value>
+  </data>
+  <data name="clearAllTooltip" xml:space="preserve">
+    <value>(Ctrl + E)
+Odstraní ze seznamu všechny snímky.</value>
+  </data>
+  <data name="clearListMessage" xml:space="preserve">
+    <value>Opravdu chcete smazat seznam  
+snímků?</value>
+  </data>
+  <data name="clearListMessageName" xml:space="preserve">
+    <value>Vymazat list</value>
+  </data>
+  <data name="configFileCorruptError" xml:space="preserve">
+    <value>Konfigurační soubor {0} je pravděpodobně poškozen.</value>
+  </data>
+  <data name="copyPicTooltip" xml:space="preserve">
+    <value>(Ctrl + D)
+Zvolený snímek se duplikuje tolikrát, jaké je číslo v "Počtu kopií"</value>
+  </data>
+  <data name="doneMessage" xml:space="preserve">
+    <value>Hotovo</value>
+  </data>
+  <data name="dpiToolTip" xml:space="preserve">
+    <value>Základní rozlišení tiskového stroje. Typické hodnoty jsou 600 DPI pro  tiskárny HP a Canon, 720 DPI pro tiskárny Epson.
+(default 0)</value>
+  </data>
+  <data name="edgeAlignmentToolTip" xml:space="preserve">
+    <value>Čárky pasovacích pruhů leží na hranici mezi čočkami. Při pasování výtisku  na lentikulární materiál je barva
+ pasovacího pruhu vidět při pohledu ze  strany.</value>
+  </data>
+  <data name="emptyListError" xml:space="preserve">
+    <value>Seznam obrázků je prázdný.</value>
+  </data>
+  <data name="falseParamsHeadline" xml:space="preserve">
+    <value>Tyto parametry jsou špatné zadány:
+</value>
+  </data>
+  <data name="falseParamsMessageName" xml:space="preserve">
+    <value>Špatné parametry prokládání</value>
+  </data>
+  <data name="fileNotFoundError" xml:space="preserve">
+    <value>Soubor {0} se nepodařilo otevřít. 
+Soubor pravděpodobně neexistuje.</value>
+  </data>
+  <data name="horizontalLenticuleOrientation" xml:space="preserve">
+    <value>Lentikule jsou umístěny vodorovně, obrázek se tedy mění při změně pohledu  shora dolů. Ideální
+ pro výměnu a animaci, NEPOUŽITELNÉ pro 3D.</value>
+  </data>
+  <data name="imageDimensionError" xml:space="preserve">
+    <value>Obrázky nejsou stejně velké. Chcete je oříznout na nejmenší šířku a nejmenší výšku?</value>
+  </data>
+  <data name="imageLoadError" xml:space="preserve">
+    <value>Soubor {0} se nepodařilo načíst.</value>
+  </data>
+  <data name="imageSaveError" xml:space="preserve">
+    <value>Obrázek {0} se nepodařilo uložit.</value>
+  </data>
+  <data name="imageSaveError2" xml:space="preserve">
+    <value>Soubor {0} se nepodařilo uložit. Překontrolujte zda máte právo zápisu, nebo dostatek místa.</value>
+  </data>
+  <data name="interlacingError" xml:space="preserve">
+    <value>Prokládání selhalo. Pravděpodobnou příčinou je chybné nastavení prokládacích parametrů. Zkontrolujte,
+ zda některý z parametrů není nulový, příliš malý či příliš velký.</value>
+  </data>
+  <data name="keepAspectRatioToolTip" xml:space="preserve">
+    <value>Při zaškrtnutém poli se výška a šířka obrázku mění souběžně při zachování  poměru stran.
+(default ON)</value>
+  </data>
+  <data name="langCzech" xml:space="preserve">
+    <value>Čeština</value>
+  </data>
+  <data name="langEnglish" xml:space="preserve">
+    <value>Angličtina</value>
+  </data>
+  <data name="leftLinesToolTip" xml:space="preserve">
+    <value>Levý
+(default OFF)</value>
+  </data>
+  <data name="libraryLoadError" xml:space="preserve">
+    <value>Chyba při načítání grafické knihovny.
+Pravděpodobnou příčinou je chybějící Visual C++ Redistributable</value>
+  </data>
+  <data name="lineBackgroundColorToolTip" xml:space="preserve">
+    <value>Barva prostoru mezi čárkami pasovacích pruhů. Typicky bílá.
+(default bílá)</value>
+  </data>
+  <data name="lineColorToolTip" xml:space="preserve">
+    <value>Barva čárek pasovacích pruhů. Typicky černá.
+(default černá)</value>
+  </data>
+  <data name="linesIndentToolTip" xml:space="preserve">
+    <value>Odsazení pruhů od obrázku. Obvykle nula až 5 milimetrů. Hodnota větší než  nula je vhodná při ořezávání 
+finálního lentikulárního tisku.
+(default 0)</value>
+  </data>
+  <data name="lineWidthGroupBox" xml:space="preserve">
+    <value>Tloušťka čárek v pasovacích pruzích. Malé hodnoty jsou vhodné pro přesné  pasování, ale kladou vyšší nároky na tisk.
+(default 25 %)</value>
+  </data>
+  <data name="loadTooltip" xml:space="preserve">
+    <value>Načíst projekt</value>
+  </data>
+  <data name="lpiToolTip" xml:space="preserve">
+    <value>Vizuální rozteč čoček zjištěná tzv. pitchtestem. Typické hodnoty jsou  přibližně mezi 20 a 100.
+(default 0)</value>
+  </data>
+  <data name="maxImagesUnderLenticuleToolTip" xml:space="preserve">
+    <value>Maximální počet snímků, který lze umístit do lentikulárního obrázku. V  ideálním případě je v lentikulárním
+ obrázku vloženo právě tolik snímků,  přičemž některé se mohou opakovat. Je-li toto číslo například 18, je 
+ vhodné při tvorbě 3-D obrázku vložit 18 pohledů na scénu. Při tvorbě  výměny dvou snímků je vhodné
+ vložit první snímek 9krát, druhý rovněž  9krát. Je-li toto číslo výrazně odlišné od celého čísla (např. 14,6),
+ není  určená tiskárna příliš vhodná pro zvolený lentikulární materiál.</value>
+  </data>
+  <data name="memoryError" xml:space="preserve">
+    <value>Aplikace nemá k dispozici dostatek operační paměti.</value>
+  </data>
+  <data name="moveDownTooltip" xml:space="preserve">
+    <value>(Ctrl + šipka dolů)
+Posune zvolené snímky v seznamu dolů</value>
+  </data>
+  <data name="moveUpTooltip" xml:space="preserve">
+    <value>(Ctrl + šipka nahoru)
+Posune zvolené snímky v seznamu nahoru</value>
+  </data>
+  <data name="nameListView" xml:space="preserve">
+    <value>Jméno</value>
+  </data>
+  <data name="orderListView" xml:space="preserve">
+    <value>Pořadí</value>
+  </data>
+  <data name="outputImageHeightToolTip" xml:space="preserve">
+    <value>Výška výstupního obrázku. Finální výtisk může navíc obsahovat vodicí čáry  a být vyšší.
+(default 0)</value>
+  </data>
+  <data name="outputImageWidthToolTip" xml:space="preserve">
+    <value>Šířka výstupního obrázku. Finální výtisk může navíc obsahovat vodicí čáry  a být širší.
+(default 0)</value>
+  </data>
+  <data name="pathListView" xml:space="preserve">
+    <value>Cesta</value>
+  </data>
+  <data name="previewError" xml:space="preserve">
+    <value>Náhled se nepodařilo vytvořit.</value>
+  </data>
+  <data name="printParamAdjustmentFilterCubic" xml:space="preserve">
+    <value>Kubický (default)</value>
+  </data>
+  <data name="printParamAdjustmentFilterLanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="printParamAdjustmentFilterLinear" xml:space="preserve">
+    <value>Bilineární</value>
+  </data>
+  <data name="printParamAdjustmentFilterNearestNeighbor" xml:space="preserve">
+    <value>Nejbližší soused</value>
+  </data>
+  <data name="printParamAdjustmentToolTip" xml:space="preserve">
+    <value>Kubický (3D, animace, výměna) (default)
+Lanczos (3D, animace, výměna)
+Bilineární (3D, animace, výměna)
+Nejbližší soused (výměna)</value>
+  </data>
+  <data name="removePicTooltip" xml:space="preserve">
+    <value>(Del)
+Odebere zvolené snímky z lentikulárního obrázku</value>
+  </data>
+  <data name="replaceTooltip" xml:space="preserve">
+    <value>Ctrl + Q)
+Nahradí zvolený snímek jiným snímekem z disku</value>
+  </data>
+  <data name="resizeFilterCubic" xml:space="preserve">
+    <value>Kubický (nejlepší) 
+(default)</value>
+  </data>
+  <data name="resizeFilterLanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="resizeFilterLinear" xml:space="preserve">
+    <value>Lineární</value>
+  </data>
+  <data name="resizeFilterNearestNeighbor" xml:space="preserve">
+    <value>Nejbližší soused</value>
+  </data>
+  <data name="revertTooltip" xml:space="preserve">
+    <value>(Ctrl + R)
+Otočí seznam snímků. Užitečné zejména pro 3-D, protože snímky musí být v pořadí od nejlevějšího k nejpravějšímu</value>
+  </data>
+  <data name="rightLinesToolTip" xml:space="preserve">
+    <value>Pravý
+(default OFF)</value>
+  </data>
+  <data name="saveTooltip" xml:space="preserve">
+    <value>Uložit projekt</value>
+  </data>
+  <data name="sortTooltip" xml:space="preserve">
+    <value>(Ctrl + S)
+Seřadí seznam snímků. Užitečné zejména pro 3-D a animace, obsahují-li  jejich názvy pořadí.
+ U 3-D nezapomeňte zkontrolovat, zda jsou snímky v  pořadí od nejlevějšího k nejpravějšímu
+ pokud ne, použijte tlačítko  "Otočit"</value>
+  </data>
+  <data name="topLinesToolTip" xml:space="preserve">
+    <value>Horní
+(default OFF)</value>
+  </data>
+  <data name="unitsInches" xml:space="preserve">
+    <value>palce</value>
+  </data>
+  <data name="verticalLenticuleOrientation" xml:space="preserve">
+    <value>Lentikule jsou umístěny svisle, obrázek se tedy mění při změně pohledu  zleva doprava. Nutné pro
+ 3D a velkoplošné lentikulární tisky, méně vhodné  pro výměnu a animaci.
+(default)</value>
+  </data>
+  <data name="wrongFormatError" xml:space="preserve">
+    <value>Soubor {0} má chybný formát.</value>
+  </data>
+  <data name="heightFinalSize" xml:space="preserve">
+    <value>Výška tisku včetně vodicích čar.</value>
+  </data>
+  <data name="widthFinalSize" xml:space="preserve">
+    <value>Šířka tisku včetně vodicích čar.</value>
+  </data>
+  <data name="fillButtonWarning" xml:space="preserve">
+    <value>V seznamu nejsou žádné obrázky!</value>
+  </data>
+  <data name="fillButtonToolTip" xml:space="preserve">
+    <value>Vyplní seznam snímků tak, aby obsahoval přesný počet snímků jaký se vejde pod lentikuli.</value>
+  </data>
+</root>
