@@ -13,5 +13,6 @@ namespace Interlacer
         public Boolean isPopulated { get; set; }
         public Boolean isDirectory { get; set; }
         public Boolean isImage { get; set; }
+        public Boolean selected { get; set; }
     }
 }

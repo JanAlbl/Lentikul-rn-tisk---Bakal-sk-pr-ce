@@ -1154,7 +1154,7 @@
             </summary>
             <param name="pictures">pole retezcu cest k obrazkum</param>
         </member>
-        <member name="M:Interlacer.MainForm.changeMaxLineThickness">
+        <member name="M:Interlacer.MainForm.updateTrackBars">
             <summary>
             Podle počtu obrázků v listu nastaví maximální šířku vodících čar.
             </summary>

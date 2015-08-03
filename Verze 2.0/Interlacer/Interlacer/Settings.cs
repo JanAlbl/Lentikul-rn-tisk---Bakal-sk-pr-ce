@@ -125,6 +125,7 @@ namespace Interlacer
         /// <param name="index">novy index nastaveni jednotek pro rozliseni</param>
         public void SetSelectedResolutionUnitsIndex(int index)
         {
+
             this.selectedResolutionUnitsIndex = index;
         }
 

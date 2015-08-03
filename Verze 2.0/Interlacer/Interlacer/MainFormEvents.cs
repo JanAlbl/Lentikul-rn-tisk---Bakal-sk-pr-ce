@@ -399,6 +399,11 @@ namespace Interlacer
         {
             try
             {
+                var fileName = Path.Combine(Environment.GetFolderPath(
+                                            Environment.SpecialFolder.ApplicationData), "InterlacerSettings.txt");
+                //int myInt = Properties.Settings.Default.myVariable;
+                //Properties.Settings.Default.myVariable = 12;
+                //Properties.Settings.Default.Save();
                 settings.Save(settingsFilename);
             }
             catch { } //pri vyjimce se soubor proste neulozi
@@ -698,12 +703,6 @@ namespace Interlacer
              // the second node. 
              return ContainsNode(node1, node2.Parent);
          } */
-
-
-        private void interlaceProgressBarFlowLayout_Paint(object sender, PaintEventArgs e)
-        {
-            interlaceProgressBar.Size = new Size(interlaceProgressBarFlowLayout.Size.Width - 5, 29);
-        }
 
         private void fillButton_Click(object sender, EventArgs e)
         {

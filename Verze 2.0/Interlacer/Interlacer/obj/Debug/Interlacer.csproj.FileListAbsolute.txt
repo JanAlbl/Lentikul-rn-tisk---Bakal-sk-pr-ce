@@ -9,3 +9,6 @@ C:\Users\Luckin\Desktop\Interlacer\Interlacer\Interlacer\obj\Debug\Interlacer.pd
 C:\Users\Luckin\Desktop\Interlacer Github\Projekt\Interlacer\Interlacer\bin\Debug\Interlacer.exe.config
 C:\Users\Luckin\Desktop\Interlacer Github\Projekt\Interlacer\Interlacer\obj\Debug\Interlacer.exe
 C:\Users\Luckin\Desktop\Interlacer Github\Projekt\Interlacer\Interlacer\obj\Debug\Interlacer.pdb
+D:\Bak. prace\Verze 2.0\Interlacer\Interlacer\bin\Debug\Interlacer.exe.config
+D:\Bak. prace\Verze 2.0\Interlacer\Interlacer\obj\Debug\Interlacer.exe
+D:\Bak. prace\Verze 2.0\Interlacer\Interlacer\obj\Debug\Interlacer.pdb

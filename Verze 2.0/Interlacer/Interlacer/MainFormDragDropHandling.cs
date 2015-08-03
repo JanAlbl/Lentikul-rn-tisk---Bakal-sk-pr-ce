@@ -99,12 +99,7 @@ namespace Interlacer
                         DirectoryInfo dirInfo = new DirectoryInfo(draggedNode.FullPath);
                         populateDirectory(dirInfo, draggedNode);
                     }
-
-                    //tady predelat aby se dobre posouvali
-                    for (int i = 0; i < draggedNode.Nodes.Count; i++)
-                    {
-                        droppedItemIsTreeNode(e, (TreeNodeInherited)draggedNode.Nodes[i]);
-                    }
+                    droppedItemIsTreeNodeDirectory(e, draggedNode);
                 }
                 else
                 {
@@ -171,12 +166,13 @@ namespace Interlacer
             ListViewItem[] draggedItems = new ListViewItem[selectedIndexes.Length];
             for (int i = 0; i < draggedItems.Length; i++)
             {
-                draggedItems[i] = new ListViewItem();
+                draggedItems[i] = pictureListViewEx.Items[selectedIndexes[i]].Clone() as ListViewItem; 
+                /*draggedItems[i] = new ListViewItem();
                 for (int j = 0; j < pictureListViewEx.Items[selectedIndexes[i]].SubItems.Count; j++)
                 {
                     draggedItems[i].SubItems.Add("");
                     draggedItems[i].SubItems[j].Text = pictureListViewEx.Items[selectedIndexes[i]].SubItems[j].Text;
-                }
+                }*/
             }
 
             int[] newIndexes = new int[draggedItems.Length];
@@ -245,14 +241,24 @@ namespace Interlacer
                     {
                         if (isExtensionValid(paths[i]))
                         {
-                            ListViewItem item = new ListViewItem(new[] { Convert.ToString(order), paths[i], getPicName(paths[i]), "" });
+                            //ListViewItem item = new ListViewItem(new[] { Convert.ToString(order), paths[i], getPicName(paths[i]), "" });
+                            ListViewItem item = new ListViewItem();
+                            item.SubItems.Add(Convert.ToString(order));
+                            item.SubItems.Add(paths[i]);
+                            item.SubItems.Add(getPicName(paths[i]));
+                            item.SubItems.Add("");
                             pictureListViewEx.Items.Insert(targetIndex++, item);
                         }
                     }
                 }
                 else
                 {
-                    ListViewItem item = new ListViewItem(new[] { Convert.ToString(order), path, getPicName(path), "" });
+                    //ListViewItem item = new ListViewItem(new[] { Convert.ToString(order), path, getPicName(path), "" });
+                    ListViewItem item = new ListViewItem();
+                    item.SubItems.Add(Convert.ToString(order));
+                    item.SubItems.Add(path);
+                    item.SubItems.Add(getPicName(path));
+                    item.SubItems.Add("");
                     pictureListViewEx.Items.Insert(targetIndex++, item);
                 }
             }
@@ -270,19 +276,63 @@ namespace Interlacer
         {
             Point targetPoint = pictureListViewEx.PointToClient(new Point(e.X, e.Y));
             ListViewItem targetItem = pictureListViewEx.GetItemAt(targetPoint.X, targetPoint.Y);
+
             int targetIndex = pictureListViewEx.Items.Count;
 
             if (targetItem != null)
                 targetIndex = targetItem.Index;
 
+            if (selectedNodes.Count > 1)
+            {
+                foreach (TreeNodeInherited child in selectedNodes)
+                {
+                    if (!child.isImage)
+                        continue;
+
+                    ListViewItem newItem = new ListViewItem();
+                    newItem.SubItems.Add(Convert.ToString(order));
+                    newItem.SubItems.Add(child.FullPath.Replace("\\\\", "\\"));
+                    newItem.SubItems.Add(getPicName(child.FullPath.Replace("\\\\", "\\")));
+                    newItem.SubItems.Add("");
+                    pictureListViewEx.Items.Insert(targetIndex, newItem);
+                    targetIndex += 1;
+                }
+
+                return;
+            }
+
             //rozdelit podle koncovky
             if (draggedNode.isImage)
             {
-                ListViewItem newItem = new ListViewItem(new[] { Convert.ToString(order), draggedNode.FullPath.Replace("\\\\", "\\"), getPicName(draggedNode.FullPath.Replace("\\\\", "\\")), "" });
+                //ListViewItem newItem = new ListViewItem(new[] { Convert.ToString(order), draggedNode.FullPath.Replace("\\\\", "\\"), getPicName(draggedNode.FullPath.Replace("\\\\", "\\")), "" });
+                ListViewItem newItem = new ListViewItem();
+                newItem.SubItems.Add(Convert.ToString(order));
+                newItem.SubItems.Add(draggedNode.FullPath.Replace("\\\\", "\\"));
+                newItem.SubItems.Add(getPicName(draggedNode.FullPath.Replace("\\\\", "\\")));
+                newItem.SubItems.Add(""); 
                 pictureListViewEx.Items.Insert(targetIndex, newItem);
             }
         }
 
+        private void droppedItemIsTreeNodeDirectory(DragEventArgs e, TreeNodeInherited draggedNode)
+        {
+            int targetIndex = 0;
+            for (int i = 0; i < draggedNode.Nodes.Count; i++)
+            {
+                TreeNodeInherited child = (TreeNodeInherited)draggedNode.Nodes[i];
+                if (child.isImage)
+                {
+                    ListViewItem newItem = new ListViewItem();
+                    newItem.SubItems.Add(Convert.ToString(order));
+                    newItem.SubItems.Add(child.FullPath.Replace("\\\\", "\\"));
+                    newItem.SubItems.Add(getPicName(child.FullPath.Replace("\\\\", "\\")));
+                    newItem.SubItems.Add("");
+                    pictureListViewEx.Items.Insert(targetIndex, newItem);
+                    targetIndex += 1;
+                }
+
+            }
+        }
 
 
 

@@ -70,23 +70,23 @@
             this.copyPicButton = new System.Windows.Forms.Button();
             this.removePicButton = new System.Windows.Forms.Button();
             this.addPicButton = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.imageResGroupBox = new System.Windows.Forms.GroupBox();
             this.lpiNumeric = new System.Windows.Forms.NumericUpDown();
             this.dpiNumeric = new System.Windows.Forms.NumericUpDown();
             this.picUnderLenLabel = new System.Windows.Forms.Label();
             this.picUnderLenTextBox = new System.Windows.Forms.TextBox();
             this.lpiLabel = new System.Windows.Forms.Label();
             this.dpiLabel = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lenDirectionGroupBox = new System.Windows.Forms.GroupBox();
             this.verticalRadiobutton = new System.Windows.Forms.RadioButton();
             this.horizontalRadiobutton = new System.Windows.Forms.RadioButton();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.finalImgSizeGroupBox = new System.Windows.Forms.GroupBox();
             this.unitsLabel5 = new System.Windows.Forms.Label();
             this.finalImageHeightTextBox = new System.Windows.Forms.TextBox();
             this.finalImageWidthTextBox = new System.Windows.Forms.TextBox();
             this.finalImageHeightLabel = new System.Windows.Forms.Label();
             this.finalImageWidthLabel = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.outputImgDimGroupBox = new System.Windows.Forms.GroupBox();
             this.widthNumeric = new System.Windows.Forms.NumericUpDown();
             this.heightNumeric = new System.Windows.Forms.NumericUpDown();
             this.heightLabel = new System.Windows.Forms.Label();
@@ -94,9 +94,9 @@
             this.keepRatioCheckbox = new System.Windows.Forms.CheckBox();
             this.unitsLabel2 = new System.Windows.Forms.Label();
             this.unitsLabel = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.finalResizeInterpGroupBox = new System.Windows.Forms.GroupBox();
             this.interpol2ComboBox = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.initResizeInterpGroupBox = new System.Windows.Forms.GroupBox();
             this.interpol1ComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -104,15 +104,15 @@
             this.maxPicsUnderLenLabel = new System.Windows.Forms.Label();
             this.separatorLabel = new System.Windows.Forms.Label();
             this.actualPicsUnderLenLabel = new System.Windows.Forms.Label();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.lineColorGroupBox = new System.Windows.Forms.GroupBox();
             this.backgroundColorButton = new System.Windows.Forms.Button();
             this.lineColorButton = new System.Windows.Forms.Button();
             this.lineBackgroundColorLabel = new System.Windows.Forms.Label();
             this.lineColorLabel = new System.Windows.Forms.Label();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.edgeCenterPosGroupBox = new System.Windows.Forms.GroupBox();
             this.edgeRadioButton = new System.Windows.Forms.RadioButton();
             this.centerRadioButton = new System.Windows.Forms.RadioButton();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.linePosGroupBox = new System.Windows.Forms.GroupBox();
             this.leftLineCheckBox = new System.Windows.Forms.CheckBox();
             this.rightLineCheckBox = new System.Windows.Forms.CheckBox();
             this.bottomLineCheckBox = new System.Windows.Forms.CheckBox();
@@ -121,7 +121,7 @@
             this.leftLinelabel = new System.Windows.Forms.Label();
             this.bottomLineLabel = new System.Windows.Forms.Label();
             this.topLineLabel = new System.Windows.Forms.Label();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.lineInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.unitsLabel4 = new System.Windows.Forms.Label();
             this.unitsLabel3 = new System.Windows.Forms.Label();
             this.indentNumeric = new System.Windows.Forms.NumericUpDown();
@@ -131,8 +131,9 @@
             this.lineWidthGroupBox = new System.Windows.Forms.GroupBox();
             this.lineThicknessTrackbar = new System.Windows.Forms.TrackBar();
             this.linePictureBox = new System.Windows.Forms.PictureBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.imageInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.infoHeightLabel = new System.Windows.Forms.Label();
+            this.imagePreviewCheckBox = new System.Windows.Forms.CheckBox();
             this.infoWidthLabel = new System.Windows.Forms.Label();
             this.infoDpiLabel = new System.Windows.Forms.Label();
             this.infoFilenameLabel = new System.Windows.Forms.Label();
@@ -145,7 +146,6 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.interlaceProgressBar = new System.Windows.Forms.ProgressBar();
-            this.imagePreviewCheckBox = new System.Windows.Forms.CheckBox();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addPicFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -154,39 +154,38 @@
             this.saveConfigDialog = new System.Windows.Forms.SaveFileDialog();
             this.openConfigDialog = new System.Windows.Forms.OpenFileDialog();
             this.treeViewImageList = new System.Windows.Forms.ImageList(this.components);
-            this.interlaceProgressBarFlowLayout = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.wholeDriveTree = new System.Windows.Forms.TreeView();
+            this.pictureTrackBar = new System.Windows.Forms.TrackBar();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.outputImageTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.listButtonFlowlayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.copyCountNumeric)).BeginInit();
-            this.groupBox3.SuspendLayout();
+            this.imageResGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lpiNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpiNumeric)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.lenDirectionGroupBox.SuspendLayout();
+            this.finalImgSizeGroupBox.SuspendLayout();
+            this.outputImgDimGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.widthNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNumeric)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.finalResizeInterpGroupBox.SuspendLayout();
+            this.initResizeInterpGroupBox.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox13.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupBox10.SuspendLayout();
+            this.lineColorGroupBox.SuspendLayout();
+            this.edgeCenterPosGroupBox.SuspendLayout();
+            this.linePosGroupBox.SuspendLayout();
+            this.lineInfoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.indentNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frameWidthNumeric)).BeginInit();
             this.lineWidthGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lineThicknessTrackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.linePictureBox)).BeginInit();
-            this.groupBox7.SuspendLayout();
+            this.imageInfoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.previewPicBox)).BeginInit();
-            this.interlaceProgressBarFlowLayout.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -325,12 +324,12 @@
             this.tabPage1.Controls.Add(this.copyPicButton);
             this.tabPage1.Controls.Add(this.removePicButton);
             this.tabPage1.Controls.Add(this.addPicButton);
-            this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.groupBox5);
-            this.tabPage1.Controls.Add(this.groupBox6);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.groupBox4);
-            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.imageResGroupBox);
+            this.tabPage1.Controls.Add(this.lenDirectionGroupBox);
+            this.tabPage1.Controls.Add(this.finalImgSizeGroupBox);
+            this.tabPage1.Controls.Add(this.outputImgDimGroupBox);
+            this.tabPage1.Controls.Add(this.finalResizeInterpGroupBox);
+            this.tabPage1.Controls.Add(this.initResizeInterpGroupBox);
             this.tabPage1.Controls.Add(this.label5);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
@@ -497,17 +496,17 @@
             this.addPicButton.UseVisualStyleBackColor = true;
             this.addPicButton.Click += new System.EventHandler(this.addPicButton_Click);
             // 
-            // groupBox3
+            // imageResGroupBox
             // 
-            this.groupBox3.Controls.Add(this.lpiNumeric);
-            this.groupBox3.Controls.Add(this.dpiNumeric);
-            this.groupBox3.Controls.Add(this.picUnderLenLabel);
-            this.groupBox3.Controls.Add(this.picUnderLenTextBox);
-            this.groupBox3.Controls.Add(this.lpiLabel);
-            this.groupBox3.Controls.Add(this.dpiLabel);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.TabStop = false;
+            this.imageResGroupBox.Controls.Add(this.lpiNumeric);
+            this.imageResGroupBox.Controls.Add(this.dpiNumeric);
+            this.imageResGroupBox.Controls.Add(this.picUnderLenLabel);
+            this.imageResGroupBox.Controls.Add(this.picUnderLenTextBox);
+            this.imageResGroupBox.Controls.Add(this.lpiLabel);
+            this.imageResGroupBox.Controls.Add(this.dpiLabel);
+            resources.ApplyResources(this.imageResGroupBox, "imageResGroupBox");
+            this.imageResGroupBox.Name = "imageResGroupBox";
+            this.imageResGroupBox.TabStop = false;
             // 
             // lpiNumeric
             // 
@@ -553,13 +552,13 @@
             resources.ApplyResources(this.dpiLabel, "dpiLabel");
             this.dpiLabel.Name = "dpiLabel";
             // 
-            // groupBox5
+            // lenDirectionGroupBox
             // 
-            this.groupBox5.Controls.Add(this.verticalRadiobutton);
-            this.groupBox5.Controls.Add(this.horizontalRadiobutton);
-            resources.ApplyResources(this.groupBox5, "groupBox5");
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.TabStop = false;
+            this.lenDirectionGroupBox.Controls.Add(this.verticalRadiobutton);
+            this.lenDirectionGroupBox.Controls.Add(this.horizontalRadiobutton);
+            resources.ApplyResources(this.lenDirectionGroupBox, "lenDirectionGroupBox");
+            this.lenDirectionGroupBox.Name = "lenDirectionGroupBox";
+            this.lenDirectionGroupBox.TabStop = false;
             // 
             // verticalRadiobutton
             // 
@@ -578,16 +577,16 @@
             this.horizontalRadiobutton.UseVisualStyleBackColor = true;
             this.horizontalRadiobutton.CheckedChanged += new System.EventHandler(this.horizontalRadiobutton_CheckedChanged);
             // 
-            // groupBox6
+            // finalImgSizeGroupBox
             // 
-            this.groupBox6.Controls.Add(this.unitsLabel5);
-            this.groupBox6.Controls.Add(this.finalImageHeightTextBox);
-            this.groupBox6.Controls.Add(this.finalImageWidthTextBox);
-            this.groupBox6.Controls.Add(this.finalImageHeightLabel);
-            this.groupBox6.Controls.Add(this.finalImageWidthLabel);
-            resources.ApplyResources(this.groupBox6, "groupBox6");
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.TabStop = false;
+            this.finalImgSizeGroupBox.Controls.Add(this.unitsLabel5);
+            this.finalImgSizeGroupBox.Controls.Add(this.finalImageHeightTextBox);
+            this.finalImgSizeGroupBox.Controls.Add(this.finalImageWidthTextBox);
+            this.finalImgSizeGroupBox.Controls.Add(this.finalImageHeightLabel);
+            this.finalImgSizeGroupBox.Controls.Add(this.finalImageWidthLabel);
+            resources.ApplyResources(this.finalImgSizeGroupBox, "finalImgSizeGroupBox");
+            this.finalImgSizeGroupBox.Name = "finalImgSizeGroupBox";
+            this.finalImgSizeGroupBox.TabStop = false;
             // 
             // unitsLabel5
             // 
@@ -616,18 +615,18 @@
             this.finalImageWidthLabel.Name = "finalImageWidthLabel";
             this.finalImageWidthLabel.UseCompatibleTextRendering = true;
             // 
-            // groupBox2
+            // outputImgDimGroupBox
             // 
-            this.groupBox2.Controls.Add(this.widthNumeric);
-            this.groupBox2.Controls.Add(this.heightNumeric);
-            this.groupBox2.Controls.Add(this.heightLabel);
-            this.groupBox2.Controls.Add(this.widthLabel);
-            this.groupBox2.Controls.Add(this.keepRatioCheckbox);
-            this.groupBox2.Controls.Add(this.unitsLabel2);
-            this.groupBox2.Controls.Add(this.unitsLabel);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
+            this.outputImgDimGroupBox.Controls.Add(this.widthNumeric);
+            this.outputImgDimGroupBox.Controls.Add(this.heightNumeric);
+            this.outputImgDimGroupBox.Controls.Add(this.heightLabel);
+            this.outputImgDimGroupBox.Controls.Add(this.widthLabel);
+            this.outputImgDimGroupBox.Controls.Add(this.keepRatioCheckbox);
+            this.outputImgDimGroupBox.Controls.Add(this.unitsLabel2);
+            this.outputImgDimGroupBox.Controls.Add(this.unitsLabel);
+            resources.ApplyResources(this.outputImgDimGroupBox, "outputImgDimGroupBox");
+            this.outputImgDimGroupBox.Name = "outputImgDimGroupBox";
+            this.outputImgDimGroupBox.TabStop = false;
             // 
             // widthNumeric
             // 
@@ -683,12 +682,12 @@
             resources.ApplyResources(this.unitsLabel, "unitsLabel");
             this.unitsLabel.Name = "unitsLabel";
             // 
-            // groupBox4
+            // finalResizeInterpGroupBox
             // 
-            this.groupBox4.Controls.Add(this.interpol2ComboBox);
-            resources.ApplyResources(this.groupBox4, "groupBox4");
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.TabStop = false;
+            this.finalResizeInterpGroupBox.Controls.Add(this.interpol2ComboBox);
+            resources.ApplyResources(this.finalResizeInterpGroupBox, "finalResizeInterpGroupBox");
+            this.finalResizeInterpGroupBox.Name = "finalResizeInterpGroupBox";
+            this.finalResizeInterpGroupBox.TabStop = false;
             // 
             // interpol2ComboBox
             // 
@@ -698,12 +697,12 @@
             this.interpol2ComboBox.Name = "interpol2ComboBox";
             this.interpol2ComboBox.SelectedIndexChanged += new System.EventHandler(this.interpol2ComboBox_SelectedIndexChanged);
             // 
-            // groupBox1
+            // initResizeInterpGroupBox
             // 
-            this.groupBox1.Controls.Add(this.interpol1ComboBox);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
+            this.initResizeInterpGroupBox.Controls.Add(this.interpol1ComboBox);
+            resources.ApplyResources(this.initResizeInterpGroupBox, "initResizeInterpGroupBox");
+            this.initResizeInterpGroupBox.Name = "initResizeInterpGroupBox";
+            this.initResizeInterpGroupBox.TabStop = false;
             // 
             // interpol1ComboBox
             // 
@@ -722,10 +721,10 @@
             // 
             this.tabPage3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage3.Controls.Add(this.groupBox13);
-            this.tabPage3.Controls.Add(this.groupBox12);
-            this.tabPage3.Controls.Add(this.groupBox11);
-            this.tabPage3.Controls.Add(this.groupBox8);
-            this.tabPage3.Controls.Add(this.groupBox10);
+            this.tabPage3.Controls.Add(this.lineColorGroupBox);
+            this.tabPage3.Controls.Add(this.edgeCenterPosGroupBox);
+            this.tabPage3.Controls.Add(this.linePosGroupBox);
+            this.tabPage3.Controls.Add(this.lineInfoGroupBox);
             this.tabPage3.Controls.Add(this.lineWidthGroupBox);
             this.tabPage3.Controls.Add(this.linePictureBox);
             resources.ApplyResources(this.tabPage3, "tabPage3");
@@ -755,15 +754,15 @@
             resources.ApplyResources(this.actualPicsUnderLenLabel, "actualPicsUnderLenLabel");
             this.actualPicsUnderLenLabel.Name = "actualPicsUnderLenLabel";
             // 
-            // groupBox12
+            // lineColorGroupBox
             // 
-            this.groupBox12.Controls.Add(this.backgroundColorButton);
-            this.groupBox12.Controls.Add(this.lineColorButton);
-            this.groupBox12.Controls.Add(this.lineBackgroundColorLabel);
-            this.groupBox12.Controls.Add(this.lineColorLabel);
-            resources.ApplyResources(this.groupBox12, "groupBox12");
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.TabStop = false;
+            this.lineColorGroupBox.Controls.Add(this.backgroundColorButton);
+            this.lineColorGroupBox.Controls.Add(this.lineColorButton);
+            this.lineColorGroupBox.Controls.Add(this.lineBackgroundColorLabel);
+            this.lineColorGroupBox.Controls.Add(this.lineColorLabel);
+            resources.ApplyResources(this.lineColorGroupBox, "lineColorGroupBox");
+            this.lineColorGroupBox.Name = "lineColorGroupBox";
+            this.lineColorGroupBox.TabStop = false;
             // 
             // backgroundColorButton
             // 
@@ -789,13 +788,13 @@
             resources.ApplyResources(this.lineColorLabel, "lineColorLabel");
             this.lineColorLabel.Name = "lineColorLabel";
             // 
-            // groupBox11
+            // edgeCenterPosGroupBox
             // 
-            this.groupBox11.Controls.Add(this.edgeRadioButton);
-            this.groupBox11.Controls.Add(this.centerRadioButton);
-            resources.ApplyResources(this.groupBox11, "groupBox11");
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.TabStop = false;
+            this.edgeCenterPosGroupBox.Controls.Add(this.edgeRadioButton);
+            this.edgeCenterPosGroupBox.Controls.Add(this.centerRadioButton);
+            resources.ApplyResources(this.edgeCenterPosGroupBox, "edgeCenterPosGroupBox");
+            this.edgeCenterPosGroupBox.Name = "edgeCenterPosGroupBox";
+            this.edgeCenterPosGroupBox.TabStop = false;
             // 
             // edgeRadioButton
             // 
@@ -811,19 +810,19 @@
             this.centerRadioButton.UseVisualStyleBackColor = true;
             this.centerRadioButton.CheckedChanged += new System.EventHandler(this.centerRadioButton_CheckedChanged);
             // 
-            // groupBox8
+            // linePosGroupBox
             // 
-            this.groupBox8.Controls.Add(this.leftLineCheckBox);
-            this.groupBox8.Controls.Add(this.rightLineCheckBox);
-            this.groupBox8.Controls.Add(this.bottomLineCheckBox);
-            this.groupBox8.Controls.Add(this.topLineCheckBox);
-            this.groupBox8.Controls.Add(this.rightLineLabel);
-            this.groupBox8.Controls.Add(this.leftLinelabel);
-            this.groupBox8.Controls.Add(this.bottomLineLabel);
-            this.groupBox8.Controls.Add(this.topLineLabel);
-            resources.ApplyResources(this.groupBox8, "groupBox8");
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.TabStop = false;
+            this.linePosGroupBox.Controls.Add(this.leftLineCheckBox);
+            this.linePosGroupBox.Controls.Add(this.rightLineCheckBox);
+            this.linePosGroupBox.Controls.Add(this.bottomLineCheckBox);
+            this.linePosGroupBox.Controls.Add(this.topLineCheckBox);
+            this.linePosGroupBox.Controls.Add(this.rightLineLabel);
+            this.linePosGroupBox.Controls.Add(this.leftLinelabel);
+            this.linePosGroupBox.Controls.Add(this.bottomLineLabel);
+            this.linePosGroupBox.Controls.Add(this.topLineLabel);
+            resources.ApplyResources(this.linePosGroupBox, "linePosGroupBox");
+            this.linePosGroupBox.Name = "linePosGroupBox";
+            this.linePosGroupBox.TabStop = false;
             // 
             // leftLineCheckBox
             // 
@@ -873,17 +872,17 @@
             resources.ApplyResources(this.topLineLabel, "topLineLabel");
             this.topLineLabel.Name = "topLineLabel";
             // 
-            // groupBox10
+            // lineInfoGroupBox
             // 
-            this.groupBox10.Controls.Add(this.unitsLabel4);
-            this.groupBox10.Controls.Add(this.unitsLabel3);
-            this.groupBox10.Controls.Add(this.indentNumeric);
-            this.groupBox10.Controls.Add(this.frameWidthNumeric);
-            this.groupBox10.Controls.Add(this.indentLabel);
-            this.groupBox10.Controls.Add(this.frameWidthLabel);
-            resources.ApplyResources(this.groupBox10, "groupBox10");
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.TabStop = false;
+            this.lineInfoGroupBox.Controls.Add(this.unitsLabel4);
+            this.lineInfoGroupBox.Controls.Add(this.unitsLabel3);
+            this.lineInfoGroupBox.Controls.Add(this.indentNumeric);
+            this.lineInfoGroupBox.Controls.Add(this.frameWidthNumeric);
+            this.lineInfoGroupBox.Controls.Add(this.indentLabel);
+            this.lineInfoGroupBox.Controls.Add(this.frameWidthLabel);
+            resources.ApplyResources(this.lineInfoGroupBox, "lineInfoGroupBox");
+            this.lineInfoGroupBox.Name = "lineInfoGroupBox";
+            this.lineInfoGroupBox.TabStop = false;
             // 
             // unitsLabel4
             // 
@@ -957,24 +956,34 @@
             this.linePictureBox.Name = "linePictureBox";
             this.linePictureBox.TabStop = false;
             // 
-            // groupBox7
+            // imageInfoGroupBox
             // 
-            resources.ApplyResources(this.groupBox7, "groupBox7");
-            this.groupBox7.Controls.Add(this.infoHeightLabel);
-            this.groupBox7.Controls.Add(this.infoWidthLabel);
-            this.groupBox7.Controls.Add(this.infoDpiLabel);
-            this.groupBox7.Controls.Add(this.infoFilenameLabel);
-            this.groupBox7.Controls.Add(this.label4);
-            this.groupBox7.Controls.Add(this.label3);
-            this.groupBox7.Controls.Add(this.label2);
-            this.groupBox7.Controls.Add(this.label1);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.TabStop = false;
+            resources.ApplyResources(this.imageInfoGroupBox, "imageInfoGroupBox");
+            this.imageInfoGroupBox.Controls.Add(this.infoHeightLabel);
+            this.imageInfoGroupBox.Controls.Add(this.imagePreviewCheckBox);
+            this.imageInfoGroupBox.Controls.Add(this.infoWidthLabel);
+            this.imageInfoGroupBox.Controls.Add(this.infoDpiLabel);
+            this.imageInfoGroupBox.Controls.Add(this.infoFilenameLabel);
+            this.imageInfoGroupBox.Controls.Add(this.label4);
+            this.imageInfoGroupBox.Controls.Add(this.label3);
+            this.imageInfoGroupBox.Controls.Add(this.label2);
+            this.imageInfoGroupBox.Controls.Add(this.label1);
+            this.imageInfoGroupBox.Name = "imageInfoGroupBox";
+            this.imageInfoGroupBox.TabStop = false;
             // 
             // infoHeightLabel
             // 
             resources.ApplyResources(this.infoHeightLabel, "infoHeightLabel");
             this.infoHeightLabel.Name = "infoHeightLabel";
+            // 
+            // imagePreviewCheckBox
+            // 
+            resources.ApplyResources(this.imagePreviewCheckBox, "imagePreviewCheckBox");
+            this.imagePreviewCheckBox.Checked = true;
+            this.imagePreviewCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.imagePreviewCheckBox.Name = "imagePreviewCheckBox";
+            this.imagePreviewCheckBox.UseVisualStyleBackColor = true;
+            this.imagePreviewCheckBox.CheckedChanged += new System.EventHandler(this.imagePreviewCheckBox_CheckedChanged);
             // 
             // infoWidthLabel
             // 
@@ -1034,15 +1043,6 @@
             resources.ApplyResources(this.interlaceProgressBar, "interlaceProgressBar");
             this.interlaceProgressBar.Name = "interlaceProgressBar";
             // 
-            // imagePreviewCheckBox
-            // 
-            resources.ApplyResources(this.imagePreviewCheckBox, "imagePreviewCheckBox");
-            this.imagePreviewCheckBox.Checked = true;
-            this.imagePreviewCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.imagePreviewCheckBox.Name = "imagePreviewCheckBox";
-            this.imagePreviewCheckBox.UseVisualStyleBackColor = true;
-            this.imagePreviewCheckBox.CheckedChanged += new System.EventHandler(this.imagePreviewCheckBox_CheckedChanged);
-            // 
             // columnHeader3
             // 
             resources.ApplyResources(this.columnHeader3, "columnHeader3");
@@ -1069,29 +1069,35 @@
             this.treeViewImageList.Images.SetKeyName(5, "TIF.png");
             this.treeViewImageList.Images.SetKeyName(6, "image.png");
             // 
-            // interlaceProgressBarFlowLayout
+            // wholeDriveTree
             // 
-            resources.ApplyResources(this.interlaceProgressBarFlowLayout, "interlaceProgressBarFlowLayout");
-            this.interlaceProgressBarFlowLayout.Controls.Add(this.interlaceProgressBar);
-            this.interlaceProgressBarFlowLayout.Name = "interlaceProgressBarFlowLayout";
-            this.interlaceProgressBarFlowLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.interlaceProgressBarFlowLayout_Paint);
+            resources.ApplyResources(this.wholeDriveTree, "wholeDriveTree");
+            this.wholeDriveTree.ImageList = this.treeViewImageList;
+            this.wholeDriveTree.Name = "wholeDriveTree";
+            this.wholeDriveTree.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.wholeDriveTree_BeforeExpand);
+            this.wholeDriveTree.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.wholeDriveTree_ItemDrag);
+            this.wholeDriveTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.wholeDriveTree_AfterSelect);
+            this.wholeDriveTree.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.wholeDriveTree_KeyPress);
+            this.wholeDriveTree.MouseClick += new System.Windows.Forms.MouseEventHandler(this.wholeDriveTree_MouseClick);
             // 
-            // flowLayoutPanel1
+            // pictureTrackBar
             // 
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
-            this.flowLayoutPanel1.Controls.Add(this.imagePreviewCheckBox);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            resources.ApplyResources(this.pictureTrackBar, "pictureTrackBar");
+            this.pictureTrackBar.Maximum = 0;
+            this.pictureTrackBar.Name = "pictureTrackBar";
+            this.pictureTrackBar.ValueChanged += new System.EventHandler(this.pictureTrackBar_ValueChanged);
             // 
             // MainForm
             // 
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.interlaceProgressBarFlowLayout);
+            this.Controls.Add(this.pictureTrackBar);
+            this.Controls.Add(this.interlaceProgressBar);
+            this.Controls.Add(this.wholeDriveTree);
             this.Controls.Add(this.previewPicBox);
             this.Controls.Add(this.interlaceButton);
-            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.imageInfoGroupBox);
             this.Controls.Add(this.outputImageTab);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -1110,42 +1116,40 @@
             this.tabPage1.PerformLayout();
             this.listButtonFlowlayout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.copyCountNumeric)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.imageResGroupBox.ResumeLayout(false);
+            this.imageResGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lpiNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpiNumeric)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.lenDirectionGroupBox.ResumeLayout(false);
+            this.lenDirectionGroupBox.PerformLayout();
+            this.finalImgSizeGroupBox.ResumeLayout(false);
+            this.finalImgSizeGroupBox.PerformLayout();
+            this.outputImgDimGroupBox.ResumeLayout(false);
+            this.outputImgDimGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.widthNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNumeric)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.finalResizeInterpGroupBox.ResumeLayout(false);
+            this.initResizeInterpGroupBox.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
+            this.lineColorGroupBox.ResumeLayout(false);
+            this.lineColorGroupBox.PerformLayout();
+            this.edgeCenterPosGroupBox.ResumeLayout(false);
+            this.edgeCenterPosGroupBox.PerformLayout();
+            this.linePosGroupBox.ResumeLayout(false);
+            this.linePosGroupBox.PerformLayout();
+            this.lineInfoGroupBox.ResumeLayout(false);
+            this.lineInfoGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.indentNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frameWidthNumeric)).EndInit();
             this.lineWidthGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lineThicknessTrackbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.linePictureBox)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.imageInfoGroupBox.ResumeLayout(false);
+            this.imageInfoGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.previewPicBox)).EndInit();
-            this.interlaceProgressBarFlowLayout.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1174,25 +1178,24 @@
         private System.Windows.Forms.CheckBox keepRatioCheckbox;
         private System.Windows.Forms.Label unitsLabel;
         private System.Windows.Forms.Label unitsLabel2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox outputImgDimGroupBox;
+        private System.Windows.Forms.GroupBox initResizeInterpGroupBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox imageResGroupBox;
+        private System.Windows.Forms.GroupBox finalResizeInterpGroupBox;
+        private System.Windows.Forms.GroupBox finalImgSizeGroupBox;
         private System.Windows.Forms.Label finalImageHeightLabel;
         private System.Windows.Forms.Label finalImageWidthLabel;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox lenDirectionGroupBox;
         private System.Windows.Forms.RadioButton verticalRadiobutton;
         private System.Windows.Forms.RadioButton horizontalRadiobutton;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox imageInfoGroupBox;
         private System.Windows.Forms.Button interlaceButton;
         private System.Windows.Forms.PictureBox previewPicBox;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ProgressBar interlaceProgressBar;
         private System.Windows.Forms.NumericUpDown heightNumeric;
-        private System.Windows.Forms.CheckBox imagePreviewCheckBox;
         private System.Windows.Forms.Label picUnderLenLabel;
         private System.Windows.Forms.TextBox picUnderLenTextBox;
         private System.Windows.Forms.TabPage tabPage3;
@@ -1200,7 +1203,7 @@
         private System.Windows.Forms.NumericUpDown lpiNumeric;
         private System.Windows.Forms.NumericUpDown dpiNumeric;
         private System.Windows.Forms.NumericUpDown widthNumeric;
-        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox linePosGroupBox;
         private System.Windows.Forms.Label rightLineLabel;
         private System.Windows.Forms.Label leftLinelabel;
         private System.Windows.Forms.Label bottomLineLabel;
@@ -1210,13 +1213,13 @@
         private System.Windows.Forms.CheckBox bottomLineCheckBox;
         private System.Windows.Forms.CheckBox topLineCheckBox;
         private System.Windows.Forms.GroupBox lineWidthGroupBox;
-        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.GroupBox lineInfoGroupBox;
         private System.Windows.Forms.Label indentLabel;
         private System.Windows.Forms.Label frameWidthLabel;
-        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.GroupBox edgeCenterPosGroupBox;
         private System.Windows.Forms.RadioButton edgeRadioButton;
         private System.Windows.Forms.RadioButton centerRadioButton;
-        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.GroupBox lineColorGroupBox;
         private System.Windows.Forms.Label lineBackgroundColorLabel;
         private System.Windows.Forms.Label lineColorLabel;
         private System.Windows.Forms.TrackBar lineThicknessTrackbar;
@@ -1274,12 +1277,13 @@
         private System.Windows.Forms.ColumnHeader imageFound;
         private System.Windows.Forms.Button expandCollapse;
         private System.Windows.Forms.FlowLayoutPanel listButtonFlowlayout;
-        private System.Windows.Forms.FlowLayoutPanel interlaceProgressBarFlowLayout;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button fillButton;
         private System.Windows.Forms.Label unitsLabel5;
         private System.Windows.Forms.ImageList listViewImageList;
         private System.Windows.Forms.ColumnHeader expandCollapseColumn;
+        private System.Windows.Forms.TreeView wholeDriveTree;
+        private System.Windows.Forms.CheckBox imagePreviewCheckBox;
+        private System.Windows.Forms.TrackBar pictureTrackBar;
 
     }
 }

@@ -124,7 +124,6 @@ namespace Interlacer
             drawLineThickness();
 
             mapDriversToTree();
-            
         }
 
         /// <summary>
@@ -272,7 +271,7 @@ namespace Interlacer
             interpol2ComboBox.Items[2] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("printParamAdjustmentFilterCubic"), FilterType.Cubic);
             interpol2ComboBox.Items[3] = new StringValuePair<FilterType>(Localization.resourcesStrings.GetString("printParamAdjustmentFilterLanczos"), FilterType.Lanczos);
             /*nastaveni tool tipu v aktualne nastavenem jazyce*/
-            t.SetToolTip(groupBox4, Localization.resourcesStrings.GetString("printParamAdjustmentToolTip"));
+            t.SetToolTip(finalResizeInterpGroupBox, Localization.resourcesStrings.GetString("printParamAdjustmentToolTip"));
             t.SetToolTip(addPicButton, Localization.resourcesStrings.GetString("addPicTooltip"));
             t.SetToolTip(removePicButton, Localization.resourcesStrings.GetString("removePicTooltip"));
             t.SetToolTip(copyPicButton, Localization.resourcesStrings.GetString("copyPicTooltip"));
@@ -324,11 +323,25 @@ namespace Interlacer
                 if (selectedItems.Count > 0)
                 {
                     previewData.Show(selectedItems[0].SubItems[pathSubItemIndex].Text);//nastaveni nahledu na prvniho z nich
+                    pictureTrackBar.Value = selectedItems[0].Index;
                 }
                 else // jinak zobrazit defaultní image picture boxu
                 {
                     previewData.ShowDefaultImage();  //zobrazeni defaultniho obrazku
                 }
+            }
+            catch  //pripad, kdy se obrazek nepodari nacist
+            {
+                MessageBox.Show(Localization.resourcesStrings.GetString("previewError"));
+                previewData.ShowDefaultImage();  //zobrazeni defaultniho obrazku
+            }
+        }
+
+        private void setPreviewByIndex(int index)
+        {
+            try
+            {
+                previewData.Show(pictureListViewEx.Items[index].SubItems[pathSubItemIndex].Text);//nastaveni nahledu na prvniho z nich              
             }
             catch  //pripad, kdy se obrazek nepodari nacist
             {
@@ -421,9 +434,9 @@ namespace Interlacer
         /// <summary>
         /// Podle počtu obrázků v listu nastaví maximální šířku vodících čar.
         /// </summary>
-        private void changeMaxLineThickness()
+        private void updateTrackBars()
         {
-            lineThicknessTrackbar.Maximum = Math.Max(1, pictureListViewEx.Items.Count - 1);
+            // lineThicknessTrackBar
             maxPicsUnderLenLabel.Text = Convert.ToString(lineThicknessTrackbar.Maximum);
 
             if (lineThicknessTrackbar.Maximum < lineThicknessTrackbar.Value)
@@ -433,10 +446,18 @@ namespace Interlacer
             }
             else
             {
+                lineThicknessTrackbar.Value = Math.Min(lineThicknessTrackbar.Maximum, projectData.GetLineData().GetLineThickness());
                 projectData.GetLineData().SetLineThickness(lineThicknessTrackbar.Value);
             }
 
             drawLineThickness();
+
+            // pictureTrackBar
+            pictureTrackBar.Maximum = Math.Max(0, pictureListViewEx.Items.Count - 1);
+            if(pictureTrackBar.Maximum < pictureTrackBar.Value) 
+            {
+                pictureTrackBar.Value = pictureTrackBar.Maximum;
+            }
         }      
 
         /// <summary>
@@ -494,8 +515,8 @@ namespace Interlacer
             indentNumeric.Text = Convert.ToString(projectData.GetLineData().GetIndent());
 
             lineThicknessTrackbar.Maximum = Math.Max(1, pictureListViewEx.Items.Count - 1);
-            lineThicknessTrackbar.Value = projectData.GetLineData().GetLineThickness();
-            changeMaxLineThickness();
+            //lineThicknessTrackbar.Value = projectData.GetLineData().GetLineThickness();
+            updateTrackBars();
             actualPicsUnderLenLabel.Text = "" + projectData.GetLineData().GetLineThickness();
 
             double pictureResolution = projectData.GetInterlacingData().GetPictureResolution();
@@ -836,7 +857,7 @@ namespace Interlacer
                 resetPictureInfo();
 
             setPreview();
-            changeMaxLineThickness();
+            updateTrackBars();
             updateAllComponents();
             reorder();
             drawLineThickness();
@@ -950,17 +971,18 @@ namespace Interlacer
                     for (int j = 0; j < copiesCount; j++)
                     {
                         ListViewItem item = new ListViewItem();
+                        item = pictureListViewEx.Items[indeces[i]].Clone() as ListViewItem;
                         //ListViewItem item = pictureListViewEx.Items.Insert(indeces[i] + 1, Convert.ToString(order)); //vlozeni noveho radku do listView a prirazeno tohoto radku do promenne item
-                        for (int k = 1; k < pictureListViewEx.Items[0].SubItems.Count; k++)  //pruchod jednotlivych prvku radku (sloupecku)
+                        /*for (int k = 1; k < pictureListViewEx.Items[0].SubItems.Count; k++)  //pruchod jednotlivych prvku radku (sloupecku)
                         {
                             ListViewItem.ListViewSubItem subItem = item.SubItems.Add(new ListViewItem.ListViewSubItem());  //pridani novehu subItemu (pro kazdy sloupec) a prirazeni do promenne subItem
                             subItem.Text = pictureListViewEx.Items[indeces[i]].SubItems[k].Text;  //prirazeni spravneho textu danemu subItemu
-                        }
+                        }*/
                         pictureListViewEx.Items.Insert(indeces[i] + 1, item);
                     }
                 }
                 reorder();
-                changeMaxLineThickness();
+                updateTrackBars();
                 drawLineThickness();
 
                 // Vrátí focus na položky, které byli původně označené
@@ -1122,7 +1144,7 @@ namespace Interlacer
             order = 1;
             projectData.GetInterlacingData().SetWidth(0);
             projectData.GetInterlacingData().SetHeight(0);
-            changeMaxLineThickness();
+            updateTrackBars();
             updateAllComponents();
             previewData.ShowDefaultImage();
             drawLineThickness();
@@ -1166,7 +1188,7 @@ namespace Interlacer
                     reorder();
                     pictureListViewEx.Focus();
                     pictureListViewEx.Items[selectedIndex].Selected = false;
-                    changeMaxLineThickness();
+                    updateTrackBars();
                 }
                 trySetValuesFromPictures(chosenPictures);
             }
@@ -1197,7 +1219,6 @@ namespace Interlacer
             return split[split.Length - 1];
         }
 
-        TreeView wholeDriveTree = new TreeView();
         private void mapDriversToTree()
         {
             string[] drives = System.Environment.GetLogicalDrives();
@@ -1343,7 +1364,6 @@ namespace Interlacer
 
                 iteratedItems += 1;
             }
-
             isExpanded = false;
         }
 
@@ -1483,6 +1503,105 @@ namespace Interlacer
 
             pictureListViewEx.Items[itemIndex].ImageKey = "expandMinus.png";
             reorder();
+        }
+
+        private void wholeDriveTree_MouseClick(object sender, MouseEventArgs e)
+        {
+            TreeNodeInherited targetNode = (TreeNodeInherited)wholeDriveTree.GetNodeAt(e.X, e.Y);
+
+            if (targetNode == null)
+                return;
+
+            if ((Control.ModifierKeys == Keys.Control && targetNode.selected) || (e.Button == MouseButtons.Right && targetNode.selected))
+            {
+                targetNode.selected = false;
+                selectedNodes.Remove((TreeNodeInherited)targetNode);
+                targetNode.BackColor = Color.White;
+            }
+            else if ((Control.ModifierKeys == Keys.Control && !targetNode.selected) || (e.Button == MouseButtons.Right && !targetNode.selected))
+            {
+                targetNode.selected = true;
+                selectedNodes.Add((TreeNodeInherited)targetNode);
+                targetNode.BackColor = Color.SteelBlue;
+            }
+            else if (Control.ModifierKeys == Keys.Shift)
+            {
+                if(selectedNodes.Count == 0) 
+                {
+                    targetNode.selected = true;
+                    selectedNodes.Add((TreeNodeInherited)targetNode);
+                    targetNode.BackColor = Color.SteelBlue;
+                }
+                else
+                {
+                    TreeNodeInherited lastNode = selectedNodes[selectedNodes.Count - 1];
+                    
+                     if(lastNode.Parent !=null && (!lastNode.isDirectory && !targetNode.isDirectory) && lastNode.Parent.Equals(targetNode.Parent)) 
+                     {
+                        int nodesBetweenCount = Math.Abs(lastNode.Index - targetNode.Index);
+                        int direction;
+
+                        if (lastNode.Index > targetNode.Index)
+                            direction = -1;
+                        else
+                            direction = 1;
+
+                        for (int i = 0; i <= nodesBetweenCount; i++ )
+                        {
+                            TreeNodeInherited actualNode = (TreeNodeInherited)lastNode.Parent.Nodes[lastNode.Index + (i * direction)];
+                            if(!actualNode.selected) 
+                            {
+                                actualNode.selected = true;
+                                selectedNodes.Add((TreeNodeInherited)actualNode);
+                                actualNode.BackColor = Color.SteelBlue;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (TreeNodeInherited child in selectedNodes)
+                {
+                    child.selected = false;
+                    child.BackColor = Color.White;
+                }
+                selectedNodes.Clear();
+                targetNode.selected = true;
+                targetNode.BackColor = Color.SteelBlue;
+                selectedNodes.Add(targetNode);
+            }
+
+            //udelat ten shift clic - od posledního označenýho to označí všechny až k tomu novýmu
+            wholeDriveTree.SelectedNode = null;
+        }
+
+        List<TreeNodeInherited> selectedNodes = new List<TreeNodeInherited>();
+        private void wholeDriveTree_KeyPress(object sender, KeyPressEventArgs e)
+        { 
+            e.Handled = true;
+            if (e.KeyChar == (char)13 && Control.ModifierKeys != Keys.Shift)
+            {
+                if (wholeDriveTree.SelectedNode.IsExpanded)
+                    wholeDriveTree.SelectedNode.Collapse();
+                else
+                    wholeDriveTree.SelectedNode.Expand();
+            }
+            else if (Control.ModifierKeys == Keys.Shift && e.KeyChar == (char)13)
+            {
+                MessageBox.Show("sdsd");
+            }
+        }
+
+        private void wholeDriveTree_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            wholeDriveTree.SelectedNode = null;
+        }
+
+        private void pictureTrackBar_ValueChanged(object sender, EventArgs e)
+        {
+            if (imagePreviewCheckBox.Checked)
+                setPreviewByIndex(pictureTrackBar.Value);
         }
 
     }
