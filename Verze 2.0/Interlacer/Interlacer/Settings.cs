@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GfxlibWrapper;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Interlacer
 {
@@ -44,22 +45,58 @@ namespace Interlacer
         /// </summary>
         public void SetToDefault()
         {
-            selectedLanguageIndex = 0;
+            Properties.Settings.Default.selectedLanguageIndex = 0;
+            Properties.Settings.Default.selectedUnitsIndex = 0;
+            Properties.Settings.Default.selectedResolutionUnitsIndex = 0; 
+            /*selectedLanguageIndex = 0;
             selectedUnitsIndex = 0;
-            selectedResolutionUnitsIndex = 0;
+            selectedResolutionUnitsIndex = 0;*/
         }
 
         /// <summary>
         /// ulozi aktualni nastaveni do souboru
         /// </summary>
         /// <param name="filename">nazev souboru, do ktereho bude nastaveni ulozeno</param>
-        public void Save(String filename)
+        public void Save(TreeView driveTree)
         {
-            using (StreamWriter sw = new StreamWriter(filename))
+            saveTreeState(driveTree.Nodes);
+            Properties.Settings.Default.expandedNodes = expandedNodes;
+            Properties.Settings.Default.Save();
+            /*using (StreamWriter sw = new StreamWriter(filename))
             {
                 sw.WriteLine(selectedLanguageIndex);
                 sw.WriteLine(selectedUnitsIndex);
                 sw.WriteLine(selectedResolutionUnitsIndex);
+            }*/
+        }
+
+        String expandedNodes = "";
+        String[] nodesToExpand;
+        int nodesToExpandIndex = 0;
+        private void saveTreeState(TreeNodeCollection treeNodeCollection)
+        {
+            foreach (TreeNode child in treeNodeCollection)
+            {
+                if (child.IsExpanded)
+                {
+                    expandedNodes += child.Name + "|";
+                    saveTreeState(child.Nodes);
+                }
+            }
+        }
+
+        private void loadTreeState(TreeNodeCollection treeNodeCollection)
+        {
+
+            foreach (TreeNode child in treeNodeCollection)
+            {
+                if (nodesToExpand[nodesToExpandIndex].Equals(child.Name))
+                {
+                    
+                    child.Expand();
+                    nodesToExpandIndex += 1;
+                    loadTreeState(child.Nodes);
+                }
             }
         }
 
@@ -67,9 +104,15 @@ namespace Interlacer
         /// nacte nastaveni ze souboru
         /// </summary>
         /// <param name="filename">soubor, ze ktereho ma byt nastaveni nacteno</param>
-        public void Load(String filename)
+        public void Load(TreeView driveTree)
         {
-            using (StreamReader sr = new StreamReader(filename))
+            nodesToExpand = (Properties.Settings.Default.expandedNodes).Split('|');
+            loadTreeState(driveTree.Nodes);
+
+            selectedLanguageIndex = Properties.Settings.Default.selectedLanguageIndex;
+            selectedUnitsIndex = Properties.Settings.Default.selectedUnitsIndex;
+            selectedResolutionUnitsIndex = Properties.Settings.Default.selectedResolutionUnitsIndex;
+            /*using (StreamReader sr = new StreamReader(filename))
             {
                 selectedLanguageIndex = int.Parse(sr.ReadLine());  //nateni indexu jazyka
                 if (selectedLanguageIndex >= settingOptions.languageOptions.Count)  //kontrola, zda je index v mezich
@@ -80,7 +123,7 @@ namespace Interlacer
                 selectedResolutionUnitsIndex = int.Parse(sr.ReadLine());  //nacteni indexu jednotek rozliseni
                 if (selectedResolutionUnitsIndex >= settingOptions.resolutionUnitsOptions.Count)  //kontrola, zda je index v mezich
                     throw new Exception();
-            }
+            }*/
         }
 
         /// <summary>
@@ -107,6 +150,7 @@ namespace Interlacer
         /// <param name="index">novy index nastaveni delkovych jednotek</param>
         public void SetSelectedUnitsIndex(int index)
         {
+            Properties.Settings.Default.selectedUnitsIndex = index;
             this.selectedUnitsIndex = index;
         }
 
@@ -116,7 +160,8 @@ namespace Interlacer
         /// <returns>aktualne vybrany index nastaveni delkovych jednotek</returns>
         public int GetSelectedUnitsIndex()
         {
-            return selectedUnitsIndex;
+            return Properties.Settings.Default.selectedUnitsIndex;
+            //return selectedUnitsIndex;
         }
 
         /// <summary>
@@ -125,7 +170,7 @@ namespace Interlacer
         /// <param name="index">novy index nastaveni jednotek pro rozliseni</param>
         public void SetSelectedResolutionUnitsIndex(int index)
         {
-
+            Properties.Settings.Default.selectedResolutionUnitsIndex = index;
             this.selectedResolutionUnitsIndex = index;
         }
 
@@ -135,7 +180,8 @@ namespace Interlacer
         /// <returns>aktualne vybrany index nastaveni jednotek pro rozliseni</returns>
         public int GetSelectedResolutionUnitsIndex()
         {
-            return selectedResolutionUnitsIndex;
+            return Properties.Settings.Default.selectedResolutionUnitsIndex;
+            //return selectedResolutionUnitsIndex;
         }
 
         /// <summary>
@@ -144,6 +190,7 @@ namespace Interlacer
         /// <param name="index">novy index nastaveni jazyka</param>
         public void SetSelectedLanguageIndex(int index)
         {
+            Properties.Settings.Default.selectedLanguageIndex = index;
             this.selectedLanguageIndex = index;
         }
 
@@ -153,7 +200,8 @@ namespace Interlacer
         /// <returns>aktualne vybrany index nastaveni jazyka</returns>
         public int GetSelectedLanguageIndex()
         {
-            return selectedLanguageIndex;
+            return Properties.Settings.Default.selectedLanguageIndex; 
+            //return selectedLanguageIndex;
         }
 
         /// <summary>

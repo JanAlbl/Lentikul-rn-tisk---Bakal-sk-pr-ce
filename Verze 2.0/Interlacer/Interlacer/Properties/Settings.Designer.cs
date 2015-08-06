@@ -23,30 +23,51 @@ namespace Interlacer.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int selectedLanguageIndex {
             get {
                 return ((int)(this["selectedLanguageIndex"]));
             }
+            set {
+                this["selectedLanguageIndex"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int selectedUnitsIndex {
             get {
                 return ((int)(this["selectedUnitsIndex"]));
             }
+            set {
+                this["selectedUnitsIndex"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int selectedResolutionUnitsIndex {
             get {
                 return ((int)(this["selectedResolutionUnitsIndex"]));
+            }
+            set {
+                this["selectedResolutionUnitsIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string expandedNodes {
+            get {
+                return ((string)(this["expandedNodes"]));
+            }
+            set {
+                this["expandedNodes"] = value;
             }
         }
     }

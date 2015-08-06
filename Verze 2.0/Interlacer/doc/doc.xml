@@ -1896,13 +1896,13 @@
             nastavi vse na vychozi nastaveni
             </summary>
         </member>
-        <member name="M:Interlacer.Settings.Save(System.String)">
+        <member name="M:Interlacer.Settings.Save(System.Windows.Forms.TreeView)">
             <summary>
             ulozi aktualni nastaveni do souboru
             </summary>
             <param name="filename">nazev souboru, do ktereho bude nastaveni ulozeno</param>
         </member>
-        <member name="M:Interlacer.Settings.Load(System.String)">
+        <member name="M:Interlacer.Settings.Load(System.Windows.Forms.TreeView)">
             <summary>
             nacte nastaveni ze souboru
             </summary>

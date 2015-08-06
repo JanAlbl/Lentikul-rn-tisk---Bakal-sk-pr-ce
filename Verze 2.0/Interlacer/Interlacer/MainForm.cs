@@ -111,6 +111,7 @@ namespace Interlacer
             centerRadioButton.Checked = true;
             projectData.GetLineData().SetLineThickness(1);
             actualPicsUnderLenLabel.Text = Convert.ToString(lineThicknessTrackbar.Value);
+            mapDriversToTree();
             loadSettings();  //nacteni akutalniho nastaveni do atributu settings
             Localization.currentLanguage = settings.GetSelectedLanguage().value;  //zjisteni aktualne nastaveneho jazyka z atributu settings
             Localization.changeCulture();  //nastaveni kultury formulare na dany jazyk
@@ -123,7 +124,7 @@ namespace Interlacer
 
             drawLineThickness();
 
-            mapDriversToTree();
+            //mapDriversToTree();
         }
 
         /// <summary>
@@ -196,7 +197,7 @@ namespace Interlacer
             settings = new Settings(createSettingOptions());
             try
             {
-                settings.Load(settingsFilename);  //pokus o nacteni
+                settings.Load(wholeDriveTree);  //pokus o nacteni
             }
             catch  //pokud se nacteni nezdari, jsou pouzity defaultni hodnoty (same 0)
             {
@@ -1231,6 +1232,7 @@ namespace Interlacer
                     continue ;
 
                 TreeNodeInherited node = new TreeNodeInherited(dr);
+                node.Name = dr;
                 node.ImageKey = "HardDisk.png";
                 node.SelectedImageKey = "HardDisk.png";
                 node.Tag = dr;

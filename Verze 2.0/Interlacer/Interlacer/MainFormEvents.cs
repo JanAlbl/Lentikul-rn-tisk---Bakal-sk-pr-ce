@@ -399,12 +399,7 @@ namespace Interlacer
         {
             try
             {
-                var fileName = Path.Combine(Environment.GetFolderPath(
-                                            Environment.SpecialFolder.ApplicationData), "InterlacerSettings.txt");
-                //int myInt = Properties.Settings.Default.myVariable;
-                //Properties.Settings.Default.myVariable = 12;
-                //Properties.Settings.Default.Save();
-                settings.Save(settingsFilename);
+                settings.Save(wholeDriveTree);
             }
             catch { } //pri vyjimce se soubor proste neulozi
         }
